@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mere Orthodoxy Subscriber Survey 2026</title>
+    <title>Mere Orthodoxy Survey Analysis 2026</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -12,6 +12,9 @@
             background: #faf9f7;
             color: #1a1a1a;
             line-height: 1.7;
+        }
+
+        .page-wrap {
             max-width: 680px;
             margin: 0 auto;
             padding: 48px 24px 96px;
@@ -28,7 +31,39 @@
             color: #888;
             font-size: 14px;
             font-family: -apple-system, system-ui, sans-serif;
-            margin-bottom: 48px;
+            margin-bottom: 24px;
+        }
+
+        /* Tabs */
+        .page-wrap > input[type="radio"] { display: none; }
+
+        .page-wrap > label {
+            display: inline-block;
+            padding: 10px 16px;
+            font-size: 13px;
+            font-weight: 500;
+            font-family: -apple-system, system-ui, sans-serif;
+            color: #888;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            margin-bottom: -1px;
+            transition: color 0.2s, border-color 0.2s;
+        }
+
+        .page-wrap > label:hover { color: #555; }
+
+        .page-wrap > input:checked + label {
+            color: #1a1a1a;
+            border-bottom-color: #1a1a1a;
+        }
+
+        .tab-panel { display: none; }
+
+        #tab-summary:checked ~ .tab-panels .panel-summary,
+        #tab-subscribers:checked ~ .tab-panels .panel-subscribers,
+        #tab-members:checked ~ .tab-panels .panel-members,
+        #tab-combined:checked ~ .tab-panels .panel-combined {
+            display: block;
         }
 
         h2 {
@@ -38,6 +73,8 @@
             padding-bottom: 8px;
             border-bottom: 1px solid #e0e0e0;
         }
+
+        h2:first-child { margin-top: 0; }
 
         h3 {
             font-size: 15px;
@@ -86,9 +123,7 @@
         }
 
         /* Bar charts */
-        .bar-chart {
-            margin: 16px 0 28px;
-        }
+        .bar-chart { margin: 16px 0 28px; }
 
         .bar-row {
             display: flex;
@@ -127,83 +162,6 @@
             font-size: 12px;
         }
 
-        /* Grouped bars */
-        .grouped-chart {
-            margin: 16px 0 28px;
-        }
-
-        .group-section {
-            margin-bottom: 16px;
-        }
-
-        .group-label {
-            font-family: -apple-system, system-ui, sans-serif;
-            font-size: 12px;
-            font-weight: 600;
-            color: #888;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 6px;
-        }
-
-        .group-bars {
-            display: flex;
-            gap: 2px;
-            align-items: flex-end;
-            height: 80px;
-        }
-
-        .g-bar {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-end;
-            height: 100%;
-        }
-
-        .g-bar-fill {
-            width: 100%;
-            background: #1a1a1a;
-            transition: height 0.6s ease;
-        }
-
-        .g-bar-fill.alt1 { background: #999; }
-        .g-bar-fill.alt2 { background: #ccc; }
-        .g-bar-fill.alt3 { background: #ddd; }
-
-        .g-bar-label {
-            font-family: -apple-system, system-ui, sans-serif;
-            font-size: 10px;
-            color: #888;
-            margin-top: 4px;
-            text-align: center;
-        }
-
-        /* Legend */
-        .legend {
-            display: flex;
-            gap: 16px;
-            margin: 8px 0 4px;
-            font-family: -apple-system, system-ui, sans-serif;
-            font-size: 11px;
-            color: #888;
-        }
-
-        .legend span::before {
-            content: '';
-            display: inline-block;
-            width: 10px;
-            height: 10px;
-            margin-right: 4px;
-            vertical-align: middle;
-        }
-
-        .legend .l0::before { background: #1a1a1a; }
-        .legend .l1::before { background: #999; }
-        .legend .l2::before { background: #ccc; }
-        .legend .l3::before { background: #ddd; }
-
         /* Callout */
         .callout {
             border-left: 2px solid #1a1a1a;
@@ -213,7 +171,6 @@
         }
 
         .callout p { margin-bottom: 0; font-size: 14px; }
-
         .callout.muted { border-left-color: #ccc; }
 
         /* Quotes */
@@ -285,6 +242,15 @@
             margin-bottom: 4px;
         }
 
+        /* Placeholder */
+        .placeholder {
+            padding: 80px 0;
+            text-align: center;
+            color: #aaa;
+            font-family: -apple-system, system-ui, sans-serif;
+            font-size: 14px;
+        }
+
         /* Footer */
         footer {
             margin-top: 64px;
@@ -297,17 +263,95 @@
         }
 
         @media (max-width: 520px) {
-            body { padding: 32px 16px 64px; }
+            .page-wrap { padding: 32px 16px 64px; }
             h1 { font-size: 22px; }
             .bar-label { width: 110px; font-size: 11px; }
             .kpis { grid-template-columns: repeat(2, 1fr); }
+            .page-wrap > label { padding: 8px 10px; font-size: 12px; }
         }
     </style>
 </head>
 <body>
 
-<h1>Mere Orthodoxy Subscriber Survey</h1>
+<div class="page-wrap">
+
+<h1>Mere Orthodoxy Survey Analysis</h1>
 <p class="subtitle">281 respondents &middot; February 2026</p>
+
+<!-- Tab inputs must be siblings of .tab-panels for CSS selectors -->
+<input type="radio" name="tabs" id="tab-summary" checked>
+<label for="tab-summary">Executive Summary</label>
+<input type="radio" name="tabs" id="tab-subscribers">
+<label for="tab-subscribers">Subscribers</label>
+<input type="radio" name="tabs" id="tab-members">
+<label for="tab-members">Members</label>
+<input type="radio" name="tabs" id="tab-combined">
+<label for="tab-combined">Combined</label>
+
+<div class="tab-bar-line" style="border-bottom: 1px solid #e0e0e0; margin-bottom: 48px;"></div>
+
+<div class="tab-panels">
+
+<!-- ============================================================ -->
+<!-- EXECUTIVE SUMMARY -->
+<!-- ============================================================ -->
+<div class="tab-panel panel-summary">
+
+<h2 style="margin-top: 0;">Who Your Readers Are</h2>
+
+<p>281 subscribers responded to the February 2026 survey. The readership is 76% male, 43% are over 55, and 36% are pastors or elders. 93% are Protestant, spread across Presbyterian (22%), non-denominational (21%), Baptist (20%), and Anglican (11%) traditions. No single denomination dominates, which means the "mere" in Mere Orthodoxy is genuinely working.</p>
+
+<p>75% read weekly or more. The website is the primary channel (69%), followed by the email newsletter (48%) and Substack (32%). Substack indexes highest among under-35 readers (43-44%), making it your primary growth platform.</p>
+
+<h2>What They Want</h2>
+
+<p>Three topics form the universal foundation: Theology (80%), Culture (77%), and Church (75%). These are consistent across every age group, gender, and church role. They should remain the backbone of your editorial calendar.</p>
+
+<p>The most significant content gap is Family. 63% of 25-34 year olds want it, 55% of women want it, and 25.5% of under-35 respondents named parenting as their biggest personal challenge. Yet it currently ranks 7th in your overall content mix. This is your clearest unmet need.</p>
+
+<p>Technology is the emerging topic. Interest runs at 53-56% among under-35 readers versus 18% among 55+. In the free-text challenges, Technology and AI were the second-most mentioned theme at 19%. Your younger readers want help thinking about what it means to be human in a digital age.</p>
+
+<p>57% of all readers want more in-depth theological content. Among academics, 76%. This is not a signal to publish shorter or more accessible content. Your readers chose MO specifically because you go deeper than anyone else. They want you to go even deeper.</p>
+
+<h2>What They Are Struggling With</h2>
+
+<p>Across 211 free-text responses, the overwhelming undercurrent is grief over the politicization of evangelicalism. 13.3% named it explicitly, but it permeates responses about theology, church health, and cultural engagement. Among pastors, political polarization was the second most-cited challenge at 17.6%. Your readers love the church and feel like their spiritual home is being torn apart. They come to MO looking for sanity.</p>
+
+<p>Pastors report a distinctive profile: political polarization, leadership strain, loneliness, and ecclesial identity questions. They are your most loyal cohort (highest daily readership at 7.5%) and came to MO looking for intellectual companionship they cannot find elsewhere.</p>
+
+<p>Your female readers (24% of the audience) are 82% lay members, many isolated. They report that most women's ministry lacks theological depth. Women want Family content at 1.5x the rate of men and report parenting challenges at 4x the rate. If you do not intentionally create space for women's voices and concerns, you will remain a publication that women recommend to their husbands but do not read themselves.</p>
+
+<h2>What You Should Do</h2>
+
+<p><strong>Launch a Faith &amp; Family content vertical.</strong> This is the single biggest unmet need in your data. 63% of your growth demographic wants it. Frame it as the intersection of formation, ecclesiology, and practical wisdom — not lifestyle content.</p>
+
+<p><strong>Invest in Technology &amp; AI coverage.</strong> Your younger readers are grappling with embodiment in a digital age. Frame it as theological-cultural analysis, which is what MO does best.</p>
+
+<p><strong>Double down on long-form theological depth.</strong> This is your competitive moat. Consider multi-part series and sustained engagement with single topics over weeks.</p>
+
+<p><strong>Create pathways for women readers.</strong> Recruit women contributors. Address the theological depth gap in women's ministry. This is both a growth opportunity and a moral imperative for a publication called "Mere Orthodoxy."</p>
+
+<p><strong>Grow your Substack presence.</strong> It is your strongest channel among under-35 readers. Use its community features to build the sense of belonging your younger cohort explicitly requests.</p>
+
+<p><strong>Pilot small regional events.</strong> 41% of 25-34 readers want them. Start with dinner discussions or reading groups in Texas, Michigan, North Carolina, Pennsylvania, and Washington.</p>
+
+<p><strong>Address the political pain directly.</strong> Your readers don't want you to take a side. They want you to model faithful engagement that transcends the partisan binary. This is exactly your brand. Lean into it more explicitly.</p>
+
+<h2>What Not to Do</h2>
+
+<p>Only 4.6% want more social media engagement. Only 7.8% want video. Your readers are readers. Your competitive moat is depth, not reach. The path to growth is not broadening to be more accessible. It is deepening your existing strengths while widening the aperture to include family, technology, and community — the bridges between your current audience and your future one.</p>
+
+<footer>
+    Mere Orthodoxy Survey Analysis &middot; 281 respondents &middot; February 2026<br>
+    Analysis prepared with Claude
+</footer>
+
+</div>
+
+<!-- ============================================================ -->
+<!-- SUBSCRIBERS -->
+<!-- ============================================================ -->
+<div class="tab-panel panel-subscribers">
 
 <div class="kpis">
     <div class="kpi"><div class="kpi-val">281</div><div class="kpi-label">Respondents</div></div>
@@ -659,9 +703,37 @@
 </div>
 
 <footer>
-    Mere Orthodoxy Subscriber Survey &middot; 281 respondents &middot; February 2026<br>
+    Mere Orthodoxy Survey Analysis &middot; 281 respondents &middot; February 2026<br>
     Analysis prepared with Claude
 </footer>
+
+</div>
+
+<!-- ============================================================ -->
+<!-- MEMBERS -->
+<!-- ============================================================ -->
+<div class="tab-panel panel-members">
+
+<div class="placeholder">
+    <p>Member survey data coming soon.</p>
+</div>
+
+</div>
+
+<!-- ============================================================ -->
+<!-- COMBINED -->
+<!-- ============================================================ -->
+<div class="tab-panel panel-combined">
+
+<div class="placeholder">
+    <p>Combined analysis coming soon.</p>
+</div>
+
+</div>
+
+</div><!-- end .tab-panels -->
+
+</div><!-- end .page-wrap -->
 
 </body>
 </html>
