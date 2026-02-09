@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mere Orthodoxy Subscriber Survey 2026</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: #faf9f7;
+            color: #1a1a1a;
+            line-height: 1.7;
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 48px 24px 96px;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 4px;
+        }
+
+        .subtitle {
+            color: #888;
+            font-size: 14px;
+            font-family: -apple-system, system-ui, sans-serif;
+            margin-bottom: 48px;
+        }
+
+        h2 {
+            font-size: 18px;
+            font-weight: 700;
+            margin: 56px 0 20px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        h3 {
+            font-size: 15px;
+            font-weight: 700;
+            margin: 32px 0 12px;
+        }
+
+        p, li {
+            font-size: 15px;
+            color: #333;
+            margin-bottom: 12px;
+        }
+
+        ul { margin: 0 0 16px 20px; }
+        li { margin-bottom: 6px; }
+
+        /* KPI strip */
+        .kpis {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1px;
+            background: #e0e0e0;
+            border: 1px solid #e0e0e0;
+            margin: 24px 0 48px;
+        }
+
+        .kpi {
+            background: #fff;
+            padding: 16px 12px;
+            text-align: center;
+        }
+
+        .kpi-val {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .kpi-label {
+            font-size: 11px;
+            font-family: -apple-system, system-ui, sans-serif;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 2px;
+        }
+
+        /* Bar charts */
+        .bar-chart {
+            margin: 16px 0 28px;
+        }
+
+        .bar-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 6px;
+            font-family: -apple-system, system-ui, sans-serif;
+            font-size: 13px;
+        }
+
+        .bar-label {
+            width: 160px;
+            flex-shrink: 0;
+            text-align: right;
+            padding-right: 12px;
+            color: #555;
+        }
+
+        .bar-track {
+            flex: 1;
+            height: 18px;
+            background: #f0efed;
+            position: relative;
+        }
+
+        .bar-fill {
+            height: 100%;
+            background: #1a1a1a;
+            transition: width 0.6s ease;
+        }
+
+        .bar-val {
+            width: 44px;
+            text-align: right;
+            padding-left: 8px;
+            color: #888;
+            font-size: 12px;
+        }
+
+        /* Grouped bars */
+        .grouped-chart {
+            margin: 16px 0 28px;
+        }
+
+        .group-section {
+            margin-bottom: 16px;
+        }
+
+        .group-label {
+            font-family: -apple-system, system-ui, sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+
+        .group-bars {
+            display: flex;
+            gap: 2px;
+            align-items: flex-end;
+            height: 80px;
+        }
+
+        .g-bar {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            height: 100%;
+        }
+
+        .g-bar-fill {
+            width: 100%;
+            background: #1a1a1a;
+            transition: height 0.6s ease;
+        }
+
+        .g-bar-fill.alt1 { background: #999; }
+        .g-bar-fill.alt2 { background: #ccc; }
+        .g-bar-fill.alt3 { background: #ddd; }
+
+        .g-bar-label {
+            font-family: -apple-system, system-ui, sans-serif;
+            font-size: 10px;
+            color: #888;
+            margin-top: 4px;
+            text-align: center;
+        }
+
+        /* Legend */
+        .legend {
+            display: flex;
+            gap: 16px;
+            margin: 8px 0 4px;
+            font-family: -apple-system, system-ui, sans-serif;
+            font-size: 11px;
+            color: #888;
+        }
+
+        .legend span::before {
+            content: '';
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin-right: 4px;
+            vertical-align: middle;
+        }
+
+        .legend .l0::before { background: #1a1a1a; }
+        .legend .l1::before { background: #999; }
+        .legend .l2::before { background: #ccc; }
+        .legend .l3::before { background: #ddd; }
+
+        /* Callout */
+        .callout {
+            border-left: 2px solid #1a1a1a;
+            padding: 12px 16px;
+            margin: 20px 0;
+            background: #fff;
+        }
+
+        .callout p { margin-bottom: 0; font-size: 14px; }
+
+        .callout.muted { border-left-color: #ccc; }
+
+        /* Quotes */
+        blockquote {
+            border-left: 2px solid #ddd;
+            padding: 8px 16px;
+            margin: 12px 0;
+            font-style: italic;
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* Profile cards */
+        .profile {
+            border-top: 1px solid #e0e0e0;
+            padding: 20px 0;
+        }
+
+        .profile h4 {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+
+        .profile .pct {
+            font-family: -apple-system, system-ui, sans-serif;
+            font-size: 12px;
+            color: #888;
+            margin-bottom: 8px;
+        }
+
+        .profile p { font-size: 14px; }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 8px;
+        }
+
+        .tag {
+            font-family: -apple-system, system-ui, sans-serif;
+            font-size: 11px;
+            padding: 2px 8px;
+            border: 1px solid #ddd;
+            color: #666;
+        }
+
+        /* Recommendations */
+        .rec {
+            border-top: 1px solid #e0e0e0;
+            padding: 16px 0;
+        }
+
+        .rec h4 {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .rec p { font-size: 14px; }
+
+        .priority-tag {
+            font-family: -apple-system, system-ui, sans-serif;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #888;
+            margin-bottom: 4px;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 64px;
+            padding-top: 24px;
+            border-top: 1px solid #e0e0e0;
+            font-family: -apple-system, system-ui, sans-serif;
+            font-size: 12px;
+            color: #aaa;
+            text-align: center;
+        }
+
+        @media (max-width: 520px) {
+            body { padding: 32px 16px 64px; }
+            h1 { font-size: 22px; }
+            .bar-label { width: 110px; font-size: 11px; }
+            .kpis { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+
+<h1>Mere Orthodoxy Subscriber Survey</h1>
+<p class="subtitle">281 respondents &middot; February 2026</p>
+
+<div class="kpis">
+    <div class="kpi"><div class="kpi-val">281</div><div class="kpi-label">Respondents</div></div>
+    <div class="kpi"><div class="kpi-val">76%</div><div class="kpi-label">Male</div></div>
+    <div class="kpi"><div class="kpi-val">43%</div><div class="kpi-label">Age 55+</div></div>
+    <div class="kpi"><div class="kpi-val">36%</div><div class="kpi-label">Pastors &amp; Elders</div></div>
+    <div class="kpi"><div class="kpi-val">75%</div><div class="kpi-label">Read Weekly+</div></div>
+</div>
+
+<div class="callout">
+    <p>Your readers are not casual browsers. Over a third are pastors or elders. They come to MO because they are trying to think Christianly through hard problems, and most other outlets either lack depth or have become too partisan to trust.</p>
+</div>
+
+<!-- DEMOGRAPHICS -->
+<h2>Who Is Reading</h2>
+
+<h3>Age Distribution</h3>
+<div class="bar-chart">
+    <div class="bar-row"><span class="bar-label">Under 25</span><div class="bar-track"><div class="bar-fill" style="width:7.5%"></div></div><span class="bar-val">6.4%</span></div>
+    <div class="bar-row"><span class="bar-label">25–34</span><div class="bar-track"><div class="bar-fill" style="width:21.2%"></div></div><span class="bar-val">18.1%</span></div>
+    <div class="bar-row"><span class="bar-label">35–44</span><div class="bar-track"><div class="bar-fill" style="width:22.1%"></div></div><span class="bar-val">18.9%</span></div>
+    <div class="bar-row"><span class="bar-label">45–54</span><div class="bar-track"><div class="bar-fill" style="width:15.8%"></div></div><span class="bar-val">13.5%</span></div>
+    <div class="bar-row"><span class="bar-label">55–64</span><div class="bar-track"><div class="bar-fill" style="width:17.9%"></div></div><span class="bar-val">15.3%</span></div>
+    <div class="bar-row"><span class="bar-label">65–74</span><div class="bar-track"><div class="bar-fill" style="width:23.7%"></div></div><span class="bar-val">20.3%</span></div>
+    <div class="bar-row"><span class="bar-label">75+</span><div class="bar-track"><div class="bar-fill" style="width:8.7%"></div></div><span class="bar-val">7.5%</span></div>
+</div>
+
+<h3>Protestant Denominations</h3>
+<div class="bar-chart">
+    <div class="bar-row"><span class="bar-label">Presbyterian</span><div class="bar-track"><div class="bar-fill" style="width:23.8%"></div></div><span class="bar-val">22.1%</span></div>
+    <div class="bar-row"><span class="bar-label">Non-Denom</span><div class="bar-track"><div class="bar-fill" style="width:23%"></div></div><span class="bar-val">21.4%</span></div>
+    <div class="bar-row"><span class="bar-label">Baptist</span><div class="bar-track"><div class="bar-fill" style="width:21.8%"></div></div><span class="bar-val">20.3%</span></div>
+    <div class="bar-row"><span class="bar-label">Anglican</span><div class="bar-track"><div class="bar-fill" style="width:11.5%"></div></div><span class="bar-val">10.7%</span></div>
+    <div class="bar-row"><span class="bar-label">Lutheran</span><div class="bar-track"><div class="bar-fill" style="width:5%"></div></div><span class="bar-val">4.6%</span></div>
+    <div class="bar-row"><span class="bar-label">Other</span><div class="bar-track"><div class="bar-fill" style="width:11.9%"></div></div><span class="bar-val">11.0%</span></div>
+</div>
+
+<p>93% Protestant. No single denomination exceeds 22%. The "mere" in Mere Orthodoxy is actually working.</p>
+
+<h3>Church Role</h3>
+<div class="bar-chart">
+    <div class="bar-row"><span class="bar-label">Lay Member</span><div class="bar-track"><div class="bar-fill" style="width:52.3%"></div></div><span class="bar-val">52.3%</span></div>
+    <div class="bar-row"><span class="bar-label">Pastor</span><div class="bar-track"><div class="bar-fill" style="width:23.8%"></div></div><span class="bar-val">23.8%</span></div>
+    <div class="bar-row"><span class="bar-label">Elder / Deacon</span><div class="bar-track"><div class="bar-fill" style="width:12.1%"></div></div><span class="bar-val">12.1%</span></div>
+    <div class="bar-row"><span class="bar-label">Academic</span><div class="bar-track"><div class="bar-fill" style="width:7.5%"></div></div><span class="bar-val">7.5%</span></div>
+    <div class="bar-row"><span class="bar-label">Other</span><div class="bar-track"><div class="bar-fill" style="width:4.3%"></div></div><span class="bar-val">4.3%</span></div>
+</div>
+
+<h3>Top States</h3>
+<div class="bar-chart">
+    <div class="bar-row"><span class="bar-label">Texas</span><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><span class="bar-val">14</span></div>
+    <div class="bar-row"><span class="bar-label">Michigan</span><div class="bar-track"><div class="bar-fill" style="width:64.3%"></div></div><span class="bar-val">9</span></div>
+    <div class="bar-row"><span class="bar-label">North Carolina</span><div class="bar-track"><div class="bar-fill" style="width:50%"></div></div><span class="bar-val">7</span></div>
+    <div class="bar-row"><span class="bar-label">Pennsylvania</span><div class="bar-track"><div class="bar-fill" style="width:50%"></div></div><span class="bar-val">7</span></div>
+    <div class="bar-row"><span class="bar-label">Washington</span><div class="bar-track"><div class="bar-fill" style="width:50%"></div></div><span class="bar-val">7</span></div>
+    <div class="bar-row"><span class="bar-label">Tennessee</span><div class="bar-track"><div class="bar-fill" style="width:42.9%"></div></div><span class="bar-val">6</span></div>
+    <div class="bar-row"><span class="bar-label">Virginia</span><div class="bar-track"><div class="bar-fill" style="width:42.9%"></div></div><span class="bar-val">6</span></div>
+    <div class="bar-row"><span class="bar-label">California</span><div class="bar-track"><div class="bar-fill" style="width:42.9%"></div></div><span class="bar-val">6</span></div>
+</div>
+
+<!-- ENGAGEMENT -->
+<h2>How They Read You</h2>
+
+<h3>Reading Frequency</h3>
+<div class="bar-chart">
+    <div class="bar-row"><span class="bar-label">Daily</span><div class="bar-track"><div class="bar-fill" style="width:4.6%"></div></div><span class="bar-val">4.6%</span></div>
+    <div class="bar-row"><span class="bar-label">Few times / week</span><div class="bar-track"><div class="bar-fill" style="width:33.1%"></div></div><span class="bar-val">33.1%</span></div>
+    <div class="bar-row"><span class="bar-label">Weekly</span><div class="bar-track"><div class="bar-fill" style="width:32.4%"></div></div><span class="bar-val">32.4%</span></div>
+    <div class="bar-row"><span class="bar-label">Monthly</span><div class="bar-track"><div class="bar-fill" style="width:11.7%"></div></div><span class="bar-val">11.7%</span></div>
+    <div class="bar-row"><span class="bar-label">Occasionally</span><div class="bar-track"><div class="bar-fill" style="width:15.7%"></div></div><span class="bar-val">15.7%</span></div>
+</div>
+
+<h3>Engagement Channels</h3>
+<div class="bar-chart">
+    <div class="bar-row"><span class="bar-label">Website</span><div class="bar-track"><div class="bar-fill" style="width:68.7%"></div></div><span class="bar-val">68.7%</span></div>
+    <div class="bar-row"><span class="bar-label">Newsletter</span><div class="bar-track"><div class="bar-fill" style="width:48.4%"></div></div><span class="bar-val">48.4%</span></div>
+    <div class="bar-row"><span class="bar-label">Substack</span><div class="bar-track"><div class="bar-fill" style="width:32%"></div></div><span class="bar-val">32.0%</span></div>
+    <div class="bar-row"><span class="bar-label">Mere Fidelity</span><div class="bar-track"><div class="bar-fill" style="width:25.6%"></div></div><span class="bar-val">25.6%</span></div>
+    <div class="bar-row"><span class="bar-label">Christians Reading</span><div class="bar-track"><div class="bar-fill" style="width:6.8%"></div></div><span class="bar-val">6.8%</span></div>
+    <div class="bar-row"><span class="bar-label">Social Media</span><div class="bar-track"><div class="bar-fill" style="width:4.6%"></div></div><span class="bar-val">4.6%</span></div>
+</div>
+
+<div class="callout muted">
+    <p>Substack is your growth channel. It indexes at 43–44% among under-35 readers compared to 24% among 55+. This is where your next generation lives.</p>
+</div>
+
+<!-- CONTENT -->
+<h2>What They Want</h2>
+
+<h3>Content Interests (Overall)</h3>
+<div class="bar-chart">
+    <div class="bar-row"><span class="bar-label">Theology</span><div class="bar-track"><div class="bar-fill" style="width:79.7%"></div></div><span class="bar-val">79.7%</span></div>
+    <div class="bar-row"><span class="bar-label">Culture</span><div class="bar-track"><div class="bar-fill" style="width:77.2%"></div></div><span class="bar-val">77.2%</span></div>
+    <div class="bar-row"><span class="bar-label">Church</span><div class="bar-track"><div class="bar-fill" style="width:75.4%"></div></div><span class="bar-val">75.4%</span></div>
+    <div class="bar-row"><span class="bar-label">Formation</span><div class="bar-track"><div class="bar-fill" style="width:53.0%"></div></div><span class="bar-val">53.0%</span></div>
+    <div class="bar-row"><span class="bar-label">Philosophy</span><div class="bar-track"><div class="bar-fill" style="width:49.1%"></div></div><span class="bar-val">49.1%</span></div>
+    <div class="bar-row"><span class="bar-label">Book Reviews</span><div class="bar-track"><div class="bar-fill" style="width:46.6%"></div></div><span class="bar-val">46.6%</span></div>
+    <div class="bar-row"><span class="bar-label">Family</span><div class="bar-track"><div class="bar-fill" style="width:40.6%"></div></div><span class="bar-val">40.6%</span></div>
+    <div class="bar-row"><span class="bar-label">Technology</span><div class="bar-track"><div class="bar-fill" style="width:34.5%"></div></div><span class="bar-val">34.5%</span></div>
+    <div class="bar-row"><span class="bar-label">Politics</span><div class="bar-track"><div class="bar-fill" style="width:34.2%"></div></div><span class="bar-val">34.2%</span></div>
+    <div class="bar-row"><span class="bar-label">Education</span><div class="bar-track"><div class="bar-fill" style="width:27.0%"></div></div><span class="bar-val">27.0%</span></div>
+    <div class="bar-row"><span class="bar-label">Leadership</span><div class="bar-track"><div class="bar-fill" style="width:23.8%"></div></div><span class="bar-val">23.8%</span></div>
+</div>
+
+<h3>Where Interests Diverge by Age</h3>
+<p>Theology, Culture, and Church are universal (75–80% across all groups). The divergence:</p>
+<ul>
+    <li><strong>Family:</strong> 63% of 25–34 year olds vs. 24% of 55+</li>
+    <li><strong>Technology:</strong> 56% of Under 25 vs. 18% of 55+</li>
+    <li><strong>Politics:</strong> 67% of Under 25 vs. 31% of 55+</li>
+    <li><strong>Book Reviews:</strong> 28% of Under 25 vs. 46% of 55+</li>
+</ul>
+
+<h3>Gender Gap</h3>
+<p>Women index significantly higher on Family (+19pts) and Education (+19pts). Men index higher on Leadership (+17pts) and Theology (+11pts).</p>
+
+<h3>What Would Make MO More Valuable</h3>
+<div class="bar-chart">
+    <div class="bar-row"><span class="bar-label">In-depth theology</span><div class="bar-track"><div class="bar-fill" style="width:56.9%"></div></div><span class="bar-val">56.9%</span></div>
+    <div class="bar-row"><span class="bar-label">Cultural commentary</span><div class="bar-track"><div class="bar-fill" style="width:51.2%"></div></div><span class="bar-val">51.2%</span></div>
+    <div class="bar-row"><span class="bar-label">Podcast content</span><div class="bar-track"><div class="bar-fill" style="width:20.3%"></div></div><span class="bar-val">20.3%</span></div>
+    <div class="bar-row"><span class="bar-label">Regional events</span><div class="bar-track"><div class="bar-fill" style="width:19.2%"></div></div><span class="bar-val">19.2%</span></div>
+    <div class="bar-row"><span class="bar-label">Topical ebooks</span><div class="bar-track"><div class="bar-fill" style="width:18.9%"></div></div><span class="bar-val">18.9%</span></div>
+    <div class="bar-row"><span class="bar-label">Online events</span><div class="bar-track"><div class="bar-fill" style="width:9.3%"></div></div><span class="bar-val">9.3%</span></div>
+    <div class="bar-row"><span class="bar-label">Video content</span><div class="bar-track"><div class="bar-fill" style="width:7.8%"></div></div><span class="bar-val">7.8%</span></div>
+    <div class="bar-row"><span class="bar-label">Social media</span><div class="bar-track"><div class="bar-fill" style="width:4.6%"></div></div><span class="bar-val">4.6%</span></div>
+</div>
+
+<!-- CHALLENGES -->
+<h2>What Keeps Them Up at Night</h2>
+<p>211 readers wrote free-text responses about their biggest challenges. Responses were coded into themes.</p>
+
+<h3>Challenge Themes</h3>
+<div class="bar-chart">
+    <div class="bar-row"><span class="bar-label">Theology / Doctrine</span><div class="bar-track"><div class="bar-fill" style="width:50.2%"></div></div><span class="bar-val">50.2%</span></div>
+    <div class="bar-row"><span class="bar-label">Technology / AI</span><div class="bar-track"><div class="bar-fill" style="width:19.4%"></div></div><span class="bar-val">19.4%</span></div>
+    <div class="bar-row"><span class="bar-label">Political Polarization</span><div class="bar-track"><div class="bar-fill" style="width:13.3%"></div></div><span class="bar-val">13.3%</span></div>
+    <div class="bar-row"><span class="bar-label">Parenting / Family</span><div class="bar-track"><div class="bar-fill" style="width:8.5%"></div></div><span class="bar-val">8.5%</span></div>
+    <div class="bar-row"><span class="bar-label">Intellectual Growth</span><div class="bar-track"><div class="bar-fill" style="width:8.1%"></div></div><span class="bar-val">8.1%</span></div>
+    <div class="bar-row"><span class="bar-label">Leadership</span><div class="bar-track"><div class="bar-fill" style="width:5.7%"></div></div><span class="bar-val">5.7%</span></div>
+    <div class="bar-row"><span class="bar-label">Ecclesial Identity</span><div class="bar-track"><div class="bar-fill" style="width:5.7%"></div></div><span class="bar-val">5.7%</span></div>
+    <div class="bar-row"><span class="bar-label">Loneliness</span><div class="bar-track"><div class="bar-fill" style="width:5.2%"></div></div><span class="bar-val">5.2%</span></div>
+    <div class="bar-row"><span class="bar-label">Time / Busyness</span><div class="bar-track"><div class="bar-fill" style="width:5.2%"></div></div><span class="bar-val">5.2%</span></div>
+</div>
+
+<h3>How Challenges Differ by Age</h3>
+<ul>
+    <li><strong>Under 35:</strong> Parenting (25.5%), Tech/AI (29.8%), ecclesial identity, loneliness</li>
+    <li><strong>35–54:</strong> Theology dominates (61.9%), intellectual growth (11.1%), time pressure</li>
+    <li><strong>55+:</strong> Political polarization (14.9%), church decline (5.9%), theology (52.5%)</li>
+</ul>
+
+<div class="callout">
+    <p>The overwhelming undercurrent across 211 responses is grief over the politicization of evangelicalism. Even respondents who cited theology or cultural engagement frequently mentioned political fractures. Your readers love the church and feel like their spiritual home is being torn apart. They come to MO looking for sanity.</p>
+</div>
+
+<h3>In Their Words</h3>
+
+<blockquote>Reconciling how so many Christians can read about God's heart for the poor, the immigrant, and marginalized all over the pages of Scripture, and then turn around and use cruel, mocking rhetoric.</blockquote>
+
+<blockquote>The pain of watching my children and their generation look in vain to evangelical Christianity in America and not see Jesus in it.</blockquote>
+
+<blockquote>Parenting. I have 6 kids and it's just really hard to fit in time for my own intellectual growth.</blockquote>
+
+<blockquote>There is no women's Bible study near me with any theological depth to it. Just lots of fluff.</blockquote>
+
+<blockquote>Generational reconciliation: receiving the good handed down from the Boomers etc, while respectfully departing from the bad.</blockquote>
+
+<!-- MEDIA ECOSYSTEM -->
+<h2>Where Else They Go</h2>
+
+<div class="bar-chart">
+    <div class="bar-row"><span class="bar-label">The Gospel Coalition</span><div class="bar-track"><div class="bar-fill" style="width:51.2%"></div></div><span class="bar-val">51.2%</span></div>
+    <div class="bar-row"><span class="bar-label">Substack Newsletters</span><div class="bar-track"><div class="bar-fill" style="width:45.6%"></div></div><span class="bar-val">45.6%</span></div>
+    <div class="bar-row"><span class="bar-label">Christianity Today</span><div class="bar-track"><div class="bar-fill" style="width:37.0%"></div></div><span class="bar-val">37.0%</span></div>
+    <div class="bar-row"><span class="bar-label">First Things</span><div class="bar-track"><div class="bar-fill" style="width:32.7%"></div></div><span class="bar-val">32.7%</span></div>
+    <div class="bar-row"><span class="bar-label">Gavin Ortlund</span><div class="bar-track"><div class="bar-fill" style="width:24.2%"></div></div><span class="bar-val">24.2%</span></div>
+    <div class="bar-row"><span class="bar-label">The Dispatch</span><div class="bar-track"><div class="bar-fill" style="width:21.0%"></div></div><span class="bar-val">21.0%</span></div>
+    <div class="bar-row"><span class="bar-label">Plough</span><div class="bar-track"><div class="bar-fill" style="width:20.6%"></div></div><span class="bar-val">20.6%</span></div>
+    <div class="bar-row"><span class="bar-label">The Free Press</span><div class="bar-track"><div class="bar-fill" style="width:13.5%"></div></div><span class="bar-val">13.5%</span></div>
+    <div class="bar-row"><span class="bar-label">Sola Media</span><div class="bar-track"><div class="bar-fill" style="width:13.5%"></div></div><span class="bar-val">13.5%</span></div>
+    <div class="bar-row"><span class="bar-label">Comment Magazine</span><div class="bar-track"><div class="bar-fill" style="width:10.0%"></div></div><span class="bar-val">10.0%</span></div>
+</div>
+
+<div class="callout muted">
+    <p>The Gavin Ortlund effect: 24% overall, but 44% among Under-25s and 47% among 25–34s. He is the single biggest gateway figure for your younger audience.</p>
+</div>
+
+<!-- READER PROFILES -->
+<h2>Reader Profiles</h2>
+
+<div class="profile">
+    <h4>The Seasoned Pastor</h4>
+    <div class="pct">~24% of readership</div>
+    <p>Male, 45–65+, Presbyterian or Baptist. Reads multiple times per week. Top interests: Church, Theology, Culture. His biggest challenge is navigating political polarization in his congregation. He feels lonely in ministry and came to MO looking for intellectual companionship.</p>
+    <div class="tags"><span class="tag">High loyalty</span><span class="tag">Political grief</span><span class="tag">Wants depth</span></div>
+</div>
+
+<div class="profile">
+    <h4>The Young Intellectual</h4>
+    <div class="pct">~18% of readership</div>
+    <p>Male, 25–34, often Anglican or non-denominational. Engages via website and Substack. Deeply interested in Culture, Theology, and Family. Also wants Technology and Philosophy. Many are navigating denominational questions. Wants regional events and community.</p>
+    <div class="tags"><span class="tag">Growth segment</span><span class="tag">Family + Tech</span><span class="tag">Wants community</span><span class="tag">Substack native</span></div>
+</div>
+
+<div class="profile">
+    <h4>The Theologically Hungry Laywoman</h4>
+    <div class="pct">~12% of readership</div>
+    <p>Female, 30–55, lay member. Reads weekly via newsletter or Substack. Wants Culture, Theology, Family, and Formation. Reports that most women's ministry lacks theological depth. Biggest challenges: parenting, time, and finding intellectually serious community.</p>
+    <div class="tags"><span class="tag">Underserved</span><span class="tag">Family content gap</span><span class="tag">Wants depth</span><span class="tag">Isolated</span></div>
+</div>
+
+<div class="profile">
+    <h4>The Retired Thinker</h4>
+    <div class="pct">~20% of readership</div>
+    <p>Male, 65+, Presbyterian or Baptist. Reads weekly via website and email. Deeply interested in Theology, Culture, Church, and Book Reviews. Has time to read deeply. Values long-form content. Most interested in cultural commentary of any cohort.</p>
+    <div class="tags"><span class="tag">High retention</span><span class="tag">Book reviews</span><span class="tag">Long-form reader</span><span class="tag">Email-first</span></div>
+</div>
+
+<div class="profile">
+    <h4>The Academic</h4>
+    <div class="pct">~7% of readership</div>
+    <p>Mixed gender, 30–60, connected to a university or seminary. Theology interest at 91%. Most likely to want in-depth theological content (76%). Values topical ebooks (38%). Most intellectually demanding cohort and most likely to contribute content or send students your way.</p>
+    <div class="tags"><span class="tag">Multipliers</span><span class="tag">Deepest readers</span><span class="tag">Potential contributors</span></div>
+</div>
+
+<div class="profile">
+    <h4>The Gen-Z Seeker</h4>
+    <div class="pct">~6% of readership</div>
+    <p>Under 25, mostly male, often non-denominational. Most politically interested cohort (67%). Heavily follows Gavin Ortlund (44%) and Substack newsletters (44%). Wants cultural commentary (78%) more than any other group. The smallest cohort but the one that will determine whether MO exists in 10 years.</p>
+    <div class="tags"><span class="tag">Future audience</span><span class="tag">Culture-first</span><span class="tag">Gavin Ortlund adjacent</span></div>
+</div>
+
+<!-- RECOMMENDATIONS -->
+<h2>Strategic Recommendations</h2>
+
+<div class="rec">
+    <div class="priority-tag">High Priority</div>
+    <h4>1. Launch a Faith &amp; Family Content Vertical</h4>
+    <p>63% of your 25–34 cohort and 55% of women want Family content. 25.5% of under-35 respondents named parenting as their top challenge. This is the single biggest unmet need in your data and directly serves your growth demographic.</p>
+</div>
+
+<div class="rec">
+    <div class="priority-tag">High Priority</div>
+    <h4>2. Invest in Technology &amp; AI Coverage</h4>
+    <p>Technology interest is 53–56% among under-35 readers and was the second-most cited challenge (19.4%). Frame it as theological-cultural analysis: what does it mean to be human in an age of AI?</p>
+</div>
+
+<div class="rec">
+    <div class="priority-tag">High Priority</div>
+    <h4>3. Double Down on Long-Form Theological Depth</h4>
+    <p>57% want more in-depth theological content. Among academics, 76%. Your readers chose MO because you go deeper. They want you to go even deeper. Consider multi-part series and sustained engagement with single topics over weeks.</p>
+</div>
+
+<div class="rec">
+    <div class="priority-tag">Medium Priority</div>
+    <h4>4. Create Pathways for Women Readers</h4>
+    <p>Women are 24% of readership but 82% are lay members with limited theological community. Actively recruit women contributors. Address the challenges women reported: theological depth in women's ministry, parenting, navigating a church culture that underestimates them intellectually.</p>
+</div>
+
+<div class="rec">
+    <div class="priority-tag">Medium Priority</div>
+    <h4>5. Grow the Substack Presence</h4>
+    <p>Already your third-largest channel at 32% and strongest among under-35 readers (43–44%). Use Substack's community features to build the sense of community your younger cohort explicitly requests.</p>
+</div>
+
+<div class="rec">
+    <div class="priority-tag">Medium Priority</div>
+    <h4>6. Pilot Small Regional Events</h4>
+    <p>41% of 25–34 readers want regional events. Start small: dinner discussions, reading groups, one-day conferences. Focus on Texas, Michigan, NC, PA, Washington. These events build loyalty and meet the real loneliness your readers report.</p>
+</div>
+
+<div class="rec">
+    <div class="priority-tag">Medium Priority</div>
+    <h4>7. Address the Political Pain Directly</h4>
+    <p>Your readers are in genuine anguish over the politicization of the evangelical church. They don't want you to take a side. They want you to model faithful engagement that transcends the binary. This is exactly your brand. Lean into it.</p>
+</div>
+
+<div class="rec">
+    <div class="priority-tag">Lower Priority</div>
+    <h4>8. Explore Topical Ebooks</h4>
+    <p>19% want topical ebooks, rising to 38% among academics. Curate your best content on a topic into downloadable compilations. Low-cost, high-value content repurposing.</p>
+</div>
+
+<div class="callout" style="margin-top: 32px;">
+    <p><strong>What not to do:</strong> Only 4.6% want more social media. Only 7.8% want video. Your readers are readers. Your competitive moat is depth, not reach.</p>
+</div>
+
+<div class="callout muted">
+    <p><strong>The strategic frame:</strong> The path to growth is not broadening to be more accessible. It is deepening your existing strengths while widening the aperture to include family, technology, and community — the bridges between your current audience and your future one.</p>
+</div>
+
+<footer>
+    Mere Orthodoxy Subscriber Survey &middot; 281 respondents &middot; February 2026<br>
+    Analysis prepared with Claude
+</footer>
+
+</body>
+</html>
