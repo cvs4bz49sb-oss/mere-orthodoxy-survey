@@ -15,9 +15,18 @@
         }
 
         .page-wrap {
-            max-width: 720px;
+            max-width: 960px;
             margin: 0 auto;
             padding: 48px 24px 96px;
+            display: flex;
+            gap: 0;
+        }
+
+        .page-header {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 48px 24px 0;
+            text-align: center;
         }
 
         h1 {
@@ -38,37 +47,53 @@
             text-align: center;
         }
 
-        /* Main Tabs */
-        .page-wrap > input[type="radio"] { display: none; }
+        /* Left-side tabs */
+        .tab-sidebar {
+            width: 160px;
+            flex-shrink: 0;
+            position: sticky;
+            top: 24px;
+            align-self: flex-start;
+            padding-right: 24px;
+            border-right: 1px solid #d4c9a8;
+            margin-right: 32px;
+        }
 
-        .page-wrap > label {
-            display: inline-block;
-            padding: 10px 16px;
+        .tab-sidebar button {
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding: 10px 12px;
             font-size: 13px;
             font-weight: 500;
             font-family: -apple-system, system-ui, sans-serif;
             color: #888;
             cursor: pointer;
-            border-bottom: 2px solid transparent;
-            margin-bottom: -1px;
-            transition: color 0.2s, border-color 0.2s;
+            background: none;
+            border: none;
+            border-left: 2px solid transparent;
+            margin-bottom: 2px;
+            transition: color 0.2s, border-color 0.2s, background 0.2s;
         }
 
-        .page-wrap > label:hover { color: #555; }
+        .tab-sidebar button:hover {
+            color: #555;
+            background: #f5f3f0;
+        }
 
-        .page-wrap > input:checked + label {
+        .tab-sidebar button.active {
             color: #1a1a1a;
-            border-bottom-color: #8B6914;
+            border-left-color: #8B6914;
+            background: #f5f3f0;
+        }
+
+        .tab-content {
+            flex: 1;
+            min-width: 0;
         }
 
         .tab-panel { display: none; }
-
-        #tab-summary:checked ~ .tab-panels .panel-summary,
-        #tab-subscribers:checked ~ .tab-panels .panel-subscribers,
-        #tab-members:checked ~ .tab-panels .panel-members,
-        #tab-combined:checked ~ .tab-panels .panel-combined {
-            display: block;
-        }
+        .tab-panel.active { display: block; }
 
         h2 {
             font-size: 18px;
@@ -402,46 +427,70 @@
             text-align: center;
         }
 
-        @media (max-width: 520px) {
-            .page-wrap { padding: 32px 16px 64px; }
+        @media (max-width: 720px) {
+            .page-header { padding: 32px 16px 0; }
+            .page-wrap {
+                padding: 0 16px 64px;
+                flex-direction: column;
+            }
+            .tab-sidebar {
+                position: relative;
+                top: 0;
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                border-right: none;
+                border-bottom: 1px solid #d4c9a8;
+                margin-right: 0;
+                margin-bottom: 32px;
+                padding-right: 0;
+                padding-bottom: 8px;
+            }
+            .tab-sidebar button {
+                border-left: none;
+                border-bottom: 2px solid transparent;
+                padding: 8px 12px;
+                font-size: 12px;
+            }
+            .tab-sidebar button.active {
+                border-left: none;
+                border-bottom-color: #8B6914;
+            }
             h1 { font-size: 26px; }
             .bar-label { width: 110px; font-size: 11px; }
             .kpis { grid-template-columns: repeat(2, 1fr); }
-            .page-wrap > label { padding: 8px 10px; font-size: 12px; }
             .sub-tab { padding: 6px 10px; font-size: 11px; }
         }
     </style>
 </head>
 <body>
 
-<div class="page-wrap">
-
+<div class="page-header">
 <h1>Mere Orthodoxy Reader Survey <span class="gold">|</span> 2026</h1>
 <p class="subtitle">381 respondents &middot; 281 subscribers &middot; 100 members &middot; February 2026</p>
+</div>
 
-<!-- Tab inputs -->
-<input type="radio" name="tabs" id="tab-summary" checked>
-<label for="tab-summary">Executive Summary</label>
-<input type="radio" name="tabs" id="tab-subscribers">
-<label for="tab-subscribers">Subscribers</label>
-<input type="radio" name="tabs" id="tab-members">
-<label for="tab-members">Members</label>
-<input type="radio" name="tabs" id="tab-combined">
-<label for="tab-combined">Combined</label>
+<div class="page-wrap">
 
-<div class="tab-bar-line" style="border-bottom: 1px solid #d4c9a8; margin-bottom: 48px;"></div>
+<!-- Left sidebar tabs -->
+<nav class="tab-sidebar">
+    <button class="active" data-tab="panel-summary">Summary</button>
+    <button data-tab="panel-subscribers">Subscribers</button>
+    <button data-tab="panel-members">Members</button>
+    <button data-tab="panel-combined">Combined</button>
+</nav>
 
-<div class="tab-panels">
+<div class="tab-content">
 
 <!-- ============================================================ -->
 <!-- EXECUTIVE SUMMARY -->
 <!-- ============================================================ -->
-<div class="tab-panel panel-summary">
+<div class="tab-panel panel-summary active">
 
 <!-- Sub-tabs -->
 <div class="sub-tabs" data-group="exec">
     <button class="sub-tab active" data-target="exec-executive">Executive</button>
-    <button class="sub-tab" data-target="exec-operations">Operations</button>
+    <button class="sub-tab" data-target="exec-fundraising">Fundraising</button>
     <button class="sub-tab" data-target="exec-editorial">Editorial</button>
     <button class="sub-tab" data-target="exec-marketing">Marketing</button>
 </div>
@@ -493,38 +542,45 @@
 
 </div>
 
-<!-- OPERATIONS SUB-TAB -->
-<div class="sub-panel" id="exec-operations">
+<!-- FUNDRAISING SUB-TAB -->
+<div class="sub-panel" id="exec-fundraising">
 
-<h2 style="margin-top: 0;">Operations Summary</h2>
+<h2 style="margin-top: 0;">Fundraising Summary</h2>
 
-<p>This summary focuses on the operational infrastructure, community management, and membership economics questions raised by the survey data.</p>
+<p>This summary focuses on membership revenue, donor conversion, retention strategy, and the financial sustainability questions raised by the survey data.</p>
 
-<h3>Membership Conversion &amp; Retention</h3>
+<h3>The Donor Profile</h3>
 
-<p>Members represent roughly 36% of your subscriber base. They are slightly younger (47% under 45 vs. 43%), more engaged (85% weekly vs. 70%), and more likely to be pastors or elders (36% vs. 36% of subscribers). The conversion profile is clear: readers who become members tend to be multi-channel users who discovered MO via Substack or TGC, started reading regularly on the website, began listening to Mere Fidelity, and then converted — motivated by mission alignment, the Journal, and theological perspectives.</p>
+<p>Your 100 paying members represent roughly 36% of your subscriber base. They are your most engaged readers (85% weekly vs. 70%), slightly younger (47% under 45 vs. 43%), and disproportionately Presbyterian (38% vs. 22%). The critical fundraising insight: these are values-driven donors, not transactional consumers. 60% say they joined to support the mission. 65% cite your theological and cultural perspectives as their primary motivation. They pay because they believe in what you are doing — not because of any specific perk.</p>
 
-<p>Members are values-driven, not perks-driven. 60% say they joined to support the mission. This means retention depends primarily on editorial quality and voice, not on accumulating features. Don't over-engineer the membership.</p>
+<h3>The Conversion Funnel</h3>
 
-<h3>Community Infrastructure</h3>
+<p>The data reveals a clear path from free reader to paying member: Substack or TGC discovery → regular website reading → Mere Fidelity listening → membership conversion. Each stage can be optimized for fundraising:</p>
 
-<p><strong>Discord:</strong> 19% of members use it, and 10% cited it as a reason they joined. Feedback is mixed: insiders enjoy it, but newcomers feel excluded. This is a retention risk. Discord needs structured programming: weekly discussion threads, reading groups, periodic AMAs with contributors, and visible editorial presence. Treat it as a community product, not an afterthought.</p>
+<ul>
+    <li><strong>Discovery:</strong> Substack indexes highest among under-35s (43-44%). It is your primary acquisition channel for the next generation of donors.</li>
+    <li><strong>Deepening:</strong> Mere Fidelity is your most effective conversion bridge. Members use it at 36% vs. 26% of subscribers. The parasocial connection podcasts create translates directly into financial commitment.</li>
+    <li><strong>Conversion trigger:</strong> Mission alignment (60%) + theological perspectives (65%) + the Journal (45%). Lead fundraising appeals with values and voice, not features.</li>
+    <li><strong>Retention:</strong> Editorial quality is the primary retention lever. Members who feel the quality is declining are your highest churn risk.</li>
+</ul>
 
-<p><strong>Regional Events:</strong> 28% of members and 41% of 25-34 subscribers want in-person gatherings. Start with 2-3 pilot events in concentrated areas (Texas, Michigan, North Carolina). Partner with local churches or seminaries to share costs. These don't need to be large or expensive — they need to be genuine and intellectually substantive.</p>
+<h3>Revenue Concentration Risk</h3>
 
-<h3>Channel Strategy</h3>
+<p>Presbyterians are 38% of paying members but only 22% of subscribers. This 16-point gap means your revenue base is narrower than your audience. Baptists are 20% of subscribers but only 17% of members — your biggest untapped denominational conversion pool. Non-denominational readers convert at parity (19%/19%), proving that broader appeal is possible. Diversifying the paying base without diluting what Presbyterians love is the key fundraising challenge.</p>
 
-<p>The website remains the primary channel (69-74%), followed by newsletter (48-51%), Substack (20-32%), and Mere Fidelity (26-36%). Key operational insight: Substack is an acquisition channel, not a retention channel. Members use it less (20% vs. 32%) because they've already committed to your direct platform. The path is: Substack discovery → regular reader → website/newsletter → paying member.</p>
+<h3>The Journal as Fundraising Asset</h3>
 
-<p>Mere Fidelity indexes 10 points higher among members (36% vs. 26%). Podcast listeners convert at a higher rate. Consider occasional membership calls-to-action on the podcast and listener-exclusive content behind the paywall.</p>
+<p>45% of members cite the print Journal as a reason they joined. Physical media creates a fundamentally different relationship with a publication — it sits on nightstands and coffee tables, gets shared with friends, and signals intellectual identity. The Journal is not a cost center. It is your most effective membership conversion and retention tool. Increasing its quality (better paper, exclusive content, themed issues) could justify a higher membership price point.</p>
 
-<h3>The Journal</h3>
+<h3>Membership Benefits That Matter</h3>
 
-<p>45% of members cite the print Journal as a reason they joined. For a digital publication, this is a strong signal. Physical media sits on nightstands and coffee tables, gets shared, and signals identity. The Journal is not a cost center — it is your primary member retention tool. Invest in its quality: higher quality paper/design, more frequent issues, or exclusive content that doesn't appear online.</p>
+<p>What drives membership revenue, ranked: theological perspectives (65%), mission support (60%), the Journal (45%), Mere Fidelity (28%), Discord (10%), Christians Reading Classics (7%). The top three are all about the content and mission. Discord and CRC are niche benefits that matter deeply to small segments but don't drive overall revenue. Don't over-invest in perks at the expense of the editorial quality that actually generates donations.</p>
 
-<h3>The Baptist Gap</h3>
+<h3>Growth Opportunities</h3>
 
-<p>Baptists are 20% of subscribers but only 17% of members. This is your biggest untapped denominational conversion pool. Understanding why Baptists read but don't pay could unlock meaningful revenue. Consider Baptist voices in the podcast and Baptist theologians in articles.</p>
+<p><strong>Regional events</strong> could become a fundraising vehicle. 28% of members and 41% of 25-34 subscribers want in-person gatherings. Ticketed dinner discussions or one-day conferences could generate revenue while deepening donor relationships. Start in Texas, Michigan, and North Carolina where readers are concentrated.</p>
+
+<p><strong>The quality-over-quantity signal</strong> has fundraising implications. Members are explicitly saying they'd prefer fewer, better articles. If reducing publishing volume improves quality and reduces costs simultaneously, it could improve both retention and margins.</p>
 
 </div>
 
@@ -1653,7 +1709,7 @@
 
 </div>
 
-</div><!-- end .tab-panels -->
+</div><!-- end .tab-content -->
 
 </div><!-- end .page-wrap -->
 
@@ -1663,12 +1719,10 @@ function toggleExamples(barRow) {
     var panel = barRow.nextElementSibling;
     if (panel && panel.classList.contains('examples-panel')) {
         var isOpen = panel.classList.contains('open');
-        // Close all open panels first
         document.querySelectorAll('.examples-panel.open').forEach(function(p) {
             p.classList.remove('open');
             p.previousElementSibling.classList.remove('open');
         });
-        // Toggle the clicked one (if it wasn't already open)
         if (!isOpen) {
             panel.classList.add('open');
             barRow.classList.add('open');
@@ -1676,24 +1730,58 @@ function toggleExamples(barRow) {
     }
 }
 
+// Main tab switching with scroll position preservation
+(function() {
+    var scrollPositions = {};
+    var currentTab = 'panel-summary';
+
+    document.querySelectorAll('.tab-sidebar button').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var target = this.getAttribute('data-tab');
+            if (target === currentTab) return;
+
+            // Save current scroll position for the current tab
+            scrollPositions[currentTab] = window.scrollY;
+
+            // Deactivate all sidebar buttons and panels
+            document.querySelectorAll('.tab-sidebar button').forEach(function(b) {
+                b.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-panel').forEach(function(p) {
+                p.classList.remove('active');
+            });
+
+            // Activate clicked tab and its panel
+            this.classList.add('active');
+            document.querySelector('.' + target).classList.add('active');
+            currentTab = target;
+
+            // Restore scroll position for the new tab (or go to saved position)
+            var savedPos = scrollPositions[target];
+            if (savedPos !== undefined) {
+                window.scrollTo(0, savedPos);
+            } else {
+                // First visit to this tab — keep current scroll position
+                // This lets you see the parallel spot
+            }
+        });
+    });
+})();
+
 // Sub-tab switching
 document.querySelectorAll('.sub-tab').forEach(function(tab) {
     tab.addEventListener('click', function() {
-        var group = this.closest('.sub-tabs').getAttribute('data-group');
         var target = this.getAttribute('data-target');
 
-        // Deactivate all tabs in this group
         this.closest('.sub-tabs').querySelectorAll('.sub-tab').forEach(function(t) {
             t.classList.remove('active');
         });
 
-        // Deactivate all panels in the parent
         var parent = this.closest('.tab-panel');
         parent.querySelectorAll('.sub-panel').forEach(function(p) {
             p.classList.remove('active');
         });
 
-        // Activate clicked tab and target panel
         this.classList.add('active');
         document.getElementById(target).classList.add('active');
     });
