@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mere Orthodoxy Reader Survey | 2026</title>
+    <title>Mere Orthodoxy Reader Survey | 2025–2026</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
 
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Georgia', serif;
             background: #faf9f7;
             color: #1a1a1a;
             line-height: 1.7;
         }
-
         .page-wrap {
             max-width: 960px;
             margin: 0 auto;
@@ -21,14 +20,12 @@
             display: flex;
             gap: 0;
         }
-
         .page-header {
             max-width: 960px;
             margin: 0 auto;
             padding: 48px 24px 0;
             text-align: center;
         }
-
         h1 {
             font-size: 36px;
             font-weight: 700;
@@ -36,9 +33,7 @@
             text-align: center;
             margin-bottom: 6px;
         }
-
         h1 .gold { color: #8B6914; }
-
         .subtitle {
             color: #888;
             font-size: 14px;
@@ -46,7 +41,6 @@
             margin-bottom: 32px;
             text-align: center;
         }
-
         /* Left-side tabs */
         .tab-sidebar {
             width: 160px;
@@ -58,7 +52,6 @@
             border-right: 1px solid #d4c9a8;
             margin-right: 32px;
         }
-
         .tab-sidebar button {
             display: block;
             width: 100%;
@@ -75,26 +68,21 @@
             margin-bottom: 2px;
             transition: color 0.2s, border-color 0.2s, background 0.2s;
         }
-
         .tab-sidebar button:hover {
             color: #555;
             background: #f5f3f0;
         }
-
         .tab-sidebar button.active {
             color: #1a1a1a;
             border-left-color: #8B6914;
             background: #f5f3f0;
         }
-
         .tab-content {
             flex: 1;
             min-width: 0;
         }
-
         .tab-panel { display: none; }
         .tab-panel.active { display: block; }
-
         h2 {
             font-size: 18px;
             font-weight: 700;
@@ -102,24 +90,19 @@
             padding-bottom: 8px;
             border-bottom: 1px solid #d4c9a8;
         }
-
         h2:first-child { margin-top: 0; }
-
         h3 {
             font-size: 15px;
             font-weight: 700;
             margin: 32px 0 12px;
         }
-
         p, li {
             font-size: 15px;
             color: #333;
             margin-bottom: 12px;
         }
-
         ul { margin: 0 0 16px 20px; }
         li { margin-bottom: 6px; }
-
         /* KPI strip */
         .kpis {
             display: grid;
@@ -129,20 +112,17 @@
             border: 1px solid #d4c9a8;
             margin: 24px 0 48px;
         }
-
         .kpi {
             background: #fff;
             padding: 16px 12px;
             text-align: center;
         }
-
         .kpi-val {
             font-size: 28px;
             font-weight: 700;
             letter-spacing: -1px;
             color: #8B6914;
         }
-
         .kpi-label {
             font-size: 11px;
             font-family: -apple-system, system-ui, sans-serif;
@@ -151,10 +131,8 @@
             letter-spacing: 0.5px;
             margin-top: 2px;
         }
-
         /* Bar charts */
         .bar-chart { margin: 16px 0 28px; }
-
         .bar-row {
             display: flex;
             align-items: center;
@@ -162,7 +140,6 @@
             font-family: -apple-system, system-ui, sans-serif;
             font-size: 13px;
         }
-
         .bar-label {
             width: 160px;
             flex-shrink: 0;
@@ -170,23 +147,19 @@
             padding-right: 12px;
             color: #555;
         }
-
         .bar-track {
             flex: 1;
             height: 18px;
             background: #f0efed;
             position: relative;
         }
-
         .bar-fill {
             height: 100%;
             background: #8B6914;
             transition: width 0.6s ease;
         }
-
         .bar-fill.dark { background: #1a1a1a; }
         .bar-fill.muted { background: #c4a84d; }
-
         .bar-val {
             width: 44px;
             text-align: right;
@@ -194,7 +167,6 @@
             color: #888;
             font-size: 12px;
         }
-
         /* Callout */
         .callout {
             border-left: 3px solid #8B6914;
@@ -202,10 +174,8 @@
             margin: 20px 0;
             background: #fff;
         }
-
         .callout p { margin-bottom: 0; font-size: 14px; }
         .callout.muted { border-left-color: #d4c9a8; }
-
         /* Quotes */
         blockquote {
             border-left: 3px solid #d4c9a8;
@@ -215,35 +185,29 @@
             font-size: 14px;
             color: #555;
         }
-
         /* Profile cards */
         .profile {
             border-top: 1px solid #d4c9a8;
             padding: 20px 0;
         }
-
         .profile h4 {
             font-size: 15px;
             font-weight: 700;
             margin-bottom: 2px;
         }
-
         .profile .pct {
             font-family: -apple-system, system-ui, sans-serif;
             font-size: 12px;
             color: #8B6914;
             margin-bottom: 8px;
         }
-
         .profile p { font-size: 14px; }
-
         .tags {
             display: flex;
             flex-wrap: wrap;
             gap: 6px;
             margin-top: 8px;
         }
-
         .tag {
             font-family: -apple-system, system-ui, sans-serif;
             font-size: 11px;
@@ -251,27 +215,22 @@
             border: 1px solid #d4c9a8;
             color: #666;
         }
-
         .tag.gold {
             background: #8B6914;
             color: #fff;
             border-color: #8B6914;
         }
-
         /* Recommendations */
         .rec {
             border-top: 1px solid #d4c9a8;
             padding: 16px 0;
         }
-
         .rec h4 {
             font-size: 14px;
             font-weight: 700;
             margin-bottom: 4px;
         }
-
         .rec p { font-size: 14px; }
-
         .priority-tag {
             font-family: -apple-system, system-ui, sans-serif;
             font-size: 10px;
@@ -280,7 +239,6 @@
             color: #8B6914;
             margin-bottom: 4px;
         }
-
         /* Comparison table */
         .comp-table {
             width: 100%;
@@ -289,7 +247,6 @@
             font-size: 13px;
             margin: 16px 0 28px;
         }
-
         .comp-table thead th {
             text-align: left;
             padding: 8px 12px;
@@ -299,16 +256,13 @@
             letter-spacing: 0.5px;
             color: #888;
         }
-
         .comp-table tbody td {
             padding: 6px 12px;
             border-bottom: 1px solid #f0efed;
         }
-
         .delta-pos { color: #2E6B4F; font-weight: 600; }
         .delta-neg { color: #6B3A2E; font-weight: 600; }
         .delta-neutral { color: #888; }
-
         /* Sub-tabs (JS-powered) */
         .sub-tabs {
             display: flex;
@@ -316,7 +270,6 @@
             margin-bottom: 32px;
             border-bottom: 1px solid #d4c9a8;
         }
-
         .sub-tab {
             padding: 8px 14px;
             font-size: 12px;
@@ -332,17 +285,13 @@
             border-left: none;
             border-right: none;
         }
-
         .sub-tab:hover { color: #555; }
-
         .sub-tab.active {
             color: #1a1a1a;
             border-bottom-color: #8B6914;
         }
-
         .sub-panel { display: none; }
         .sub-panel.active { display: block; }
-
         /* Gold divider */
         .gold-divider {
             width: 60px;
@@ -350,29 +299,24 @@
             background: #8B6914;
             margin: 0 auto 32px;
         }
-
         /* Clickable bar rows with examples */
         .bar-row.clickable {
             cursor: pointer;
             position: relative;
         }
-
         .bar-row.clickable:hover .bar-label {
             color: #8B6914;
         }
-
         .bar-row.clickable .bar-label::after {
             content: ' ▸';
             font-size: 10px;
             color: #ccc;
             transition: transform 0.2s;
         }
-
         .bar-row.clickable.open .bar-label::after {
             content: ' ▾';
             color: #8B6914;
         }
-
         .examples-panel {
             display: none;
             margin: 0 0 12px 160px;
@@ -381,11 +325,9 @@
             border-left: 2px solid #d4c9a8;
             font-size: 13px;
         }
-
         .examples-panel.open {
             display: block;
         }
-
         .examples-panel p {
             font-size: 13px;
             font-style: italic;
@@ -394,11 +336,9 @@
             padding-left: 8px;
             border-left: 2px solid #e8e0cc;
         }
-
         .examples-panel p:last-child {
             margin-bottom: 0;
         }
-
         .examples-panel .examples-header {
             font-family: -apple-system, system-ui, sans-serif;
             font-size: 11px;
@@ -408,14 +348,12 @@
             margin-bottom: 8px;
             font-style: normal;
         }
-
         @media (max-width: 520px) {
             .examples-panel {
                 margin-left: 0;
                 margin-top: 4px;
             }
         }
-
         /* Footer */
         footer {
             margin-top: 64px;
@@ -426,7 +364,6 @@
             color: #aaa;
             text-align: center;
         }
-
         @media (max-width: 720px) {
             .page-header { padding: 32px 16px 0; }
             .page-wrap {
@@ -461,17 +398,53 @@
             .kpis { grid-template-columns: repeat(2, 1fr); }
             .sub-tab { padding: 6px 10px; font-size: 11px; }
         }
+    
+        /* Year tabs */
+        .year-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            margin: 0 auto 0;
+            max-width: 960px;
+            padding: 0 24px;
+        }
+        .year-tab {
+            padding: 10px 28px;
+            font-size: 14px;
+            font-weight: 600;
+            font-family: -apple-system, system-ui, sans-serif;
+            color: #888;
+            cursor: pointer;
+            border: none;
+            border-bottom: 2px solid transparent;
+            background: none;
+            transition: color 0.2s, border-color 0.2s;
+            letter-spacing: 0.5px;
+        }
+        .year-tab:hover { color: #555; }
+        .year-tab.active {
+            color: #1a1a1a;
+            border-bottom-color: #8B6914;
+        }
+        .year-panel { display: none; }
+        .year-panel.active { display: block; }
+    
     </style>
 </head>
 <body>
-
 <div class="page-header">
-<h1>Mere Orthodoxy Reader Survey <span class="gold">|</span> 2026</h1>
-<p class="subtitle">398 respondents &middot; 281 subscribers &middot; 117 members &middot; February 2026</p>
+<h1>Mere Orthodoxy Reader Survey <span class="gold">|</span> Dashboard</h1>
+<p class="subtitle">2025–2026 Readership Data</p>
 </div>
+<div class="year-tabs">
+  <button class="year-tab active" data-year="year-2026">2026</button>
+  <button class="year-tab" data-year="year-2025">2025</button>
+</div>
+<div class="gold-divider" style="margin-top:12px;"></div>
 
+<div class="year-panel active" id="year-2026">
+<p class="subtitle" style="text-align:center; padding:12px 24px 0;">398 respondents &middot; 281 subscribers &middot; 117 members &middot; February 2026</p>
 <div class="page-wrap">
-
 <!-- Left sidebar tabs -->
 <nav class="tab-sidebar">
     <button class="active" data-tab="panel-summary">Summary</button>
@@ -480,14 +453,11 @@
     <button data-tab="panel-combined">Combined</button>
     <button data-tab="panel-feedback">Feedback</button>
 </nav>
-
 <div class="tab-content">
-
 <!-- ============================================================ -->
 <!-- EXECUTIVE SUMMARY -->
 <!-- ============================================================ -->
 <div class="tab-panel panel-summary active">
-
 <!-- Sub-tabs -->
 <div class="sub-tabs" data-group="exec">
     <button class="sub-tab active" data-target="exec-executive">Executive</button>
@@ -495,195 +465,110 @@
     <button class="sub-tab" data-target="exec-editorial">Editorial</button>
     <button class="sub-tab" data-target="exec-marketing">Marketing</button>
 </div>
-
 <!-- EXECUTIVE SUB-TAB -->
 <div class="sub-panel active" id="exec-executive">
-
 <h2 style="margin-top: 0;">The Big Picture</h2>
-
 <p>398 readers responded to the February 2026 survey: 281 subscribers and 117 paying members. Together, they paint a remarkably coherent picture of who MO serves and what it should do next.</p>
-
 <p>Your readership is 76-78% male, heavily Protestant (93%), and disproportionately composed of pastors and elders (36% of subscribers, 36% of members). No single denomination exceeds 22% among subscribers, though Presbyterians dominate the paying member base at 38%. The "mere" in Mere Orthodoxy is genuinely working for your free audience; your paying audience skews Reformed.</p>
-
 <h2>What Readers Want</h2>
-
 <p>Three topics form the universal foundation: Culture (80%), Theology (78%), and Church (76%). These are consistent across every age group, gender, and role. A crucial insight emerges from the member data: members want theological depth (55%) and cultural commentary (53%) in nearly equal measure. Both groups want depth applied to culture. The answer is not to choose; it is to apply theological depth to cultural questions.</p>
-
 <p>The most significant content gap remains Family. 63% of 25-34 year olds want it, members with young children cite parenting as their dominant challenge, and it currently ranks 7th in your content mix. Technology is the emerging topic, with 53-56% interest among under-35 readers and rising.</p>
-
 <h2>What They Are Struggling With</h2>
-
 <p>Across 291 free-text responses from both groups, the pattern is unmistakable: time and competing demands, grief over the politicization of evangelicalism, the strain of parenting in a hostile culture, and the loneliness of trying to think seriously about faith. Among members specifically, time constraints remain the dominant challenge, with political polarization and personal faith struggles close behind. Among subscribers, political polarization runs deepest.</p>
-
 <p>Pastors report a distinctive profile across both datasets: political polarization, leadership strain, loneliness, and ecclesial identity questions. They are your most loyal cohort and came to MO for intellectual companionship they cannot find elsewhere.</p>
-
 <p>A new signal from members deserves attention: multiple members explicitly criticize publishing volume, asking for fewer but higher-quality articles. As one member put it, prioritizing quantity over quality dilutes the brand.</p>
-
 <h2>What You Should Do</h2>
-
 <p><strong>Reconsider your publishing volume.</strong> Members are telling you directly that two articles per day is too many. They would rather receive fewer pieces that are truly excellent. This is your most committed audience speaking. Listen to them.</p>
-
 <p><strong>Deepen both theology and cultural commentary.</strong> Members want theological depth (55%) and cultural commentary (53%) in nearly equal measure. The sweet spot is both: sustained theological analysis applied to cultural questions.</p>
-
 <p><strong>Launch a Faith &amp; Family content vertical.</strong> This is the single biggest unmet need across both datasets. Frame it as the intersection of formation, ecclesiology, and practical wisdom.</p>
-
 <p><strong>Protect and invest in the Journal.</strong> 49% of members cite it as a reason they joined. It is your most tangible membership benefit and your clearest differentiator from free content.</p>
-
 <p><strong>Invest in Technology &amp; AI coverage.</strong> Frame it as theological-cultural analysis: what does it mean to be human in a digital age.</p>
-
 <p><strong>Tend the Discord community intentionally.</strong> 10% of members joined specifically for it, but feedback is mixed. Insiders enjoy it; newcomers feel excluded. Online communities require active cultivation, not autopilot.</p>
-
 <p><strong>Pilot small regional events.</strong> 41% of 25-34 subscribers and 27% of members want them. Start with dinner discussions in Texas, Michigan, and the Carolinas.</p>
-
 <p><strong>Address the political pain directly.</strong> Your readers don't want you to take a side. They want you to model faithful engagement that transcends the partisan binary.</p>
-
 <h2>What Not to Do</h2>
-
 <p>Only 4.6% want more social media. Only 5-8% want video. Your readers are readers. Your competitive moat is depth, not reach. The path to growth is not broadening — it is deepening your existing strengths while widening the aperture to include family, technology, and community.</p>
-
 </div>
-
 <!-- FUNDRAISING SUB-TAB -->
 <div class="sub-panel" id="exec-fundraising">
-
 <h2 style="margin-top: 0;">Fundraising Summary</h2>
-
 <p>This summary focuses on membership revenue, donor conversion, retention strategy, and the financial sustainability questions raised by the survey data.</p>
-
 <h3>The Donor Profile</h3>
-
 <p>Your 117 paying members represent roughly 42% of your subscriber base. They are your most engaged readers (84% weekly vs. 70%), notably younger (51% under 45 vs. 43%), and disproportionately Presbyterian (38% vs. 22%). The critical fundraising insight: these are values-driven donors, not transactional consumers. 62% say they joined to support the mission. 68% cite your theological and cultural perspectives as their primary motivation. They pay because they believe in what you are doing — not because of any specific perk.</p>
-
 <h3>The Conversion Funnel</h3>
-
 <p>The data reveals a clear path from free reader to paying member: Substack or TGC discovery → regular website reading → Mere Fidelity listening → membership conversion. Each stage can be optimized for fundraising:</p>
-
 <ul>
     <li><strong>Discovery:</strong> Substack indexes highest among under-35s (43-44%). It is your primary acquisition channel for the next generation of donors.</li>
     <li><strong>Deepening:</strong> Mere Fidelity is your most effective conversion bridge. Members use it at 40% vs. 26% of subscribers. The parasocial connection podcasts create translates directly into financial commitment.</li>
     <li><strong>Conversion trigger:</strong> Mission alignment (62%) + theological perspectives (68%) + the Journal (49%). Lead fundraising appeals with values and voice, not features.</li>
     <li><strong>Retention:</strong> Editorial quality is the primary retention lever. Members who feel the quality is declining are your highest churn risk.</li>
 </ul>
-
 <h3>Revenue Concentration Risk</h3>
-
 <p>Presbyterians are 38% of paying members but only 22% of subscribers. This 16-point gap means your revenue base is narrower than your audience. Baptists are 20% of subscribers but only 15% of members — your biggest untapped denominational conversion pool. Non-denominational readers convert at parity (21%/21%), proving that broader appeal is possible. Diversifying the paying base without diluting what Presbyterians love is the key fundraising challenge.</p>
-
 <h3>The Journal as Fundraising Asset</h3>
-
 <p>49% of members cite the print Journal as a reason they joined. Physical media creates a fundamentally different relationship with a publication — it sits on nightstands and coffee tables, gets shared with friends, and signals intellectual identity. The Journal is not a cost center. It is your most effective membership conversion and retention tool. Increasing its quality (better paper, exclusive content, themed issues) could justify a higher membership price point.</p>
-
 <h3>Membership Benefits That Matter</h3>
-
 <p>What drives membership revenue, ranked: theological perspectives (68%), mission support (62%), the Journal (49%), Mere Fidelity (30%), Discord (10%), Christians Reading Classics (7%). The top three are all about the content and mission. Discord and CRC are niche benefits that matter deeply to small segments but don't drive overall revenue. Don't over-invest in perks at the expense of the editorial quality that actually generates donations.</p>
-
 <h3>Growth Opportunities</h3>
-
 <p><strong>Regional events</strong> could become a fundraising vehicle. 27% of members and 41% of 25-34 subscribers want in-person gatherings. Ticketed dinner discussions or one-day conferences could generate revenue while deepening donor relationships. Start in Texas, Michigan, and North Carolina where readers are concentrated.</p>
-
 <p><strong>The quality-over-quantity signal</strong> has fundraising implications. Members are explicitly saying they'd prefer fewer, better articles. If reducing publishing volume improves quality and reduces costs simultaneously, it could improve both retention and margins.</p>
-
 </div>
-
 <!-- EDITORIAL SUB-TAB -->
 <div class="sub-panel" id="exec-editorial">
-
 <h2 style="margin-top: 0;">Editorial Summary</h2>
-
 <p>This summary focuses on content strategy, editorial priorities, and audience needs surfaced by the survey data.</p>
-
 <h3>The Content Hierarchy</h3>
-
 <p>The universal triad — Theology, Culture, and Church — remains your foundation (73-86% across both groups). Everything else is important but secondary. The critical editorial insight is that these three are not separate buckets. Your best content lives at their intersection, and that's what readers are asking for: theological depth applied to cultural questions in the context of church life.</p>
-
 <h3>The Culture-Theology Balance</h3>
-
 <p>Subscribers want more theological depth (57%). Members want theological depth (55%) and cultural commentary (53%) in nearly equal measure. This is an important recalibration. Your members don't simply want cultural commentary instead of theology; they want both, deeply integrated. The editorial strategy: continue deepening theological content (it's your acquisition engine) while increasing timely cultural commentary (it's your retention engine). The sweet spot is theology applied to culture.</p>
-
 <h3>Quality Over Quantity</h3>
-
 <p>A new and significant signal from the member data: multiple members explicitly criticize the current publishing pace. They report a perceived decline in article quality with the move to two articles per day. Recycled Substack posts and shorter, shallower articles are not what they read MO for. They want fewer articles of greater depth and quality. This is actionable editorial feedback from your most committed readers.</p>
-
 <h3>Content Gaps to Fill</h3>
-
 <p><strong>Family.</strong> 63% of 25-34 year olds want it. Members with young children cite parenting as a top challenge. This is not "mommy blog" territory — it's the intersection of formation, ecclesiology, and practical wisdom. How do you raise children to see Jesus in a church that has become indistinguishable from partisan politics? That's an MO question.</p>
-
 <p><strong>Technology &amp; AI.</strong> Interest runs 53-56% among under-35 readers. It was the second-most mentioned challenge theme at 19%. Your younger readers are grappling with what it means to be embodied creatures in a digital age. This is a natural extension of your formation and cultural commentary strengths.</p>
-
 <p><strong>Timely cultural commentary.</strong> Not just evergreen theological reflection, but engagement with cultural moments — books, films, trends, events. Consider a weekly or biweekly cultural commentary column.</p>
-
 <h3>Content to Protect</h3>
-
 <p><strong>Long-form theological depth.</strong> 57% of subscribers and 52% of members want more. This is your competitive moat. Consider multi-part series and sustained engagement with single topics over weeks — but ensure each piece justifies its publication.</p>
-
 <p><strong>Book reviews.</strong> 47-61% interest across both groups. Your readership is a reading readership. Book reviews drive engagement and differentiate you from outlets that only react to news.</p>
-
 <h3>The Political Voice</h3>
-
 <p>13.3% of subscribers explicitly named political polarization as their top challenge. Among pastors, 17.6%. The overwhelming undercurrent across hundreds of free-text responses is grief over what partisan politics has done to the evangelical church. Your readers don't want you to take a side. They want you to model faithful engagement that transcends the binary. Lean into this more explicitly — it's exactly your brand.</p>
-
 <h3>Pathways for Women Readers</h3>
-
 <p>Women are 21-24% of readership and most are lay members. They report that most women's ministry lacks theological depth. Women want Family content at higher rates and report parenting challenges more frequently. Recruit women contributors. Address the theological depth gap in women's ministry. This is both a growth opportunity and a moral imperative for a publication called "Mere Orthodoxy."</p>
-
 </div>
-
 <!-- MARKETING SUB-TAB -->
 <div class="sub-panel" id="exec-marketing">
-
 <h2 style="margin-top: 0;">Marketing Summary</h2>
-
 <p>This summary focuses on audience growth, member acquisition, competitive positioning, and channel strategy.</p>
-
 <h3>Your Competitive Position</h3>
-
 <p>MO occupies a distinctive niche: more intellectual than TGC, more Protestant than First Things, less institutionally cautious than CT, and more editorial than individual Substacks. 51% of your readers also follow TGC, 46% read Substack newsletters, 37% follow CT, and 33% follow First Things. This positioning is your strategic advantage — guard it.</p>
-
 <h3>Growth Demographics</h3>
-
 <p>Your under-35 cohort (24.5% of subscribers) is disproportionately engaged and hungry for cultural commentary, family content, and community. They represent your future. However, the updated member data shows a shift: 51% of members are under 45 (vs. 43% of subscribers). Younger readers convert at notably higher rates — the gap has widened with the larger sample. The 35-44 age group is the single largest member cohort at 30%, suggesting mid-career professionals are the most likely to convert.</p>
-
 <h3>The Gavin Ortlund Effect</h3>
-
 <p>24% of all readers follow Gavin Ortlund/Truth Unites, but among under-25s it's 44% and among 25-34s it's 47%. He is the single biggest gateway figure for your younger audience. Cross-pollination — guest appearances, shared events, co-authored pieces — could significantly boost reach with your growth demographic.</p>
-
 <h3>The Acquisition Funnel</h3>
-
 <p>The data reveals a clear optimal member conversion path: Substack or TGC crossover → regular website reader → Mere Fidelity listener → membership conversion. Each step can be optimized:</p>
-
 <ul>
     <li><strong>Discovery:</strong> Invest in Substack presence. It indexes highest among under-35 readers (43-44%). Use its community features to build belonging.</li>
     <li><strong>Engagement:</strong> Mere Fidelity is a conversion engine. Members use it at 40% vs. 26% of subscribers. The parasocial relationship podcasts create is powerful.</li>
     <li><strong>Conversion:</strong> Mission alignment + Journal + theological perspectives. Lead with values, not perks. Members' #1 motivation is theological perspectives (68%), followed by mission support (62%).</li>
     <li><strong>Retention:</strong> Editorial quality, Discord community, Journal. Values-driven members stay for the voice. But heed the quality-over-quantity feedback — publishing too much can erode the brand that attracted them.</li>
 </ul>
-
 <h3>The Presbyterian Concentration</h3>
-
 <p>Presbyterians are 22% of subscribers but 38% of members. This is your deepest financial support well, but it's also a concentration risk. The strategic question: can you broaden your paying base without diluting what Presbyterians love about you? The Baptist gap (20% of subscribers, 15% of members) is your biggest untapped pool. Non-denominational readers convert well at 21%/21%.</p>
-
 <h3>What Not to Invest In</h3>
-
 <p>Only 4.6% want social media engagement. Only 5-8% want video. Only 9-12% want online events. Your readers are readers. The marketing strategy is not broader reach — it is deeper engagement with people who already want what you offer. Word of mouth among theologically serious Christians is your most effective growth channel. Make the content so good that pastors share it with their congregations and professors assign it to their students.</p>
-
 <h3>The Secular-Adjacent Audience</h3>
-
 <p>Members are more likely to follow The Dispatch and other secular-adjacent publications. Meaningful minorities follow The Free Press (14%) and UnHerd (10%). Content that bridges Christian thought and mainstream intellectual conversation — without compromising theological commitments — would especially serve and retain these readers. This is a growing segment and a natural fit for MO's cultural commentary ambitions.</p>
-
 </div>
-
 <footer>
     Mere Orthodoxy Reader Survey &middot; 398 respondents &middot; February 2026<br>
     Analysis prepared with Claude
 </footer>
-
 </div>
-
 <!-- ============================================================ -->
 <!-- SUBSCRIBERS -->
 <!-- ============================================================ -->
 <div class="tab-panel panel-subscribers">
-
 <div class="kpis">
     <div class="kpi"><div class="kpi-val">281</div><div class="kpi-label">Respondents</div></div>
     <div class="kpi"><div class="kpi-val">76%</div><div class="kpi-label">Male</div></div>
@@ -691,26 +576,20 @@
     <div class="kpi"><div class="kpi-val">36%</div><div class="kpi-label">Pastors &amp; Elders</div></div>
     <div class="kpi"><div class="kpi-val">75%</div><div class="kpi-label">Read Weekly+</div></div>
 </div>
-
 <div class="callout">
     <p><strong>The Core Truth.</strong> Your readers are not casual browsers. Over a third are pastors or elders. They come to MO because they are trying to think Christianly through hard problems, and most other outlets either lack depth or have become too partisan to trust.</p>
 </div>
-
 <div class="callout">
     <p><strong>The Biggest Opportunity.</strong> Your Under-35 cohort (24.5% of readers) is disproportionately engaged and hungry for cultural commentary, family content, and community. They represent your future. They want MO to help them think about parenting, technology, and vocation, not just abstract theology. Investing in content for them does not mean dumbing down; it means widening the aperture.</p>
 </div>
-
 <div class="callout">
     <p><strong>The Biggest Risk.</strong> You have almost no female readers in leadership (0% pastors among women respondents). Your female audience is 82% lay members, many isolated. Women want Family content at 1.5x the rate of men and report parenting challenges at 4x the rate. If you do not intentionally create space for women's voices and concerns, you will remain a publication that women recommend to their husbands but do not read themselves.</p>
 </div>
-
 <div class="callout">
     <p><strong>The Emotional Core.</strong> Across 211 free-text responses about their biggest challenges, the overwhelming undercurrent is grief over the politicization of evangelicalism. Even respondents who cited theology or cultural engagement frequently mentioned political fractures in the church. Your readers are people who love the church and feel like their spiritual home is being torn apart. They come to MO looking for sanity.</p>
 </div>
-
 <!-- DEMOGRAPHICS -->
 <h2>Who Is Reading</h2>
-
 <h3>Age Distribution</h3>
 <div class="bar-chart">
     <div class="bar-row"><span class="bar-label">Under 25</span><div class="bar-track"><div class="bar-fill" style="width:7.5%"></div></div><span class="bar-val">6.4%</span></div>
@@ -721,7 +600,6 @@
     <div class="bar-row"><span class="bar-label">65–74</span><div class="bar-track"><div class="bar-fill" style="width:23.7%"></div></div><span class="bar-val">20.3%</span></div>
     <div class="bar-row"><span class="bar-label">75+</span><div class="bar-track"><div class="bar-fill" style="width:8.7%"></div></div><span class="bar-val">7.5%</span></div>
 </div>
-
 <h3>Protestant Denominations</h3>
 <div class="bar-chart">
     <div class="bar-row"><span class="bar-label">Presbyterian</span><div class="bar-track"><div class="bar-fill" style="width:23.8%"></div></div><span class="bar-val">22.1%</span></div>
@@ -731,15 +609,12 @@
     <div class="bar-row"><span class="bar-label">Lutheran</span><div class="bar-track"><div class="bar-fill" style="width:5%"></div></div><span class="bar-val">4.6%</span></div>
     <div class="bar-row"><span class="bar-label">Other</span><div class="bar-track"><div class="bar-fill" style="width:11.9%"></div></div><span class="bar-val">11.0%</span></div>
 </div>
-
 <div class="callout muted">
     <p><strong>Age Skew is a Strategic Concern.</strong> 43% of your readers are 55+. Only 6.4% are under 25. This is not inherently bad for an intellectual publication, but it means your long-term sustainability depends on whether you can attract and retain younger readers without alienating the older base that provides stability. The good news: your 25-34 cohort (18.1%) is already sizable and highly engaged.</p>
 </div>
-
 <div class="callout muted">
     <p><strong>The Denominational Spread Is a Strength.</strong> 93% Protestant. No single denomination exceeds 22%. You genuinely appeal across the Protestant spectrum, with meaningful representation from Reformed, Baptist, Anglican, and non-denominational backgrounds. This is your "mere" in Mere Orthodoxy actually working. Guard it carefully.</p>
 </div>
-
 <h3>Church Role</h3>
 <div class="bar-chart">
     <div class="bar-row"><span class="bar-label">Lay Member</span><div class="bar-track"><div class="bar-fill" style="width:52.3%"></div></div><span class="bar-val">52.3%</span></div>
@@ -748,7 +623,6 @@
     <div class="bar-row"><span class="bar-label">Academic</span><div class="bar-track"><div class="bar-fill" style="width:7.5%"></div></div><span class="bar-val">7.5%</span></div>
     <div class="bar-row"><span class="bar-label">Other</span><div class="bar-track"><div class="bar-fill" style="width:4.3%"></div></div><span class="bar-val">4.3%</span></div>
 </div>
-
 <h3>Top States</h3>
 <div class="bar-chart">
     <div class="bar-row"><span class="bar-label">Texas</span><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><span class="bar-val">14</span></div>
@@ -760,10 +634,8 @@
     <div class="bar-row"><span class="bar-label">Virginia</span><div class="bar-track"><div class="bar-fill" style="width:42.9%"></div></div><span class="bar-val">6</span></div>
     <div class="bar-row"><span class="bar-label">California</span><div class="bar-track"><div class="bar-fill" style="width:42.9%"></div></div><span class="bar-val">6</span></div>
 </div>
-
 <!-- ENGAGEMENT -->
 <h2>How They Read You</h2>
-
 <h3>Reading Frequency</h3>
 <div class="bar-chart">
     <div class="bar-row"><span class="bar-label">Daily</span><div class="bar-track"><div class="bar-fill" style="width:4.6%"></div></div><span class="bar-val">4.6%</span></div>
@@ -772,7 +644,6 @@
     <div class="bar-row"><span class="bar-label">Monthly</span><div class="bar-track"><div class="bar-fill" style="width:11.7%"></div></div><span class="bar-val">11.7%</span></div>
     <div class="bar-row"><span class="bar-label">Occasionally</span><div class="bar-track"><div class="bar-fill" style="width:15.7%"></div></div><span class="bar-val">15.7%</span></div>
 </div>
-
 <h3>Engagement Channels</h3>
 <div class="bar-chart">
     <div class="bar-row"><span class="bar-label">Website</span><div class="bar-track"><div class="bar-fill" style="width:68.7%"></div></div><span class="bar-val">68.7%</span></div>
@@ -782,18 +653,14 @@
     <div class="bar-row"><span class="bar-label">Christians Reading</span><div class="bar-track"><div class="bar-fill" style="width:6.8%"></div></div><span class="bar-val">6.8%</span></div>
     <div class="bar-row"><span class="bar-label">Social Media</span><div class="bar-track"><div class="bar-fill" style="width:4.6%"></div></div><span class="bar-val">4.6%</span></div>
 </div>
-
 <div class="callout muted">
     <p><strong>The Podcast Gap.</strong> Only 26% engage via Mere Fidelity and 7% via Christians Reading Classics. For a publication with an intellectual audience that explicitly asks for "more podcast content" (20% overall), this suggests either a discoverability problem or a format mismatch. Your Under-25 cohort indexes highest on podcast engagement (28%), suggesting audio has growth potential with younger readers.</p>
 </div>
-
 <div class="callout muted">
     <p><strong>Substack Is Your Growth Channel.</strong> 32% already use Substack, and it indexes especially high among Under-25 (44%) and 25-34 (43%) readers. This is where your next generation of readers lives. Investing in the Substack experience (community features, discussion threads, subscriber-only content) would disproportionately serve your younger, growth-oriented audience.</p>
 </div>
-
 <!-- CONTENT -->
 <h2>What They Want</h2>
-
 <h3>Content Interests (Overall)</h3>
 <div class="bar-chart">
     <div class="bar-row"><span class="bar-label">Theology</span><div class="bar-track"><div class="bar-fill" style="width:79.7%"></div></div><span class="bar-val">79.7%</span></div>
@@ -808,7 +675,6 @@
     <div class="bar-row"><span class="bar-label">Education</span><div class="bar-track"><div class="bar-fill" style="width:27.0%"></div></div><span class="bar-val">27.0%</span></div>
     <div class="bar-row"><span class="bar-label">Leadership</span><div class="bar-track"><div class="bar-fill" style="width:23.8%"></div></div><span class="bar-val">23.8%</span></div>
 </div>
-
 <h3>Where Interests Diverge by Age</h3>
 <p>Theology, Culture, and Church are universal (75–80% across all groups). The divergence:</p>
 <ul>
@@ -817,26 +683,20 @@
     <li><strong>Politics:</strong> 67% of Under 25 vs. 31% of 55+</li>
     <li><strong>Book Reviews:</strong> 28% of Under 25 vs. 46% of 55+</li>
 </ul>
-
 <h3>Gender Gap</h3>
 <p>Women index significantly higher on Family (+19pts) and Education (+19pts). Men index higher on Leadership (+17pts) and Theology (+11pts).</p>
-
 <div class="callout">
     <p><strong>The Universal Triad: Theology + Culture + Church.</strong> These three topics are selected by 75–80% of readers across all age groups, genders, and roles. They are your foundation and should remain the backbone of your editorial calendar. Everything else is important but secondary.</p>
 </div>
-
 <div class="callout">
     <p><strong>Family Content Is Underserved.</strong> 63% of 25-34 year olds want Family content, but it currently ranks 7th overall. Among women it's the 4th highest interest at 55%. This is the clearest content gap in your data. Your readers are trying to raise children in a confusing culture and want thoughtful, theologically-grounded guidance. This is not "mommy blog" territory; it is the intersection of formation, ecclesiology, and practical wisdom.</p>
 </div>
-
 <div class="callout">
     <p><strong>Technology Is the Emerging Topic.</strong> Technology interest is at 56% among Under-25s and 53% among 25-34s, compared to only 18% among 55+. In the free-text challenges, Technology/AI was the second-most mentioned theme at 19%. Your younger readers are grappling with what it means to be embodied creatures in a digital age, and they want MO to help them think about it. This is a natural extension of your existing formation and cultural commentary strengths.</p>
 </div>
-
 <div class="callout">
     <p><strong>Regional Events: A Surprising Request.</strong> 41% of 25-34 year olds want regional in-person events, the highest of any demographic. This cohort reports loneliness and isolation at 6.4%, and many are navigating ecclesial transitions. They want MO to be more than a publication; they want it to be a community. Even small-scale gatherings (dinner events, reading groups, conference partnerships) could serve this need.</p>
 </div>
-
 <h3>What Would Make MO More Valuable</h3>
 <div class="bar-chart">
     <div class="bar-row"><span class="bar-label">In-depth theology</span><div class="bar-track"><div class="bar-fill" style="width:56.9%"></div></div><span class="bar-val">56.9%</span></div>
@@ -848,11 +708,9 @@
     <div class="bar-row"><span class="bar-label">Video content</span><div class="bar-track"><div class="bar-fill" style="width:7.8%"></div></div><span class="bar-val">7.8%</span></div>
     <div class="bar-row"><span class="bar-label">Social media</span><div class="bar-track"><div class="bar-fill" style="width:4.6%"></div></div><span class="bar-val">4.6%</span></div>
 </div>
-
 <!-- CHALLENGES -->
 <h2>What Keeps Them Up at Night</h2>
 <p>211 readers wrote free-text responses about their biggest challenges. Responses were coded into themes.</p>
-
 <h3>Challenge Themes <span style="font-weight:400; font-size:12px; color:#888; font-family:-apple-system,system-ui,sans-serif;">(click to see examples)</span></h3>
 <div class="bar-chart">
     <div class="bar-row clickable" onclick="toggleExamples(this)"><span class="bar-label">Theology / Doctrine</span><div class="bar-track"><div class="bar-fill" style="width:50.2%"></div></div><span class="bar-val">50.2%</span></div>
@@ -913,45 +771,32 @@
     <div class="bar-row"><span class="bar-label">Loneliness</span><div class="bar-track"><div class="bar-fill" style="width:5.2%"></div></div><span class="bar-val">5.2%</span></div>
     <div class="bar-row"><span class="bar-label">Time / Busyness</span><div class="bar-track"><div class="bar-fill" style="width:5.2%"></div></div><span class="bar-val">5.2%</span></div>
 </div>
-
 <h3>How Challenges Differ by Age</h3>
 <ul>
     <li><strong>Under 35:</strong> Parenting (25.5%), Tech/AI (29.8%), ecclesial identity, loneliness</li>
     <li><strong>35–54:</strong> Theology dominates (61.9%), intellectual growth (11.1%), time pressure</li>
     <li><strong>55+:</strong> Political polarization (14.9%), church decline (5.9%), theology (52.5%)</li>
 </ul>
-
 <div class="callout">
     <p><strong>The Political Grief.</strong> 13.3% explicitly named political polarization as their top challenge, but this understates its presence. Many responses coded under "Theology" or "Church health" also referenced political division. Among pastors, it was their second most-cited challenge at 17.6%. Among 55+ readers, 14.9%. These are people who feel the evangelical church has been captured by partisan politics and are looking for resources to help them stay faithful without taking sides.</p>
 </div>
-
 <div class="callout">
     <p><strong>Parenting as Formation.</strong> 25.5% of Under-35 respondents named parenting/family as their biggest challenge. Among women it's 19.2% (vs. 5% among men). These are not lightweight concerns. Readers wrote about raising children to see Jesus in a church that has become indistinguishable from partisan politics, about finding time for intellectual growth while caring for young children, and about navigating a culture of lies about what family means.</p>
 </div>
-
 <div class="callout">
     <p><strong>The Hunger for Depth.</strong> 50.2% of all responses touch on theological or doctrinal questions. Among 35-54 year olds it's 62%. These are readers asking about natural law, embodiment, ecclesiology, the historical Jesus, inerrancy, and universalism. They are not looking for quick takes. They want sustained, serious theological engagement that helps them think through hard questions over time.</p>
 </div>
-
 <div class="callout">
     <p><strong>What Pastors Are Feeling.</strong> Pastors report a distinctive profile of challenges: political polarization (17.6%), leadership strain (9.8%), loneliness (7.8%), and ecclesial identity (9.8%). They are the most politically burdened demographic. They came to MO looking for intellectual companionship and resources they can use in ministry, and they are your most loyal engagement cohort with the highest daily readership rate (7.5%).</p>
 </div>
-
 <h3>In Their Words</h3>
-
 <blockquote>Reconciling how so many Christians can read about God's heart for the poor, the immigrant, and marginalized all over the pages of Scripture, and then turn around and use cruel, mocking rhetoric.</blockquote>
-
 <blockquote>The pain of watching my children and their generation look in vain to evangelical Christianity in America and not see Jesus in it.</blockquote>
-
 <blockquote>Parenting. I have 6 kids and it's just really hard to fit in time for my own intellectual growth.</blockquote>
-
 <blockquote>There is no women's Bible study near me with any theological depth to it. Just lots of fluff.</blockquote>
-
 <blockquote>Generational reconciliation: receiving the good handed down from the Boomers etc, while respectfully departing from the bad.</blockquote>
-
 <!-- MEDIA ECOSYSTEM -->
 <h2>Where Else They Go</h2>
-
 <div class="bar-chart">
     <div class="bar-row"><span class="bar-label">The Gospel Coalition</span><div class="bar-track"><div class="bar-fill" style="width:51.2%"></div></div><span class="bar-val">51.2%</span></div>
     <div class="bar-row"><span class="bar-label">Substack Newsletters</span><div class="bar-track"><div class="bar-fill" style="width:45.6%"></div></div><span class="bar-val">45.6%</span></div>
@@ -964,135 +809,110 @@
     <div class="bar-row"><span class="bar-label">Sola Media</span><div class="bar-track"><div class="bar-fill" style="width:13.5%"></div></div><span class="bar-val">13.5%</span></div>
     <div class="bar-row"><span class="bar-label">Comment Magazine</span><div class="bar-track"><div class="bar-fill" style="width:10.0%"></div></div><span class="bar-val">10.0%</span></div>
 </div>
-
 <div class="callout muted">
     <p><strong>Your Competitive Set.</strong> TGC (51%), Substack Newsletters (46%), Christianity Today (37%), and First Things (33%) are the publications your readers also follow. MO occupies a distinctive niche: more intellectual than TGC, more Protestant than First Things, less institutionally cautious than CT, and more editorial than individual Substacks. This positioning is your strategic advantage.</p>
 </div>
-
 <div class="callout muted">
     <p><strong>The Gavin Ortlund Effect.</strong> 24% of all readers follow Gavin Ortlund/Truth Unites, but among Under-25s it's 44% and among 25-34s it's 47%. He is the single biggest gateway figure for your younger audience. Any cross-pollination (guest appearances, shared events, co-authored pieces) could significantly boost your reach with the demographic you most need to grow.</p>
 </div>
-
 <div class="callout muted">
     <p><strong>The Secular-Adjacent Reader.</strong> Meaningful minorities follow The Dispatch (21%), The Free Press (14%), and UnHerd (10%). These are readers who want to engage with non-Christian intellectual discourse, not just the Christian bubble. Content that bridges Christian thought and mainstream intellectual conversation would especially serve and retain these readers.</p>
 </div>
-
 <!-- READER PROFILES -->
 <h2>Reader Profiles</h2>
-
 <div class="profile">
     <h4>The Seasoned Pastor</h4>
     <div class="pct">~24% of readership</div>
     <p>Male, 45–65+, Presbyterian or Baptist. Reads multiple times per week. Top interests: Church, Theology, Culture. His biggest challenge is navigating political polarization in his congregation. He feels lonely in ministry and came to MO looking for intellectual companionship.</p>
     <div class="tags"><span class="tag">High loyalty</span><span class="tag">Political grief</span><span class="tag">Wants depth</span></div>
 </div>
-
 <div class="profile">
     <h4>The Young Intellectual</h4>
     <div class="pct">~18% of readership</div>
     <p>Male, 25–34, often Anglican or non-denominational. Engages via website and Substack. Deeply interested in Culture, Theology, and Family. Also wants Technology and Philosophy. Many are navigating denominational questions. Wants regional events and community.</p>
     <div class="tags"><span class="tag gold">Growth segment</span><span class="tag">Family + Tech</span><span class="tag">Wants community</span><span class="tag">Substack native</span></div>
 </div>
-
 <div class="profile">
     <h4>The Theologically Hungry Laywoman</h4>
     <div class="pct">~12% of readership</div>
     <p>Female, 30–55, lay member. Reads weekly via newsletter or Substack. Wants Culture, Theology, Family, and Formation. Reports that most women's ministry lacks theological depth. Biggest challenges: parenting, time, and finding intellectually serious community.</p>
     <div class="tags"><span class="tag gold">Underserved</span><span class="tag">Family content gap</span><span class="tag">Wants depth</span><span class="tag">Isolated</span></div>
 </div>
-
 <div class="profile">
     <h4>The Retired Thinker</h4>
     <div class="pct">~20% of readership</div>
     <p>Male, 65+, Presbyterian or Baptist. Reads weekly via website and email. Deeply interested in Theology, Culture, Church, and Book Reviews. Has time to read deeply. Values long-form content. Most interested in cultural commentary of any cohort.</p>
     <div class="tags"><span class="tag">High retention</span><span class="tag">Book reviews</span><span class="tag">Long-form reader</span><span class="tag">Email-first</span></div>
 </div>
-
 <div class="profile">
     <h4>The Academic</h4>
     <div class="pct">~7% of readership</div>
     <p>Mixed gender, 30–60, connected to a university or seminary. Theology interest at 91%. Most likely to want in-depth theological content (76%). Values topical ebooks (38%). Most intellectually demanding cohort and most likely to contribute content or send students your way.</p>
     <div class="tags"><span class="tag">Multipliers</span><span class="tag">Deepest readers</span><span class="tag">Potential contributors</span></div>
 </div>
-
 <div class="profile">
     <h4>The Gen-Z Seeker</h4>
     <div class="pct">~6% of readership</div>
     <p>Under 25, mostly male, often non-denominational. Most politically interested cohort (67%). Heavily follows Gavin Ortlund (44%) and Substack newsletters (44%). Wants cultural commentary (78%) more than any other group. The smallest cohort but the one that will determine whether MO exists in 10 years.</p>
     <div class="tags"><span class="tag gold">Future audience</span><span class="tag">Culture-first</span><span class="tag">Gavin Ortlund adjacent</span></div>
 </div>
-
 <!-- RECOMMENDATIONS -->
 <h2>Strategic Recommendations</h2>
-
 <div class="rec">
     <div class="priority-tag">High Priority</div>
     <h4>1. Launch a Faith &amp; Family Content Vertical</h4>
     <p>63% of your 25–34 cohort and 55% of women want Family content. 25.5% of under-35 respondents named parenting as their top challenge. This is the single biggest unmet need in your data and directly serves your growth demographic.</p>
 </div>
-
 <div class="rec">
     <div class="priority-tag">High Priority</div>
     <h4>2. Invest in Technology &amp; AI Coverage</h4>
     <p>Technology interest is 53–56% among under-35 readers and was the second-most cited challenge (19.4%). Frame it as theological-cultural analysis: what does it mean to be human in an age of AI?</p>
 </div>
-
 <div class="rec">
     <div class="priority-tag">High Priority</div>
     <h4>3. Double Down on Long-Form Theological Depth</h4>
     <p>57% want more in-depth theological content. Among academics, 76%. Your readers chose MO because you go deeper. They want you to go even deeper. Consider multi-part series and sustained engagement with single topics over weeks.</p>
 </div>
-
 <div class="rec">
     <div class="priority-tag">Medium Priority</div>
     <h4>4. Create Pathways for Women Readers</h4>
     <p>Women are 24% of readership but 82% are lay members with limited theological community. Actively recruit women contributors. Address the challenges women reported: theological depth in women's ministry, parenting, navigating a church culture that underestimates them intellectually.</p>
 </div>
-
 <div class="rec">
     <div class="priority-tag">Medium Priority</div>
     <h4>5. Grow the Substack Presence</h4>
     <p>Already your third-largest channel at 32% and strongest among under-35 readers (43–44%). Use Substack's community features to build the sense of community your younger cohort explicitly requests.</p>
 </div>
-
 <div class="rec">
     <div class="priority-tag">Medium Priority</div>
     <h4>6. Pilot Small Regional Events</h4>
     <p>41% of 25–34 readers want regional events. Start small: dinner discussions, reading groups, one-day conferences. Focus on Texas, Michigan, NC, PA, Washington. These events build loyalty and meet the real loneliness your readers report.</p>
 </div>
-
 <div class="rec">
     <div class="priority-tag">Medium Priority</div>
     <h4>7. Address the Political Pain Directly</h4>
     <p>Your readers are in genuine anguish over the politicization of the evangelical church. They don't want you to take a side. They want you to model faithful engagement that transcends the binary. This is exactly your brand. Lean into it.</p>
 </div>
-
 <div class="rec">
     <div class="priority-tag">Lower Priority</div>
     <h4>8. Explore Topical Ebooks</h4>
     <p>19% want topical ebooks, rising to 38% among academics. Curate your best content on a topic into downloadable compilations. Low-cost, high-value content repurposing.</p>
 </div>
-
 <div class="callout" style="margin-top: 32px;">
     <p><strong>What not to do:</strong> Only 4.6% want more social media. Only 7.8% want video. Your readers are readers. Your competitive moat is depth, not reach.</p>
 </div>
-
 <div class="callout muted">
     <p><strong>The strategic frame:</strong> The path to growth is not broadening to be more accessible. It is deepening your existing strengths while widening the aperture to include family, technology, and community — the bridges between your current audience and your future one.</p>
 </div>
-
 <footer>
     Mere Orthodoxy Subscriber Survey &middot; 281 respondents &middot; February 2026<br>
     Analysis prepared with Claude
 </footer>
-
 </div>
-
 <!-- ============================================================ -->
 <!-- MEMBERS -->
 <!-- ============================================================ -->
 <div class="tab-panel panel-members">
-
 <div class="kpis">
     <div class="kpi"><div class="kpi-val">117</div><div class="kpi-label">Members</div></div>
     <div class="kpi"><div class="kpi-val">84%</div><div class="kpi-label">Read Weekly+</div></div>
@@ -1100,22 +920,17 @@
     <div class="kpi"><div class="kpi-val">79/21</div><div class="kpi-label">Male / Female</div></div>
     <div class="kpi"><div class="kpi-val">68%</div><div class="kpi-label">#1: Perspectives</div></div>
 </div>
-
 <div class="callout">
     <p><strong>Who Your Members Are.</strong> Your paying members are your most engaged readers, with 84% reading weekly or more. They are 79% male and 51% are under 45. They are disproportionately Presbyterian (38% vs. 22%) and include a significant share of pastors or elders (36%). The age profile is bimodal, with peaks at 35-44 (30%) and 65-74 (18%), reflecting two distinct generations of committed supporters.</p>
 </div>
-
 <div class="callout">
     <p><strong>Why They Pay.</strong> Members pay for three things: your theological and cultural perspectives (68%), to support the mission (62%), and to get the print Journal (49%). The primary transaction is ideological: they pay because they believe in what you are doing and want it to continue. The Journal is the tangible benefit that seals the deal.</p>
 </div>
-
 <div class="callout">
     <p><strong>What They Want More Of.</strong> Theological depth (55%) and cultural commentary (53%) are now virtually tied as their top requests. Members also want regional events (27%). Your members are asking you to go deeper and apply that depth to the culture around them — and they want you to do it with fewer, higher-quality articles.</p>
 </div>
-
 <!-- DEMOGRAPHICS -->
 <h2>Demographics</h2>
-
 <h3>Age Distribution</h3>
 <div class="bar-chart">
     <div class="bar-row"><span class="bar-label">18–24</span><div class="bar-track"><div class="bar-fill" style="width:0.9%"></div></div><span class="bar-val">0.9%</span></div>
@@ -1126,7 +941,6 @@
     <div class="bar-row"><span class="bar-label">65–74</span><div class="bar-track"><div class="bar-fill" style="width:17.9%"></div></div><span class="bar-val">17.9%</span></div>
     <div class="bar-row"><span class="bar-label">75+</span><div class="bar-track"><div class="bar-fill" style="width:8.5%"></div></div><span class="bar-val">8.5%</span></div>
 </div>
-
 <h3>Denomination</h3>
 <div class="bar-chart">
     <div class="bar-row"><span class="bar-label">Presbyterian</span><div class="bar-track"><div class="bar-fill" style="width:38.5%"></div></div><span class="bar-val">38.5%</span></div>
@@ -1138,11 +952,9 @@
     <div class="bar-row"><span class="bar-label">Episcopal</span><div class="bar-track"><div class="bar-fill" style="width:1.7%"></div></div><span class="bar-val">1.7%</span></div>
     <div class="bar-row"><span class="bar-label">Methodist</span><div class="bar-track"><div class="bar-fill" style="width:0.9%"></div></div><span class="bar-val">0.9%</span></div>
 </div>
-
 <div class="callout muted">
     <p><strong>The Presbyterian Over-Representation.</strong> Presbyterians are 38% of paying members but only 22% of subscribers. This likely reflects the Reformed intellectual tradition's particular affinity for your content style. Non-denominational readers convert at parity (21%/21%), while Baptists remain under-converted (15% vs. 20%). The strategic question is whether this concentration is a strength (deep loyalty) or a risk (too narrow a financial base).</p>
 </div>
-
 <h3>Church Role</h3>
 <div class="bar-chart">
     <div class="bar-row"><span class="bar-label">Lay Member</span><div class="bar-track"><div class="bar-fill" style="width:62%"></div></div><span class="bar-val">62%</span></div>
@@ -1150,10 +962,8 @@
     <div class="bar-row"><span class="bar-label">Elder / Deacon</span><div class="bar-track"><div class="bar-fill" style="width:9%"></div></div><span class="bar-val">9%</span></div>
     <div class="bar-row"><span class="bar-label">Academic</span><div class="bar-track"><div class="bar-fill" style="width:3%"></div></div><span class="bar-val">3%</span></div>
 </div>
-
 <!-- ENGAGEMENT -->
 <h2>How Members Engage</h2>
-
 <h3>Reading Frequency</h3>
 <div class="bar-chart">
     <div class="bar-row"><span class="bar-label">Daily</span><div class="bar-track"><div class="bar-fill" style="width:8.5%"></div></div><span class="bar-val">8.5%</span></div>
@@ -1162,29 +972,24 @@
     <div class="bar-row"><span class="bar-label">Monthly</span><div class="bar-track"><div class="bar-fill" style="width:12.8%"></div></div><span class="bar-val">12.8%</span></div>
     <div class="bar-row"><span class="bar-label">Occasionally</span><div class="bar-track"><div class="bar-fill" style="width:3.4%"></div></div><span class="bar-val">3.4%</span></div>
 </div>
-
 <h3>Engagement Channels</h3>
 <div class="bar-chart">
     <div class="bar-row"><span class="bar-label">Website</span><div class="bar-track"><div class="bar-fill" style="width:76.1%"></div></div><span class="bar-val">76.1%</span></div>
     <div class="bar-row"><span class="bar-label">Newsletter</span><div class="bar-track"><div class="bar-fill" style="width:52.1%"></div></div><span class="bar-val">52.1%</span></div>
     <div class="bar-row"><span class="bar-label">Mere Fidelity</span><div class="bar-track"><div class="bar-fill" style="width:40.2%"></div></div><span class="bar-val">40.2%</span></div>
-    <div class="bar-row"><span class="bar-label">Substack</span><div class="bar-track"><div class="bar-fill" style="width:18.8%"></div></div><span class="bar-val">18.8%</span></div>
-    <div class="bar-row"><span class="bar-label">Discord</span><div class="bar-track"><div class="bar-fill" style="width:17.1%"></div></div><span class="bar-val">17.1%</span></div>
+    <div class="bar-row"><span class="bar-label">Discord</span><div class="bar-track"><div class="bar-fill" style="width:18.8%"></div></div><span class="bar-val">18.8%</span></div>
+    <div class="bar-row"><span class="bar-label">Substack</span><div class="bar-track"><div class="bar-fill" style="width:17.1%"></div></div><span class="bar-val">17.1%</span></div>
     <div class="bar-row"><span class="bar-label">Christians Reading</span><div class="bar-track"><div class="bar-fill" style="width:6.8%"></div></div><span class="bar-val">6.8%</span></div>
     <div class="bar-row"><span class="bar-label">Social Media</span><div class="bar-track"><div class="bar-fill" style="width:3.4%"></div></div><span class="bar-val">3.4%</span></div>
 </div>
-
 <div class="callout muted">
-    <p><strong>Multi-Channel Members.</strong> 76% use the website, 52% read the newsletter, 40% listen to Mere Fidelity (vs. 26% of subscribers), and 19% use Discord. Each additional channel likely deepens retention.</p>
+    <p><strong>Multi-Channel Members.</strong> Members engage across multiple channels. 76% use the website, 52% read the newsletter, 40% listen to Mere Fidelity (vs. 26% of subscribers), and 19% use Discord. Each additional channel likely deepens retention.</p>
 </div>
-
 <div class="callout muted">
     <p><strong>Discord: Needs Attention.</strong> 19% of members use Discord, and 10% cited it as a reason they joined. But feedback is mixed: insiders enjoy the community, while newcomers feel excluded. This is a retention risk that needs intentional cultivation: structured discussions, editorial presence, and clear norms for welcoming new members.</p>
 </div>
-
 <!-- WHY THEY JOINED -->
 <h2>Why They Became Members</h2>
-
 <h3>Membership Motivations</h3>
 <div class="bar-chart">
     <div class="bar-row"><span class="bar-label">Theological perspectives</span><div class="bar-track"><div class="bar-fill" style="width:67.5%"></div></div><span class="bar-val">67.5%</span></div>
@@ -1194,42 +999,35 @@
     <div class="bar-row"><span class="bar-label">Discord community</span><div class="bar-track"><div class="bar-fill" style="width:10.3%"></div></div><span class="bar-val">10.3%</span></div>
     <div class="bar-row"><span class="bar-label">Christians Reading</span><div class="bar-track"><div class="bar-fill" style="width:6.8%"></div></div><span class="bar-val">6.8%</span></div>
 </div>
-
 <div class="callout">
     <p><strong>Mission First, Product Second.</strong> 62% say they joined to support the mission. These are values-driven buyers, not product-driven consumers. Your brand and editorial voice are more important to retention than any specific perk.</p>
 </div>
-
 <div class="callout">
     <p><strong>The Journal Matters.</strong> 49% cite the print Journal as a reason they joined. Physical media creates a different kind of relationship with content — it sits on nightstands and coffee tables, it gets shared, it signals identity. The Journal is not just a perk; it is a retention and conversion tool.</p>
 </div>
-
 <div class="callout">
     <p><strong>Mere Fidelity as Conversion Path.</strong> 30% joined specifically to support Mere Fidelity. Podcast listeners who convert to members are likely your stickiest segment. The parasocial relationship that podcasts create is a powerful conversion mechanism.</p>
 </div>
-
 <!-- CONTENT -->
 <h2>What Members Want</h2>
-
 <h3>Content Interests</h3>
 <div class="bar-chart">
     <div class="bar-row"><span class="bar-label">Culture</span><div class="bar-track"><div class="bar-fill" style="width:86.3%"></div></div><span class="bar-val">86.3%</span></div>
     <div class="bar-row"><span class="bar-label">Church</span><div class="bar-track"><div class="bar-fill" style="width:77.8%"></div></div><span class="bar-val">77.8%</span></div>
     <div class="bar-row"><span class="bar-label">Theology</span><div class="bar-track"><div class="bar-fill" style="width:72.6%"></div></div><span class="bar-val">72.6%</span></div>
     <div class="bar-row"><span class="bar-label">Book Reviews</span><div class="bar-track"><div class="bar-fill" style="width:60.7%"></div></div><span class="bar-val">60.7%</span></div>
-    <div class="bar-row"><span class="bar-label">Philosophy</span><div class="bar-track"><div class="bar-fill" style="width:53.0%"></div></div><span class="bar-val">53.0%</span></div>
-    <div class="bar-row"><span class="bar-label">Formation</span><div class="bar-track"><div class="bar-fill" style="width:50.4%"></div></div><span class="bar-val">50.4%</span></div>
-    <div class="bar-row"><span class="bar-label">Technology</span><div class="bar-track"><div class="bar-fill" style="width:46.2%"></div></div><span class="bar-val">46.2%</span></div>
-    <div class="bar-row"><span class="bar-label">Politics</span><div class="bar-track"><div class="bar-fill" style="width:44.4%"></div></div><span class="bar-val">44.4%</span></div>
+    <div class="bar-row"><span class="bar-label">Formation</span><div class="bar-track"><div class="bar-fill" style="width:53.0%"></div></div><span class="bar-val">53.0%</span></div>
+    <div class="bar-row"><span class="bar-label">Philosophy</span><div class="bar-track"><div class="bar-fill" style="width:50.4%"></div></div><span class="bar-val">50.4%</span></div>
+    <div class="bar-row"><span class="bar-label">Politics</span><div class="bar-track"><div class="bar-fill" style="width:46.2%"></div></div><span class="bar-val">46.2%</span></div>
+    <div class="bar-row"><span class="bar-label">Technology</span><div class="bar-track"><div class="bar-fill" style="width:44.4%"></div></div><span class="bar-val">44.4%</span></div>
     <div class="bar-row"><span class="bar-label">Family</span><div class="bar-track"><div class="bar-fill" style="width:41.0%"></div></div><span class="bar-val">41.0%</span></div>
     <div class="bar-row"><span class="bar-label">Education</span><div class="bar-track"><div class="bar-fill" style="width:29.1%"></div></div><span class="bar-val">29.1%</span></div>
     <div class="bar-row"><span class="bar-label">Interviews</span><div class="bar-track"><div class="bar-fill" style="width:23.1%"></div></div><span class="bar-val">23.1%</span></div>
     <div class="bar-row"><span class="bar-label">Leadership</span><div class="bar-track"><div class="bar-fill" style="width:18.8%"></div></div><span class="bar-val">18.8%</span></div>
 </div>
-
 <div class="callout">
     <p><strong>Culture Leads, But Theology Is Close.</strong> Among members, Culture (86%) leads, followed by Church (78%) and Theology (73%). But when asked what would make MO more valuable, theological depth (55%) and cultural commentary (53%) are virtually tied. Members don't want one or the other — they want both, deeply integrated.</p>
 </div>
-
 <h3>What Would Make MO More Valuable</h3>
 <div class="bar-chart">
     <div class="bar-row"><span class="bar-label">Theological depth</span><div class="bar-track"><div class="bar-fill" style="width:54.7%"></div></div><span class="bar-val">54.7%</span></div>
@@ -1237,18 +1035,15 @@
     <div class="bar-row"><span class="bar-label">Regional events</span><div class="bar-track"><div class="bar-fill" style="width:26.5%"></div></div><span class="bar-val">26.5%</span></div>
     <div class="bar-row"><span class="bar-label">Podcast content</span><div class="bar-track"><div class="bar-fill" style="width:19.7%"></div></div><span class="bar-val">19.7%</span></div>
     <div class="bar-row"><span class="bar-label">Topical ebooks</span><div class="bar-track"><div class="bar-fill" style="width:14.5%"></div></div><span class="bar-val">14.5%</span></div>
-    <div class="bar-row"><span class="bar-label">Online events</span><div class="bar-track"><div class="bar-fill" style="width:12%"></div></div><span class="bar-val">12%</span></div>
+    <div class="bar-row"><span class="bar-label">Online events</span><div class="bar-track"><div class="bar-fill" style="width:12.0%"></div></div><span class="bar-val">12.0%</span></div>
     <div class="bar-row"><span class="bar-label">Video content</span><div class="bar-track"><div class="bar-fill" style="width:6.0%"></div></div><span class="bar-val">6.0%</span></div>
 </div>
-
 <div class="callout">
     <p><strong>Quality Over Quantity.</strong> Multiple members explicitly wrote that they want fewer but higher-quality articles. The move to two articles per day has not gone unnoticed. Members report a perceived decline in quality and want MO to prioritize depth over volume. This is actionable feedback from your most committed readers.</p>
 </div>
-
 <!-- CHALLENGES -->
 <h2>What Members Are Struggling With</h2>
-<p>80 of 117 members (68%) wrote about their biggest challenges. Time and competing demands have emerged as the dominant theme.</p>
-
+<p>80 of 117 members (68%) wrote about their biggest challenges. Time and competing demands remain the dominant theme.</p>
 <h3>Challenge Themes <span style="font-weight:400; font-size:12px; color:#888; font-family:-apple-system,system-ui,sans-serif;">(click to see examples)</span></h3>
 <div class="bar-chart">
     <div class="bar-row clickable" onclick="toggleExamples(this)"><span class="bar-label">Time / Competing Demands</span><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><span class="bar-val">17</span></div>
@@ -1315,148 +1110,113 @@
         <p>The challenge of suffering and evil.</p>
     </div>
 </div>
-
 <div class="callout">
-    <p><strong>Time Is the Dominant Theme.</strong> Time and competing demands are now the #1 challenge for members, with 17 responses naming it directly. This is a shift from the earlier sample where parenting led. Your members are busy people juggling ministry, family, work, and intellectual life. This reinforces the quality-over-quantity feedback: if your members are time-constrained, every article must earn its place in their day.</p>
+    <p><strong>Time Is the Dominant Theme.</strong> Time and competing demands remain the #1 challenge for members, with 17 responses naming it directly. This is a shift from the earlier sample where parenting led. Your members are busy people juggling ministry, family, work, and intellectual life. This reinforces the quality-over-quantity feedback: if your members are time-constrained, every article must earn its place in their day.</p>
 </div>
-
 <div class="callout">
     <p><strong>Political Polarization Runs Deep.</strong> 14 members named political polarization, making it the second-most cited challenge. Your members feel the fractures in their churches and communities, and they look to MO for a voice that transcends partisan divides.</p>
 </div>
-
 <div class="callout">
     <p><strong>Pastoral Burden.</strong> Pastors among your members describe acute challenges: shepherding through political division, leading through personal suffering, and the loneliness of leadership. These are people who give all day and come to MO to be fed. The pastoral voice in your content is essential to retaining your most committed supporters.</p>
 </div>
-
 <h3>In Their Words</h3>
-
 <blockquote>I've seen a decline in article quality now that you're posting two articles a day. Recycled substack posts or shorter shallower articles aren't what I read you for. I come to Mere O for 'nuance and wordcount' not short takes. Prioritizing feature quantity over quality dilutes your brand.</blockquote>
-
 <blockquote>I'd rather get 2 per week that are really, really worth it.</blockquote>
-
 <blockquote>Figuring out how to love and serve my family + be a pastor + be a Christian amidst a cancer diagnosis for my wife. Our 'normal' has been irrevocably changed. God has been faithful but it is really hard.</blockquote>
-
 <blockquote>Time — I have 5 kids under 9.</blockquote>
-
 <blockquote>Pastorally shepherding with wisdom and prudence in the political environment.</blockquote>
-
 <blockquote>Hope. It's hard to come by these days.</blockquote>
-
 <blockquote>Oh gosh, that is rather expansive. I suppose my greatest desire is to 'speak life'. I am 67. I've wasted a lot of time on this journey. I hope I can be useful in this, whatever, last quarter of life.</blockquote>
-
 <blockquote>I'm a father of six, and my biggest challenge is maintaining a faith that they will turn out okay. No matter how I parent them, it is ultimately God who can bring them to a saving faith.</blockquote>
-
 <blockquote>Thank you for offering thoughtful, reasonable and decent commentary. It is a boon to my sanity at this stage of my life in this cultural moment.</blockquote>
-
 <!-- MEMBER PROFILES -->
 <h2>Member Profiles</h2>
-
 <div class="profile">
     <h4>The Mid-Career Leader</h4>
     <div class="pct">~40% of members</div>
     <p>Male, 35-54, often Presbyterian, pastor or lay leader. The core member. Time-constrained and multi-channel. Reads multiple times per week via the website and Mere Fidelity. Joined for the theological perspectives and to support the mission. Wants depth but has limited time — which is why he cares so much about article quality. Wants cultural commentary and regional events.</p>
     <div class="tags"><span class="tag gold">Core Member</span><span class="tag">Time-constrained</span><span class="tag">Multi-channel</span><span class="tag">Wants depth</span></div>
 </div>
-
 <div class="profile">
     <h4>The Engaged Retiree</h4>
     <div class="pct">~30% of members</div>
     <p>Male, 55+, Presbyterian or Baptist, retired pastor or longtime elder. Mission-driven and deeply loyal. Reads weekly via website and email. Joined to support the mission and values the Journal as a physical artifact. A Journal devotee and long-term supporter. Challenges center on church decline and the desire to pass on a healthy faith to the next generation.</p>
     <div class="tags"><span class="tag">Mission-driven</span><span class="tag">Journal devotee</span><span class="tag">Long-term supporter</span></div>
 </div>
-
 <div class="profile">
     <h4>The Young Intellectual</h4>
     <div class="pct">~20% of members</div>
-    <p>Male or female, under 35, non-denominational or Anglican. Philosophy-first — 60% of under-35 members select it. Highly interested in Technology (60%) and Culture (96%). Community-seeking and engaged with Discord. The growth segment with the most potential for long-term commitment if the community promise is delivered.</p>
+    <p>Male or female, under 35, non-denominational or Anglican. Philosophy-focused — 60% of under-35 members select it. Highly interested in Technology (60%) and Culture (96%). Community-seeking and engaged with Discord. The growth segment with the most potential for long-term commitment if the community promise is delivered.</p>
     <div class="tags"><span class="tag gold">Growth Potential</span><span class="tag">Philosophy-first</span><span class="tag">Tech-interested</span><span class="tag">Community-seeking</span></div>
 </div>
-
 <div class="profile">
     <h4>The Community Seeker</h4>
     <div class="pct">~10% of members</div>
     <p>Mixed age (25-44), joined specifically for Discord and/or regional events. Looking for intellectual community they can't find locally. Some are disappointed with Discord's current state. Most at-risk for churn if the community promise isn't delivered.</p>
     <div class="tags"><span class="tag gold">Churn Risk</span><span class="tag">Discord user</span><span class="tag">Wants events</span><span class="tag">Community-hungry</span></div>
 </div>
-
 <!-- MEMBER RECOMMENDATIONS -->
 <h2>Strategic Recommendations for Members</h2>
-
 <div class="rec">
     <div class="priority-tag">High Priority</div>
     <h4>1. Reconsider Publishing Volume</h4>
     <p>Members are directly criticizing the two-articles-per-day pace. They want fewer, higher-quality pieces. This is your most committed audience telling you that quantity is diluting your brand. Consider reducing to the best 2-3 articles per week that truly justify their time.</p>
 </div>
-
 <div class="rec">
     <div class="priority-tag">High Priority</div>
     <h4>2. Deepen Both Theology and Cultural Commentary</h4>
     <p>55% want theological depth, 53% want cultural commentary. The sweet spot is both: sustained theological analysis applied to cultural questions. This is what MO does at its best. Do more of it.</p>
 </div>
-
 <div class="rec">
     <div class="priority-tag">High Priority</div>
     <h4>3. Protect and Invest in the Journal</h4>
     <p>49% cite the Journal as a reason they joined. Consider higher quality paper/design, more frequent issues, or exclusive content that doesn't appear online. It is your primary member retention tool.</p>
 </div>
-
 <div class="rec">
     <div class="priority-tag">Medium Priority</div>
     <h4>4. Launch Small Regional Gatherings</h4>
-    <p>28% of members want regional events. Start with 2-3 pilot events in concentrated areas. A dinner discussion, a reading group, or a one-day mini-conference. Partner with local churches or seminaries.</p>
+    <p>27% of members want regional events. Start with 2-3 pilot events in concentrated areas. A dinner discussion, a reading group, or a one-day mini-conference. Partner with local churches or seminaries.</p>
 </div>
-
 <div class="rec">
     <div class="priority-tag">Medium Priority</div>
     <h4>5. Invest in Discord Intentionally</h4>
     <p>19% of members use Discord, and 10% joined for it. But feedback is mixed — insiders enjoy it, newcomers feel excluded. Add structured programming: weekly discussion threads, reading groups, AMAs, and visible editorial presence. Treat it as a real community product.</p>
 </div>
-
 <div class="rec">
     <div class="priority-tag">Medium Priority</div>
     <h4>6. Broaden Denominational Appeal</h4>
     <p>Presbyterians are 38% of members vs. 22% of subscribers. Baptists are 17% of members vs. 20% of subscribers. Non-denominational readers convert well at 21%/21%. Consider Baptist and broader evangelical voices to widen the paying base without diluting what Presbyterians love.</p>
 </div>
-
 <div class="rec">
     <div class="priority-tag">Medium Priority</div>
     <h4>7. Use Mere Fidelity as a Conversion Funnel</h4>
     <p>40% of members engage via Mere Fidelity (vs. 26% of subscribers). Consider occasional calls-to-action on the podcast and listener-exclusive content behind the membership paywall.</p>
 </div>
-
 <div class="rec">
     <div class="priority-tag">Lower Priority</div>
     <h4>8. Create Content for the Technology Conversation</h4>
     <p>44% of members are interested in Technology (vs. 35% of subscribers). Frame it as theological anthropology for a digital age. Your members are already thinking about these questions — give them the depth they expect from MO.</p>
 </div>
-
 <div class="callout" style="margin-top: 32px;">
     <p><strong>The Retention Equation.</strong> Your members are values-driven, not perks-driven. Retention depends on editorial quality and voice. Don't over-engineer the membership. Keep the Journal excellent, make the community genuine, and above all — heed their plea for quality over quantity. Fewer excellent articles will retain members better than many mediocre ones.</p>
 </div>
-
 <footer>
     Mere Orthodoxy Member Survey &middot; 117 respondents &middot; February 2026<br>
     Analysis prepared with Claude
 </footer>
-
 </div>
-
 <!-- ============================================================ -->
 <!-- COMBINED -->
 <!-- ============================================================ -->
 <div class="tab-panel panel-combined">
-
 <div class="kpis">
     <div class="kpi"><div class="kpi-val">398</div><div class="kpi-label">Total Respondents</div></div>
     <div class="kpi"><div class="kpi-val">281</div><div class="kpi-label">Subscribers</div></div>
     <div class="kpi"><div class="kpi-val">117</div><div class="kpi-label">Members</div></div>
     <div class="kpi"><div class="kpi-val">74%</div><div class="kpi-label">Read Weekly+</div></div>
 </div>
-
 <h2 style="margin-top: 32px;">Members vs. Subscribers</h2>
-
 <p>This side-by-side comparison reveals what distinguishes your paying members from the broader subscriber base — and what it tells you about who converts and why.</p>
-
 <table class="comp-table">
     <thead>
         <tr>
@@ -1577,13 +1337,10 @@
         </tr>
     </tbody>
 </table>
-
 <div class="callout">
     <p><strong>The Conversion Profile.</strong> Readers who convert to paying members tend to be Presbyterian, culturally engaged, multi-channel users who listen to Mere Fidelity. They read more frequently, care about both theological depth and cultural commentary, and want in-person community. With the larger sample, the age gap has narrowed — members are notably younger (51% under 45 vs. 43%) but the difference is modest. What distinguishes members most is engagement intensity, not demographics.</p>
 </div>
-
 <h2>Content Interests: Combined View</h2>
-
 <h3>All Readers (n=398)</h3>
 <div class="bar-chart">
     <div class="bar-row"><span class="bar-label">Culture</span><div class="bar-track"><div class="bar-fill" style="width:80%"></div></div><span class="bar-val">80%</span></div>
@@ -1598,37 +1355,27 @@
     <div class="bar-row"><span class="bar-label">Education</span><div class="bar-track"><div class="bar-fill" style="width:28%"></div></div><span class="bar-val">28%</span></div>
     <div class="bar-row"><span class="bar-label">Leadership</span><div class="bar-track"><div class="bar-fill" style="width:22%"></div></div><span class="bar-val">22%</span></div>
 </div>
-
 <div class="callout">
     <p><strong>Culture Leads Overall.</strong> When you combine both datasets, Culture (80%) edges out Theology (78%) as the top content interest. Book Reviews hold at 51% (61% among members). The combined signal is clear: your readers want theology and culture not as separate categories, but as a unified lens. The best MO content has always done this.</p>
 </div>
-
 <h2>The Reader Journey</h2>
-
 <p>The combined data reveals a clear pathway from discovery to commitment:</p>
-
 <div class="callout">
     <p><strong>Stage 1: Discovery.</strong> Readers find MO via Substack (indexes highest among under-35s at 43-44%), TGC crossover (51% overlap), or Gavin Ortlund (44% of under-25s follow him). The entry point is typically a single article that resonates.</p>
 </div>
-
 <div class="callout">
     <p><strong>Stage 2: Regular Reading.</strong> They migrate to the website (69-74%) and newsletter (48-51%). Reading frequency increases to multiple times per week. They begin to trust the editorial voice.</p>
 </div>
-
 <div class="callout">
     <p><strong>Stage 3: Audio Engagement.</strong> They discover Mere Fidelity. Members use it at 40% vs. 26% of subscribers. The parasocial connection to MO's editorial voice deepens commitment. This is the bridge between reading and belonging.</p>
 </div>
-
 <div class="callout">
     <p><strong>Stage 4: Conversion.</strong> They become paying members. The triggers: theological perspectives (68%), mission alignment (62%), and the Journal (49%). Substack usage drops (17% vs. 32%) as they commit to the direct platform.</p>
 </div>
-
 <div class="callout muted">
     <p><strong>Stage 5: Community.</strong> The frontier. 19% of members use Discord, 27% want regional events. This stage is nascent and under-built. Whether MO can create genuine intellectual community — not just publish content — may determine the next chapter of its growth.</p>
 </div>
-
 <h2>Where Both Groups Agree</h2>
-
 <ul>
     <li><strong>The Universal Triad.</strong> Theology + Culture + Church are the foundation across both groups (71-84%). This should never change.</li>
     <li><strong>Family is underserved.</strong> 39-41% interest, rising to 63% among 25-34 year olds. The clearest content gap in the data.</li>
@@ -1636,9 +1383,7 @@
     <li><strong>Political polarization is the shared wound.</strong> Among the most cited personal challenges across age groups, roles, and membership status.</li>
     <li><strong>They want depth, not breadth.</strong> Only 5-6% want social media. Only 5-8% want video. Your readers are readers.</li>
 </ul>
-
 <h2>Where They Diverge</h2>
-
 <ul>
     <li><strong>Theology vs. Culture priority.</strong> Subscribers want more theological depth (57%); members want theological depth (55%) and cultural commentary (53%) nearly equally. The earlier cultural-commentary-dominant pattern has moderated with the larger sample.</li>
     <li><strong>Substack vs. direct.</strong> Subscribers use Substack more (32% vs. 17%). Members have committed to the direct platform. Substack is acquisition; website is retention.</li>
@@ -1646,263 +1391,587 @@
     <li><strong>Denominational composition.</strong> Subscribers are evenly spread; members are disproportionately Presbyterian (38%). Non-denominational readers convert at parity (21%/21%). The "mere" works for free readers; the paying base skews Reformed.</li>
     <li><strong>Quality concerns.</strong> Members are more vocal about publishing volume, explicitly asking for fewer but better articles. This feedback is absent from the subscriber data.</li>
 </ul>
-
 <h2>Combined Strategic Priorities</h2>
-
 <div class="rec">
     <div class="priority-tag">Highest Priority</div>
     <h4>1. Quality Over Quantity</h4>
     <p>Your most committed readers are telling you directly: fewer articles, greater depth. The two-articles-per-day pace is perceived as diluting your brand. Consider a model that prioritizes 2-3 excellent pieces per week over daily volume. Your competitive moat is depth, not frequency.</p>
 </div>
-
 <div class="rec">
     <div class="priority-tag">Highest Priority</div>
     <h4>2. Theological Depth + Cultural Commentary</h4>
     <p>Not either/or. Your subscribers want you to go deeper. Your members want depth and cultural application in nearly equal measure. The answer is both: sustained theological analysis applied to cultural moments, books, films, and trends. This is what MO does at its best.</p>
 </div>
-
 <div class="rec">
     <div class="priority-tag">Highest Priority</div>
     <h4>3. Launch Faith &amp; Family Content</h4>
     <p>The single biggest unmet need across both datasets. 63% of 25-34 subscribers, 39% of members, and parenting/family remains a top challenge theme. Frame it as formation + ecclesiology + practical wisdom.</p>
 </div>
-
 <div class="rec">
     <div class="priority-tag">High Priority</div>
     <h4>4. Protect the Journal, Tend the Discord</h4>
-    <p>These are your two tangible membership benefits. The Journal retains (49% cite it). Discord needs work (insiders enjoy it, newcomers feel excluded). Both need intentional investment.</p>
+    <p>These are your two tangible membership benefits. The Journal retains (45% cite it). Discord needs work (insiders enjoy it, newcomers feel excluded). Both need intentional investment.</p>
 </div>
-
 <div class="rec">
     <div class="priority-tag">High Priority</div>
     <h4>5. Invest in Technology &amp; AI Coverage</h4>
-    <p>35-44% overall interest, 53-56% among under-35s. A top challenge theme in free-text responses. Frame it as theological anthropology for a digital age.</p>
+    <p>35-43% overall interest, 53-56% among under-35s. A top challenge theme in free-text responses. Frame it as theological anthropology for a digital age.</p>
 </div>
-
 <div class="rec">
     <div class="priority-tag">Medium Priority</div>
     <h4>6. Build the Acquisition Funnel</h4>
     <p>Substack → Website → Mere Fidelity → Member. Each step can be optimized. Invest in Substack for discovery, Mere Fidelity for deepening (40% of members use it vs. 26% of subscribers), and the Journal + mission for conversion.</p>
 </div>
-
 <div class="rec">
     <div class="priority-tag">Medium Priority</div>
     <h4>7. Pilot Regional Events</h4>
     <p>28-41% want them. Start small in Texas, Michigan, and North Carolina. Partner with churches and seminaries. These meet a real need for intellectual community that your readers report across both datasets.</p>
 </div>
-
 <div class="rec">
     <div class="priority-tag">Medium Priority</div>
     <h4>8. Broaden the Denominational Base</h4>
     <p>Your free audience is genuinely "mere." Your paying audience skews Reformed. Close the Baptist gap (20% subscribers, 15% members) and diversify the financial base. Non-denominational readers already convert at parity — look for similar opportunities among Baptists and Anglicans.</p>
 </div>
-
 <div class="callout" style="margin-top: 32px;">
-    <p><strong>The Bottom Line.</strong> You have 398 readers who took the time to tell you exactly what they need. They need depth applied to culture, content for parents in the trenches, help thinking about technology, a community that transcends the partisan binary, and a publication brave enough to be smart without being academic, faithful without being tribal, and practical without being shallow. Your most committed readers are also telling you something new: publish less, but make every piece count. They believe MO can be that. Give them reason to keep believing.</p>
+    <p><strong>The Bottom Line.</strong> You have 381 readers who took the time to tell you exactly what they need. They need depth applied to culture, content for parents in the trenches, help thinking about technology, a community that transcends the partisan binary, and a publication brave enough to be smart without being academic, faithful without being tribal, and practical without being shallow. Your most committed readers are also telling you something new: publish less, but make every piece count. They believe MO can be that. Give them reason to keep believing.</p>
 </div>
-
 <footer>
     Mere Orthodoxy Reader Survey &middot; 398 respondents &middot; February 2026<br>
     Analysis prepared with Claude
 </footer>
-
 </div>
-
 <!-- ============================================================ -->
 <!-- FEEDBACK -->
 <!-- ============================================================ -->
 <div class="tab-panel panel-feedback">
-
 <div class="sub-tabs" data-group="feedback">
     <button class="sub-tab active" data-target="feedback-praise">Praise</button>
     <button class="sub-tab" data-target="feedback-criticism">Criticism</button>
     <button class="sub-tab" data-target="feedback-patterns">Patterns</button>
 </div>
-
 <!-- PRAISE -->
 <div class="sub-panel active" id="feedback-praise">
-
 <p>Respondents were asked "Anything else?" at the end of the survey. These are the responses that expressed gratitude, encouragement, or affirmation of Mere Orthodoxy's work.</p>
-
 <div class="callout"><p>I'm very grateful for the work of MO and have really appreciated the things I've learned and the companion that it has been for me on my spiritual journey.</p></div>
-
 <div class="callout"><p>Thank you for offering thoughtful, reasonable and decent commentary. It is a boon to my sanity at this stage of my life in this cultural moment.</p></div>
-
 <div class="callout"><p>I believe MereO has a unique voice that is greatly needed at this time!</p></div>
-
 <div class="callout"><p>I love what you all are doing. Keep going!</p></div>
-
 <div class="callout"><p>I am thankful for the work you do. I've been a MO reader since 2015. The articles and podcasts have made the Protestant tradition more accessible to me, and helped me establish boundaries for my personal Overton window during this confusing and tumultuous era.</p></div>
-
 <div class="callout"><p>Thank you for your work. I've benefited from it and thank God for it.</p></div>
-
 <div class="callout"><p>You are a blessing to the church. Thank you.</p></div>
-
 <div class="callout"><p>I appreciate the work you all are doing.</p></div>
-
 <div class="callout"><p>I get that the American context naturally dominates, with some cameo appearances from Englishmen, but at least a little bit more content that speaks into the global context would be appreciated. Minor point really — I love the work that you guys are doing. Context is that I am an Australian living in Indonesia attending a Presy church.</p></div>
-
 <div class="callout"><p>I used to be a campus minister with a parachurch organization. In finding Mere O, it has felt like a little more balance in perspectives like I had when I worked for the ministry. Appreciate your work as it grows my faith.</p></div>
-
 <div class="callout"><p>Mere Orthodoxy is (for me) a counterpoint to social media, a place of depth and critical thought.</p></div>
-
 <div class="callout"><p>Thank you for your ministry!</p></div>
-
 <div class="callout"><p>I appreciate the thoughtful writing and commentary on important things. Thank you.</p></div>
-
 <div class="callout"><p>I am so encouraged and challenged by your work, and I am deeply grateful for all of those involved!</p></div>
-
 <div class="callout"><p>Greatly appreciate what you guys are already doing. Please keep up the good work!!!</p></div>
-
 <div class="callout"><p>Love the podcast!</p></div>
-
 <div class="callout"><p>Thank you for making such great writing. I only recently began reading y'all, but MO has been absolutely excellent (insightful, historic, and solidly Christian.)</p></div>
-
 <div class="callout"><p>You all are a breath of fresh air. I praise God for you.</p></div>
-
 <div class="callout"><p>Politics and its polarization have pretty much colonized all of our lives, so I like content from a Christian perspective that provides lenses on that, and I also like content that challenges me to remember that being a faithful Christian means a lot more than politics.</p></div>
-
 <div class="callout"><p>My email is ciaradunne2001@outlook.ie. I just want to say I appreciate everything Mere Orthodoxy does!</p></div>
-
 <div class="callout"><p>You guys are great, thank you so much for your labors on behalf of Christ and his church!</p></div>
-
 <div class="callout"><p>I appreciate the variety of essays. I love hearing how different Christians are applying the Bible to their industries and everyday lives.</p></div>
-
 <div class="callout"><p>You all do a great job. Hold the line. Keep up the good work. Don't pander to the desires of men.</p></div>
-
 <div class="callout"><p>Thank you for all that you do.</p></div>
-
 <div class="callout"><p>I love Mere Orthodoxy! One of the best protestant publications out there!</p></div>
-
 <div class="callout"><p>Love your work and the depth of it. Keep up the good work, brothers! As a father of a small child I especially appreciate the audio versions on your website and on substack. I listen to some of your articles while doing dishes and so on. But I often realise they are so insightful and deep that I have to pause and relisten :)</p></div>
-
 <div class="callout"><p>You guys are a great resource for the Church. Thanks for thinking deeply and providing the fruit of your labor!</p></div>
-
 <div class="callout"><p>Appreciate all you are doing. It's one of the few intelligent voices out there.</p></div>
-
 <div class="callout"><p>Love the work my dudes and dudettes!</p></div>
-
 <div class="callout"><p>Thank you for all you do!</p></div>
-
 <div class="callout"><p>Thanks for what you do!</p></div>
-
 <div class="callout"><p>Just to say keep up the good work. I've been listening to Mere Fidelity since basically the beginning and it remains a highlight of my week. I discovered Mere Orthodoxy about the same time I discovered the podcast and have also found it a very helpful outlet over the years. I am less Reformed and more inclined to the apostolic traditions than I once was, but all the same, I still greatly appreciate the work you do.</p></div>
-
 <div class="callout"><p>Thank you for your labors this past year. Your extra effort is paying off!</p></div>
-
 <div class="callout"><p>Love the work you do at Mere O!</p></div>
-
 <div class="callout"><p>I'm a non-Christian who thinks that a revived Christianity is essential for our nation to work its way out of our current troubles. From my outsider's perspective, I'm heartened by Mere Orthodoxy's Christian witness.</p></div>
-
 <div class="callout"><p>As a professor at Dallas Baptist University, my biggest challenge is to continually and faithfully usher students in a confused culture to genuine Christian faith — a faith that Christ is still forming in me. Your journal helps provide touchpoints between faith and culture that have proven formative in this task.</p></div>
-
 </div>
-
 <!-- CRITICISM -->
 <div class="sub-panel" id="feedback-criticism">
-
 <p>Constructive criticism, concerns, and suggestions for improvement from the "Anything else?" field.</p>
-
 <div class="callout"><p>I appreciate the increased content, but I've seen a decline in article quality now that you're posting two articles a day. Recycled substack posts or shorter shallower articles aren't what I read you for. I come to Mere O for "nuance and wordcount" not short takes. Prioritizing feature quantity over quality dilutes your brand.</p></div>
-
 <div class="callout"><p>Regarding what would make MereO more valuable, I selected "More Cultural Commentary," but only because of all the "more of something" options, this is most interesting to me. But with a plethora of things to read already, I honestly think the thing that would make most publications more valuable is not more content, but less. Rather than 2 articles per day, I'd rather get 2 per week that are really, really worth it.</p></div>
-
 <div class="callout"><p>I joined Mere Orthodoxy as a paying member a few months ago specifically to interact with the Discord community. Unfortunately it seems the Discord is the same as all other Discords I've ever been a part of: filled with lots of in-jokes and "lore" that is, frankly, quite off-putting for a new person who simply doesn't have the time or inclination to scroll through lengthy past discussions only to understand the humor. I will probably let my paying membership expire at the end of a year (unless I somehow manage to forge some serious and meaningful friendships among the people using the M.O. Discord).</p></div>
-
 <div class="callout"><p>I didn't like the article in gowning — I thought it was too detailed too long too comprehensive and I'm pretty sure it was a temptation to a lot of readers to explore that trail more deeply. I don't think it was redeeming, I didn't think it elevated anything, I thought it was depressing and so sad and frightening, and I did not understand the place of it in your magazine.</p></div>
-
 <div class="callout"><p>Y'all are doing great work. So grateful. I do get a bit overwhelmed each week by the number of articles mentioned in the email blast. I'd appreciate if there were fewer.</p></div>
-
 <div class="callout"><p>I genuinely hope more social media engagement is not the consensus of this survey. I'm eager for MereO to get more awareness and support for its mission, and obviously much of this will come from online presence in some form. But I think too strong a push for that sort of presence (a pivot to video or some such) potentially endangers the MereO "defending words counts on the web" mission, the medium being the message and all that.</p></div>
-
 <div class="callout"><p>Your content is good; impressed. An essay per day on Substack is too much, reduce the frequency. It becomes irritating. I'm probably going to unsubscribe from Substack because I like the email digest format.</p></div>
-
 <div class="callout"><p>I feel like many of the Mere O articles use "$5 words," as my mother called them. That's great — the author is smart. But that can make them inaccessible to the wider public. Just something to think about…</p></div>
-
 <div class="callout"><p>Sometimes the articles seem esoteric or intellectual for the sake of being intellectual.</p></div>
-
 <div class="callout"><p>I would like far far less content and content less frequently. Give us beautiful solid material, a few pieces a month. And that's it. The amount of content is too much to actually consume or engage with any thought or deliberation because 16 more things have just come into my inbox... Slow the content down, and just give us the best stuff… And then give us time to consume it and read it talk about it underline it.</p></div>
-
 <div class="callout"><p>Have dear friends who write for MereO and I love it. Very needed as a Protestant institution. Lately I've noticed there's been an upsurge of articles from folks I've never heard of. I pass these pieces by as there are too many. I'm a fan of First Things. They have regular writers I'm familiar with and I have more comfort in knowing what to expect.</p></div>
-
 <div class="callout"><p>I skip about half the articles because they involve an author I don't know reacting to a book by another author I don't know on what seems like a very narrow theological or historical point.</p></div>
-
 <div class="callout"><p>Although there are no checkboxes for what would make MO less valuable to me, so I'll just say more social media engagement would make it less valuable to me. As was said in a recent mailing: "It's realizing that some technologies are designed for the maximum extraction of our humanity and it is simply time to say 'No' to those."</p></div>
-
 <div class="callout"><p>An app might be nice. I would like to read articles on my phone more, but my browser app doesn't keep me logged in.</p></div>
-
 <div class="callout"><p>Maybe benefit from less intellectual communication and words. Maybe address issue of Christians being driven more by 'pragmatism' than by the Word of God in areas of worship, Christian living and evangelism.</p></div>
-
 <div class="callout"><p>I love MereO. I think the emails from MereO are too frequent. They are sometimes valuable enough so that I haven't unsubscribed yet, but it borders on spam.</p></div>
-
 <div class="callout"><p>There's too much content in Mere Orthodoxy for me to do more than skim it.</p></div>
-
 <div class="callout"><p>It is truly staggering how much Christian content is pumped out and how everyone is asking for support. Don't know what the answer is but the noise is loud.</p></div>
-
 <div class="callout"><p>Your list of other media is pitiful. I read Sojourners, Baptist News Global, Phoebe organization news, Christian Century.</p></div>
-
 <div class="callout"><p>I wanted to subscribe to the print journal but there was no shipping to Canada.</p></div>
-
 <div class="callout"><p>My church is apathetic to cultural engagement (prefer silence/neutrality on all but a few standard topics: abortion, LGBT issues) and I'm concerned about the epistemic crisis and dearth of minds being renewed to think deeply and critically about the faith itself.</p></div>
-
 </div>
-
 <!-- PATTERNS -->
 <div class="sub-panel" id="feedback-patterns">
-
 <p>Key patterns distilled from the praise and criticism, with actionable takeaways.</p>
-
 <h3>What's Working</h3>
-
 <div class="callout">
     <p><strong>You Are a Lifeline for the Politically Homeless.</strong> The most emotionally resonant praise comes from readers who feel stranded between partisan camps. They describe MO as a "counterpoint to social media," a "boon to my sanity," and a companion on their spiritual journey. Multiple respondents explicitly say you occupy a space no one else fills. <em>Action: This is your brand. Protect it fiercely. Never let content drift toward predictable partisan alignment in either direction.</em></p>
 </div>
-
 <div class="callout">
     <p><strong>Depth Is Your Differentiator.</strong> Readers praise you for "nuance and wordcount," for being "insightful, historic, and solidly Christian," and for the kind of intellectual depth they can't find elsewhere. A non-Christian respondent even called your work essential for national renewal. <em>Action: Depth is not a liability — it's your competitive moat. Don't dilute it chasing broader appeal.</em></p>
 </div>
-
 <div class="callout">
     <p><strong>The Audio Versions Are a Quiet Win.</strong> A parent of a small child specifically praised the audio versions for letting him listen while doing dishes — then noted the articles are so substantive he often has to pause and relisten. This is high engagement, not a problem. <em>Action: Continue investing in audio. It expands your addressable audience to time-constrained parents and pastors without dumbing anything down.</em></p>
 </div>
-
 <div class="callout">
     <p><strong>The Loyalty Runs Deep.</strong> Readers since 2015. Listeners since the beginning of Mere Fidelity. A campus minister who found balance through you. These aren't casual consumers — they're committed. <em>Action: Treat long-term readers as an asset. Consider a "Founding Readers" or tenure-based recognition to deepen the relationship.</em></p>
 </div>
-
 <h3>What Needs Attention</h3>
-
 <div class="callout">
     <p><strong>Content Volume Is Your #1 Criticism.</strong> This was the single most repeated piece of feedback, appearing in at least 8 distinct responses. Readers used words like "overwhelming," "irritating," "borders on spam," and "too much to consume." Multiple people asked for fewer, higher-quality pieces. One put it bluntly: "Rather than 2 articles per day, I'd rather get 2 per week that are really, really worth it." <em>Action: This is urgent. Consider cutting publishing frequency and making each piece feel like an event rather than a feed item. Your readers are telling you that less would be more.</em></p>
 </div>
-
 <div class="callout">
     <p><strong>Quality Perception Is Slipping with Volume.</strong> Connected to volume but distinct: several readers noted a decline in article quality tied to increased output. "Recycled substack posts or shorter shallower articles aren't what I read you for." Another noticed "an upsurge of articles from folks I've never heard of" and started skipping them. <em>Action: Audit your contributor pipeline. Readers trust your regular voices. Unknown authors writing on narrow topics feel like filler, even if they're not.</em></p>
 </div>
-
 <div class="callout">
     <p><strong>The Discord Isn't Converting Members.</strong> One paying member joined specifically for the Discord community and found it impenetrable — "filled with lots of in-jokes and 'lore' that is, frankly, quite off-putting for a new person." They're likely to let their membership expire. <em>Action: If Discord is a membership selling point, it needs onboarding. Consider a welcome channel, monthly new-member intros, or a moderated discussion thread that's explicitly newcomer-friendly.</em></p>
 </div>
-
 <div class="callout">
     <p><strong>Accessibility vs. Depth Tension.</strong> Two respondents flagged the writing as sometimes inaccessible — "$5 words" and "esoteric or intellectual for the sake of being intellectual." This is a minority view, but it's worth noting alongside the majority who love the depth. <em>Action: You don't need to dumb down. But consider a mix: some pieces that are entry-level on-ramps to the deeper work. Think of it as a portfolio, not a single register.</em></p>
 </div>
-
 <div class="callout">
     <p><strong>Social Media Expansion Would Backfire.</strong> Multiple readers proactively warned against increased social media engagement. One quoted MO's own mailing back at you about technologies "designed for the maximum extraction of our humanity." Another feared a "pivot to video." <em>Action: Your readers chose you because you're not that. Any social expansion should be distribution-only (sharing links), never a shift in medium or voice.</em></p>
 </div>
-
 <div class="callout">
     <p><strong>International and Canadian Readers Feel Excluded.</strong> An Australian in Indonesia wants more global content. A Canadian couldn't subscribe to the print journal due to shipping restrictions. <em>Action: Consider international shipping options for print, and occasionally commission or solicit pieces from non-American contexts. Your "mere" brand should feel global.</em></p>
 </div>
-
 </div>
-
 </div>
-
 </div><!-- end .tab-content -->
-
 </div><!-- end .page-wrap -->
+</div><!-- end .year-panel year-2026 -->
+
+
+<div class="year-panel" id="year-2025">
+<p class="subtitle" style="text-align:center; padding:12px 24px 0;">636 respondents &middot; February 2025</p>
+<div class="page-wrap">
+<nav class="tab-sidebar" id="sidebar-2025">
+    <button class="active" data-tab="panel-2025-summary">Summary</button>
+    <button data-tab="panel-2025-readers">Readers</button>
+    <button data-tab="panel-2025-feedback">Feedback</button>
+</nav>
+
+<div class="tab-content">
+<!-- SUMMARY -->
+<div class="tab-panel panel-2025-summary active">
+<div class="sub-tabs" data-group="summary-2025">
+    <button class="sub-tab active" data-target="summary-2025-executive">Executive</button>
+    <button class="sub-tab" data-target="summary-2025-editorial">Editorial</button>
+    <button class="sub-tab" data-target="summary-2025-marketing">Marketing</button>
+</div>
+<div class="sub-panel active" id="summary-2025-executive">
+<h2 style="margin-top: 0;">The Big Picture</h2>
+<p>636 readers responded to the February 2025 survey. This is a substantially larger and more representative sample than previous years — all respondents identified as "Readers" with no member/subscriber split at this stage. They tell a compelling story about who Mere Orthodoxy serves and what it should prioritize.</p>
+<p>Your readership is 82% male, heavily Protestant (100%), and disproportionately composed of pastors and elders (41.7% combined). Presbyterians lead at 29.6%, but the denominational spread is genuinely broad — Baptist readers (16.5%), Non-denominational (18.9%), and Anglican (12.6%) together account for nearly half the audience. This is the "mere" in Mere Orthodoxy actually working.</p>
+<h2>What Readers Want</h2>
+<p>Three topics form the universal foundation: Theology/Doctrine/Church History (83.6%), Cultural Analysis (82.2%), and Christian Life &amp; Church Life (72.2%). These are nearly universal across every demographic. When asked what would make MO more valuable, readers cluster around depth: more in-depth theological content (51.9%) and more cultural commentary (50.8%) are virtually tied at the top.</p>
+<p>The most significant emerging interest is Technology &amp; Humanity (45.6% overall, 56-58% among under-54s). Among younger readers, Family &amp; Sexuality interest reaches 58.4% — the highest of any age-gender combination in your data. These are parents trying to think Christianly about formation and culture.</p>
+<h2>What They Are Struggling With</h2>
+<p>463 readers wrote about their challenges (72.8% response rate). The themes cluster around time/busyness (15.6%), parenting/family (16.4%), cultural engagement (14.5%), spiritual disciplines (14.3%), and political polarization (14.0%). All run 14-17%. There is no single dominant challenge — your readers are juggling multiple, profound tensions simultaneously.</p>
+<p>Among pastors specifically, the political burden runs deepest. They are navigating congregations fractured by partisan divisions while trying to maintain pastoral compassion for all sides. This is the emotional undercurrent beneath many responses.</p>
+<h2>What You Should Do</h2>
+<p><strong>Deepen theological-cultural content.</strong> The demand is clear: readers want both theology and cultural analysis, not as separate categories but as an integrated lens. Your best work has always done this.</p>
+<p><strong>Launch Faith &amp; Family content.</strong> Family interest reaches 58.4% among under-35 readers and 49.6% among 35-54s. This is the single biggest unmet need. Frame it as formation, ecclesiology, and practical wisdom at the intersection of faith and parenting.</p>
+<p><strong>Invest in Technology &amp; AI coverage.</strong> 45.6% overall interest, rising to 56-58% among under-54s. Technology was the second-most cited challenge theme (17.3%). Your younger readers want help thinking theologically about what it means to be human in a digital age.</p>
+<p><strong>Protect and celebrate the denominational diversity.</strong> Presbyterians are your core (29.6%) but Baptists (16.5%), Non-denom (18.9%), and Anglicans (12.6%) together account for nearly half. This is a strength. Don't narrow toward any single tradition.</p>
+<p><strong>Maintain audio investment.</strong> 20.1% of readers engage via podcast, and audio content addresses the time constraint challenge without dumbing down. Busy pastors and parents with commutes need this.</p>
+<h2>What Not to Do</h2>
+<p>Only 3.5% want more social media. Only 6.4% want video content. Only 2.5% want exclusive member-only content. Your readers chose you because you offer depth in a shallow media environment. Don't dilute that strength chasing broader appeal.</p>
+</div>
+<div class="sub-panel" id="summary-2025-editorial">
+<h2 style="margin-top: 0;">Editorial Summary</h2>
+<p>This summary focuses on content strategy, editorial priorities, and audience needs surfaced by the survey data.</p>
+<h3>The Content Hierarchy</h3>
+<p>The universal triad — Theology, Culture, and Church — remains your foundation (72-84% across the audience). Everything else is important but secondary. The critical editorial insight is that these three are not separate buckets. Your best content lives at their intersection.</p>
+<h3>The Emerging Gaps</h3>
+<p><strong>Family Content.</strong> 58.4% of under-35 readers, 49.6% of 35-54s, and 41.8% overall want family-focused content. Yet this ranks 8th in your current content mix. Parents are struggling with formation in a hostile culture and want theological guidance grounded in practical wisdom. This is not "mommy blog" territory — it's ecclesiology applied to parenting.</p>
+<p><strong>Technology &amp; AI.</strong> 45.6% overall interest, reaching 56-58% among readers under 54. Technology/AI/Distraction was cited as a challenge by 17.3% — the second-most common theme. Your younger readers are grappling with fundamental anthropological questions: what does it mean to be human, embodied, and faithful in a digital age?</p>
+<h3>Age Divergence in Interests</h3>
+<ul>
+    <li><strong>Technology &amp; Humanity:</strong> Under 35: 56.0%, 35-54: 58.0%, 55+: 23.6% — a massive generational divide</li>
+    <li><strong>Family &amp; Sexuality:</strong> Under 35: 58.4%, 35-54: 49.6%, 55+: 20.5% — again, clear age stratification</li>
+    <li><strong>Cultural Analysis:</strong> Under 35: 86.1%, 35-54: 85.2%, 55+: 75.9% — universally high but strongest in younger cohorts</li>
+    <li><strong>Philosophy &amp; Ethics:</strong> Under 35: 62.7%, 35-54: 66.0%, 55+: 47.7% — younger readers more interested in foundational thinking</li>
+</ul>
+<h3>The Reading Audience</h3>
+<p>74.5% read weekly or more — these are habitual readers, not browsers. Website (81.3%) dominates as the primary channel, followed by email newsletter (48.6%) and podcasts (20.1%). This is an audience that has chosen depth over breadth and committed to regular engagement.</p>
+<h3>What's Working</h3>
+<p>Readers explicitly want more of what you already do: theological depth (51.9% want more) and cultural commentary (50.8% want more). You have not lost the plot. You just need to go deeper on the content that's already working.</p>
+</div>
+<div class="sub-panel" id="summary-2025-marketing">
+<h2 style="margin-top: 0;">Marketing Summary</h2>
+<p>This summary focuses on audience growth, competitive positioning, and channel strategy.</p>
+<h3>Your Competitive Position</h3>
+<p>MO occupies a distinctive niche: more intellectual than TGC (49.7% of readers follow TGC), more Protestant than First Things (38.5%), less institutional than Christianity Today (34.3%), and more curated than individual Substack newsletters (45.6% follow them). This positioning is your strategic advantage.</p>
+<h3>Growth Demographics</h3>
+<p>Your under-35 cohort (26.1% of readers) is disproportionately engaged and represents your future. They want Technology (56%), Family (58.4%), and Cultural Analysis (86.1%) at higher rates than older cohorts. They are not your largest segment but they are your most growth-oriented one.</p>
+<p>The 35-54 age group (250 readers, 39.3%) is actually your largest segment. These are mid-career leaders, parents navigating cultural complexity, and people with disposable income for memberships. They want balanced content across theology, culture, and family.</p>
+<h3>The Acquisition Funnel</h3>
+<p>Most readers discover MO via: TGC crossover (49.7%), Substack recommendations (45.6%), or direct search. They engage via website (81.3%), then newsletter (48.6%), then podcasts (20.1%). The pathway is: discovery → website reading → email subscription → podcast engagement → (potentially) membership.</p>
+<h3>Channel Strategy</h3>
+<p><strong>Website:</strong> Your primary platform at 81.3%. Prioritize content quality and discoverability on the site itself.</p>
+<p><strong>Email:</strong> Second channel at 48.6%. Newsletter strategy is critical for retention and directing readers to your best content.</p>
+<p><strong>Podcasts:</strong> Third at 20.1%, but growing among younger readers (24.7% among under-35). This is your conversion bridge to membership.</p>
+<p><strong>Social Media:</strong> Only 6.1% use it. Don't over-invest here. Use it for discovery links, not engagement.</p>
+<h3>What Not to Invest In</h3>
+<p>Only 3.5% want more social media. Only 6.4% want video. Only 2.5% want exclusive member-only content. Your readers came to you to escape shallow media. Don't follow them down those paths.</p>
+</div>
+</div>
+<!-- READERS -->
+<div class="tab-panel panel-2025-readers">
+<div class="kpis">
+    <div class="kpi"><div class="kpi-val">636</div><div class="kpi-label">Respondents</div></div>
+    <div class="kpi"><div class="kpi-val">82%</div><div class="kpi-label">Male</div></div>
+    <div class="kpi"><div class="kpi-val">35%</div><div class="kpi-label">Age 55+</div></div>
+    <div class="kpi"><div class="kpi-val">42%</div><div class="kpi-label">Pastors &amp; Elders</div></div>
+    <div class="kpi"><div class="kpi-val">75%</div><div class="kpi-label">Read Weekly+</div></div>
+</div>
+<div class="callout">
+    <p><strong>The Core Truth.</strong> Your readers are not casual browsers. 75% read weekly or more. 41.7% are pastors or elders. They come to MO because they are trying to think Christianly through hard problems, and most other outlets either lack depth or have become too partisan to trust.</p>
+</div>
+<div class="callout">
+    <p><strong>The Biggest Opportunity.</strong> Your under-35 cohort (26.1% of readers) wants Family content at 58.4% and Technology at 56%. They are navigating parenthood, technology, and cultural shifts simultaneously. This is the fastest-moving demographic in your audience and the most underserved by current content.</p>
+</div>
+<div class="callout">
+    <p><strong>The Denominational Strength.</strong> 100% Protestant, but genuinely diverse: Presbyterian (29.6%), Non-denominational (18.9%), Baptist (16.5%), Anglican (12.6%), with meaningful representation across Lutheran, Episcopal, Methodist, Pentecostal, and other traditions. You genuinely appeal across the Protestant spectrum. This is your "mere" actually working.</p>
+</div>
+<div class="callout">
+    <p><strong>The Political Undercurrent.</strong> 14% of responses explicitly mention political polarization. But across theology, church life, and even challenges around "cultural engagement," political division runs through many responses. Your readers are grieving the politicization of evangelicalism and looking for resources to stay faithful without taking partisan sides.</p>
+</div>
+
+<h2>Who Is Reading</h2>
+<h3>Age Distribution</h3>
+<div class="bar-chart">
+    <div class="bar-row"><span class="bar-label">Under 18</span><div class="bar-track"><div class="bar-fill" style="width:1%"></div></div><span class="bar-val">0.3%</span></div>
+    <div class="bar-row"><span class="bar-label">18–24</span><div class="bar-track"><div class="bar-fill" style="width:3.5%"></div></div><span class="bar-val">3.5%</span></div>
+    <div class="bar-row"><span class="bar-label">25–34</span><div class="bar-track"><div class="bar-fill" style="width:22.3%"></div></div><span class="bar-val">22.3%</span></div>
+    <div class="bar-row"><span class="bar-label">35–44</span><div class="bar-track"><div class="bar-fill" style="width:25.9%"></div></div><span class="bar-val">25.9%</span></div>
+    <div class="bar-row"><span class="bar-label">45–54</span><div class="bar-track"><div class="bar-fill" style="width:13.4%"></div></div><span class="bar-val">13.4%</span></div>
+    <div class="bar-row"><span class="bar-label">55–64</span><div class="bar-track"><div class="bar-fill" style="width:13.7%"></div></div><span class="bar-val">13.7%</span></div>
+    <div class="bar-row"><span class="bar-label">65+</span><div class="bar-track"><div class="bar-fill" style="width:20.9%"></div></div><span class="bar-val">20.9%</span></div>
+</div>
+<h3>Protestant Denominations</h3>
+<div class="bar-chart">
+    <div class="bar-row"><span class="bar-label">Presbyterian</span><div class="bar-track"><div class="bar-fill" style="width:29.6%"></div></div><span class="bar-val">29.6%</span></div>
+    <div class="bar-row"><span class="bar-label">Non-Denom</span><div class="bar-track"><div class="bar-fill" style="width:18.9%"></div></div><span class="bar-val">18.9%</span></div>
+    <div class="bar-row"><span class="bar-label">Baptist</span><div class="bar-track"><div class="bar-fill" style="width:16.5%"></div></div><span class="bar-val">16.5%</span></div>
+    <div class="bar-row"><span class="bar-label">Anglican</span><div class="bar-track"><div class="bar-fill" style="width:12.6%"></div></div><span class="bar-val">12.6%</span></div>
+    <div class="bar-row"><span class="bar-label">Lutheran</span><div class="bar-track"><div class="bar-fill" style="width:2.7%"></div></div><span class="bar-val">2.7%</span></div>
+    <div class="bar-row"><span class="bar-label">Episcopal</span><div class="bar-track"><div class="bar-fill" style="width:2%"></div></div><span class="bar-val">2.0%</span></div>
+    <div class="bar-row"><span class="bar-label">Methodist</span><div class="bar-track"><div class="bar-fill" style="width:1.9%"></div></div><span class="bar-val">1.9%</span></div>
+    <div class="bar-row"><span class="bar-label">Pentecostal</span><div class="bar-track"><div class="bar-fill" style="width:1.4%"></div></div><span class="bar-val">1.4%</span></div>
+    <div class="bar-row"><span class="bar-label">Other</span><div class="bar-track"><div class="bar-fill" style="width:14.5%"></div></div><span class="bar-val">14.5%</span></div>
+</div>
+<div class="callout muted">
+    <p><strong>Age Distribution.</strong> 26.1% under 35, 39.3% ages 35-54, 34.6% age 55+. Your readership skews older but not dramatically. The 35-54 age group is actually your single largest demographic, reflecting the appeal to mid-career professionals and established leaders.</p>
+</div>
+<div class="callout muted">
+    <p><strong>The Denominational Spread Is Your Strength.</strong> 93% are affiliated with a Protestant denomination, but spread across nine categories with no single denomination exceeding 30%. This is your "mere" in Mere Orthodoxy actually working. Guard this carefully — the appeal to Reformed, Baptist, Anglican, and non-denominational readers simultaneously is rare and valuable.</p>
+</div>
+<h3>Church Role</h3>
+<div class="bar-chart">
+    <div class="bar-row"><span class="bar-label">Lay Member</span><div class="bar-track"><div class="bar-fill" style="width:45.9%"></div></div><span class="bar-val">45.9%</span></div>
+    <div class="bar-row"><span class="bar-label">Pastor</span><div class="bar-track"><div class="bar-fill" style="width:25.8%"></div></div><span class="bar-val">25.8%</span></div>
+    <div class="bar-row"><span class="bar-label">Elder / Deacon</span><div class="bar-track"><div class="bar-fill" style="width:15.9%"></div></div><span class="bar-val">15.9%</span></div>
+    <div class="bar-row"><span class="bar-label">Academic</span><div class="bar-track"><div class="bar-fill" style="width:7.2%"></div></div><span class="bar-val">7.2%</span></div>
+    <div class="bar-row"><span class="bar-label">Parachurch</span><div class="bar-track"><div class="bar-fill" style="width:5.2%"></div></div><span class="bar-val">5.2%</span></div>
+</div>
+<div class="callout muted">
+    <p><strong>Leadership Concentration.</strong> 41.7% are pastors or elders. Your audience is disproportionately composed of people responsible for others' spiritual formation. This shapes your content strategy: these readers need resources they can use in ministry, not just for personal enrichment.</p>
+</div>
+
+<h2>How They Read You</h2>
+<h3>Reading Frequency</h3>
+<div class="bar-chart">
+    <div class="bar-row"><span class="bar-label">Daily</span><div class="bar-track"><div class="bar-fill" style="width:6%"></div></div><span class="bar-val">6.0%</span></div>
+    <div class="bar-row"><span class="bar-label">Few times/week</span><div class="bar-track"><div class="bar-fill" style="width:28.8%"></div></div><span class="bar-val">28.8%</span></div>
+    <div class="bar-row"><span class="bar-label">Weekly</span><div class="bar-track"><div class="bar-fill" style="width:39.8%"></div></div><span class="bar-val">39.8%</span></div>
+    <div class="bar-row"><span class="bar-label">Monthly</span><div class="bar-track"><div class="bar-fill" style="width:13.7%"></div></div><span class="bar-val">13.7%</span></div>
+    <div class="bar-row"><span class="bar-label">Occasionally</span><div class="bar-track"><div class="bar-fill" style="width:11.8%"></div></div><span class="bar-val">11.8%</span></div>
+</div>
+<h3>Engagement Channels</h3>
+<div class="bar-chart">
+    <div class="bar-row"><span class="bar-label">Website</span><div class="bar-track"><div class="bar-fill" style="width:81.3%"></div></div><span class="bar-val">81.3%</span></div>
+    <div class="bar-row"><span class="bar-label">Newsletter/Email</span><div class="bar-track"><div class="bar-fill" style="width:48.6%"></div></div><span class="bar-val">48.6%</span></div>
+    <div class="bar-row"><span class="bar-label">Podcast(s)</span><div class="bar-track"><div class="bar-fill" style="width:20.1%"></div></div><span class="bar-val">20.1%</span></div>
+    <div class="bar-row"><span class="bar-label">Social media</span><div class="bar-track"><div class="bar-fill" style="width:6.1%"></div></div><span class="bar-val">6.1%</span></div>
+</div>
+<div class="callout muted">
+    <p><strong>Website Dominates.</strong> 81.3% engage via website articles, making this your primary channel. Newsletter (48.6%) is the secondary engagement vehicle, especially important for retention. Podcasts (20.1%) represent the emerging audio segment — still minority but growing among younger readers.</p>
+</div>
+
+<h2>What They Want</h2>
+<h3>Content Interests (Overall)</h3>
+<div class="bar-chart">
+    <div class="bar-row"><span class="bar-label">Theology, Doctrine, Church History</span><div class="bar-track"><div class="bar-fill" style="width:83.6%"></div></div><span class="bar-val">83.6%</span></div>
+    <div class="bar-row"><span class="bar-label">Cultural Analysis</span><div class="bar-track"><div class="bar-fill" style="width:82.2%"></div></div><span class="bar-val">82.2%</span></div>
+    <div class="bar-row"><span class="bar-label">Christian Life &amp; Church Life</span><div class="bar-track"><div class="bar-fill" style="width:72.2%"></div></div><span class="bar-val">72.2%</span></div>
+    <div class="bar-row"><span class="bar-label">Philosophy &amp; Ethics</span><div class="bar-track"><div class="bar-fill" style="width:58.8%"></div></div><span class="bar-val">58.8%</span></div>
+    <div class="bar-row"><span class="bar-label">Politics &amp; Society</span><div class="bar-track"><div class="bar-fill" style="width:55%"></div></div><span class="bar-val">55.0%</span></div>
+    <div class="bar-row"><span class="bar-label">Book Reviews</span><div class="bar-track"><div class="bar-fill" style="width:46.7%"></div></div><span class="bar-val">46.7%</span></div>
+    <div class="bar-row"><span class="bar-label">Technology &amp; Humanity</span><div class="bar-track"><div class="bar-fill" style="width:45.6%"></div></div><span class="bar-val">45.6%</span></div>
+    <div class="bar-row"><span class="bar-label">Family &amp; Sexuality</span><div class="bar-track"><div class="bar-fill" style="width:41.8%"></div></div><span class="bar-val">41.8%</span></div>
+    <div class="bar-row"><span class="bar-label">Education</span><div class="bar-track"><div class="bar-fill" style="width:27.4%"></div></div><span class="bar-val">27.4%</span></div>
+    <div class="bar-row"><span class="bar-label">Leadership</span><div class="bar-track"><div class="bar-fill" style="width:25.9%"></div></div><span class="bar-val">25.9%</span></div>
+    <div class="bar-row"><span class="bar-label">Interviews &amp; Podcasts</span><div class="bar-track"><div class="bar-fill" style="width:22.2%"></div></div><span class="bar-val">22.2%</span></div>
+    <div class="bar-row"><span class="bar-label">Health &amp; Medicine</span><div class="bar-track"><div class="bar-fill" style="width:14.9%"></div></div><span class="bar-val">14.9%</span></div>
+</div>
+<div class="callout">
+    <p><strong>The Universal Triad: Theology + Culture + Church.</strong> These three topics are selected by 72-84% of readers across all age groups, genders, and roles. They are your foundation and should remain the backbone of your editorial calendar. Everything else is important but secondary.</p>
+</div>
+<div class="callout">
+    <p><strong>Technology Is Emerging.</strong> Technology interest is 45.6% overall but 56% among under-54 readers, and Technology/AI was the second-most cited challenge (17.3%). Your younger readers are grappling with what it means to be embodied creatures in a digital age. This is a natural extension of your formation and cultural commentary strengths.</p>
+</div>
+<div class="callout">
+    <p><strong>Family Content Is Underserved.</strong> 58.4% of 25-34 year olds want it, 49.6% of 35-54 year olds. Yet Family ranks 8th overall. This is the clearest content gap in your data. Your readers are trying to raise children in a confusing culture and want thoughtful, theologically-grounded guidance. This is not "mommy blog" territory; it is the intersection of formation, ecclesiology, and practical wisdom.</p>
+</div>
+
+<h3>What Would Make MO More Valuable</h3>
+<div class="bar-chart">
+    <div class="bar-row"><span class="bar-label">More in-depth theological content</span><div class="bar-track"><div class="bar-fill" style="width:51.9%"></div></div><span class="bar-val">51.9%</span></div>
+    <div class="bar-row"><span class="bar-label">More cultural commentary</span><div class="bar-track"><div class="bar-fill" style="width:50.8%"></div></div><span class="bar-val">50.8%</span></div>
+    <div class="bar-row"><span class="bar-label">Audio version of articles</span><div class="bar-track"><div class="bar-fill" style="width:19.7%"></div></div><span class="bar-val">19.7%</span></div>
+    <div class="bar-row"><span class="bar-label">More podcast content</span><div class="bar-track"><div class="bar-fill" style="width:17.8%"></div></div><span class="bar-val">17.8%</span></div>
+    <div class="bar-row"><span class="bar-label">More video content</span><div class="bar-track"><div class="bar-fill" style="width:6.4%"></div></div><span class="bar-val">6.4%</span></div>
+    <div class="bar-row"><span class="bar-label">More social media</span><div class="bar-track"><div class="bar-fill" style="width:3.5%"></div></div><span class="bar-val">3.5%</span></div>
+    <div class="bar-row"><span class="bar-label">Exclusive member-only content</span><div class="bar-track"><div class="bar-fill" style="width:2.5%"></div></div><span class="bar-val">2.5%</span></div>
+</div>
+<div class="callout">
+    <p><strong>Depth, Not Breadth.</strong> Only 6.4% want video. Only 3.5% want more social media. Only 2.5% want exclusive member content. Your readers chose MO to escape the shallow media ecosystem. They want you to go deeper, not broader.</p>
+</div>
+
+<h2>What Keeps Them Up at Night</h2>
+<p>463 readers wrote free-text responses about their biggest challenges (72.8% response rate). Responses were coded into themes.</p>
+<h3>Challenge Themes <span style="font-weight:400; font-size:12px; color:#888; font-family:-apple-system,system-ui,sans-serif;">(click to see examples)</span></h3>
+<div class="bar-chart">    <div class="bar-row clickable" onclick="toggleExamples(this)"><span class="bar-label">Technology / AI / Distraction</span><div class="bar-track"><div class="bar-fill" style="width:95%"></div></div><span class="bar-val">17.3%</span></div>
+    <div class="examples-panel">
+        <div class="examples-header">Sample responses</div>
+        <p>"Parenting in the silicon valley"</p><p>"Being distracted by all of the information that comes at me (and that I seek out, unfortunately)."</p><p>"How to be a faithful traditional Christian while meeting the challenges of contemporary society."</p>
+    </div>
+    <div class="bar-row clickable" onclick="toggleExamples(this)"><span class="bar-label">Parenting / Family</span><div class="bar-track"><div class="bar-fill" style="width:90%"></div></div><span class="bar-val">16.4%</span></div>
+    <div class="examples-panel">
+        <div class="examples-header">Sample responses</div>
+        <p>"Trying to encourage my kids to trust and value Christ."</p><p>"Pursuing an academic career while faithfully raising a young family."</p><p>"Care of souls, particularly the four young children I'm raising in urban Philly."</p>
+    </div>
+    <div class="bar-row clickable" onclick="toggleExamples(this)"><span class="bar-label">Time / Busyness</span><div class="bar-track"><div class="bar-fill" style="width:85%"></div></div><span class="bar-val">15.6%</span></div>
+    <div class="examples-panel">
+        <div class="examples-header">Sample responses</div>
+        <p>"Fighting busyness"</p><p>"Creating time to ponder, not just take in information"</p><p>"Finding a balance between family obligations and academic aspirations"</p>
+    </div>
+    <div class="bar-row clickable" onclick="toggleExamples(this)"><span class="bar-label">Cultural Engagement</span><div class="bar-track"><div class="bar-fill" style="width:79%"></div></div><span class="bar-val">14.5%</span></div>
+    <div class="examples-panel">
+        <div class="examples-header">Sample responses</div>
+        <p>"How to be a faithful traditional Christian while meeting the challenges of contemporary society."</p><p>"Discerning faithful cultural engagement and missiology in a post-liberal/post-secular/post-Christian society."</p><p>"Finding intellectual common cause with people who reject the right-left binary that's tearing apart the church along with society."</p>
+    </div>
+    <div class="bar-row clickable" onclick="toggleExamples(this)"><span class="bar-label">Spiritual Disciplines</span><div class="bar-track"><div class="bar-fill" style="width:78%"></div></div><span class="bar-val">14.3%</span></div>
+    <div class="examples-panel">
+        <div class="examples-header">Sample responses</div>
+        <p>"godliness"</p><p>"Overcoming sin, lack of time to read/think deeply, and navigating the current cultural moment in my church."</p><p>"Joining academic theological work with a personal vibrant faith life"</p>
+    </div>
+    <div class="bar-row clickable" onclick="toggleExamples(this)"><span class="bar-label">Political Polarization</span><div class="bar-track"><div class="bar-fill" style="width:77%"></div></div><span class="bar-val">14.0%</span></div>
+    <div class="examples-panel">
+        <div class="examples-header">Sample responses</div>
+        <p>"Though I am a conservative (Burkean Conservative; never voted for a Democrat in my life), I find the confluence between Christianity and right-wing politics and libertine techno-optimism to be repugnant."</p><p>"Difficulty navigating political polarization; often I feel myself drawn to both reactionary and progressive political visions."</p><p>"Being caught between increasingly extreme positions in the church."</p>
+    </div>
+    <div class="bar-row clickable" onclick="toggleExamples(this)"><span class="bar-label">Evangelism / Sharing Faith</span><div class="bar-track"><div class="bar-fill" style="width:58%"></div></div><span class="bar-val">10.6%</span></div>
+    <div class="examples-panel">
+        <div class="examples-header">Sample responses</div>
+        <p>"Discerning faithful cultural engagement and missiology in a post-liberal/post-secular/post-Christian society."</p><p>"As a missionary, God is good. But just tired (albeit from joyful, meaningful work as seminary teacher)"</p><p>"Navigating how to be winsome and a peacemaker, while also contending for the faith without compromise"</p>
+    </div>
+    <div class="bar-row clickable" onclick="toggleExamples(this)"><span class="bar-label">Church Life / Leadership</span><div class="bar-track"><div class="bar-fill" style="width:55%"></div></div><span class="bar-val">10.2%</span></div>
+    <div class="examples-panel">
+        <div class="examples-header">Sample responses</div>
+        <p>"The biggest challenge currently arises from mental exhaustion arising from duties related to my role as an elder."</p><p>"The contradictions and/or disconnect I observe between what the church says it believes and what its followers actually do."</p><p>"Grace in leadership"</p>
+    </div>
+    <div class="bar-row clickable" onclick="toggleExamples(this)"><span class="bar-label">Theology / Doctrine</span><div class="bar-track"><div class="bar-fill" style="width:48%"></div></div><span class="bar-val">8.9%</span></div>
+    <div class="examples-panel">
+        <div class="examples-header">Sample responses</div>
+        <p>"One is the challenge of Protestantism being a splintering machine with no universal human authoritative structure."</p><p>"Many Christians seem to confidently know the right answers to a whole range of pressing cultural, moral, and ethical questions. To be sure, some questions are straightforward, but others are not."</p><p>"With the death of my 6-year old daughter, learning to lament and heal."</p>
+    </div>
+    <div class="bar-row clickable" onclick="toggleExamples(this)"><span class="bar-label">Ecclesial Identity</span><div class="bar-track"><div class="bar-fill" style="width:40%"></div></div><span class="bar-val">7.3%</span></div>
+    <div class="examples-panel">
+        <div class="examples-header">Sample responses</div>
+        <p>"Whether to stay in the Episcopal Church or to go ACNA."</p><p>"Disillusionment with my church and church tradition."</p><p>"The revitalization of the Christian, specifically protestant, church in America."</p>
+    </div>
+    <div class="bar-row clickable" onclick="toggleExamples(this)"><span class="bar-label">Loneliness / Isolation</span><div class="bar-track"><div class="bar-fill" style="width:32%"></div></div><span class="bar-val">5.8%</span></div>
+    <div class="examples-panel">
+        <div class="examples-header">Sample responses</div>
+        <p>"Feeling like I'm alone in my interest and concern for the bigger picture."</p><p>"We are in a very lonely space in the church regarding faith and culture"</p><p>"Having like minded women to discuss deeper topics"</p>
+    </div>
+    <div class="bar-row clickable" onclick="toggleExamples(this)"><span class="bar-label">Personal Faith Crisis</span><div class="bar-track"><div class="bar-fill" style="width:21%"></div></div><span class="bar-val">3.9%</span></div>
+    <div class="examples-panel">
+        <div class="examples-header">Sample responses</div>
+        <p>"With the death of my 6-year old daughter, learning to lament and heal, realizing that much of the evangelical church is simply not equipped nor prepared for suffering."</p><p>"Intellectual doubts"</p><p>"And the question of God's silence and my own lack of affection/belief in him always hangs over me."</p>
+    </div>
+</div>
+
+<h2>Where Else They Go</h2>
+<div class="bar-chart">    <div class="bar-row"><span class="bar-label">The Gospel Coalition</span><div class="bar-track"><div class="bar-fill" style="width:95%"></div></div><span class="bar-val">49.7%</span></div>
+    <div class="bar-row"><span class="bar-label">Substack Newsletters</span><div class="bar-track"><div class="bar-fill" style="width:87%"></div></div><span class="bar-val">45.6%</span></div>
+    <div class="bar-row"><span class="bar-label">First Things</span><div class="bar-track"><div class="bar-fill" style="width:73%"></div></div><span class="bar-val">38.5%</span></div>
+    <div class="bar-row"><span class="bar-label">Christianity Today</span><div class="bar-track"><div class="bar-fill" style="width:65%"></div></div><span class="bar-val">34.3%</span></div>
+    <div class="bar-row"><span class="bar-label">Plough</span><div class="bar-track"><div class="bar-fill" style="width:45%"></div></div><span class="bar-val">23.9%</span></div>
+    <div class="bar-row"><span class="bar-label">The Dispatch</span><div class="bar-track"><div class="bar-fill" style="width:43%"></div></div><span class="bar-val">22.8%</span></div>
+    <div class="bar-row"><span class="bar-label">The Free Press</span><div class="bar-track"><div class="bar-fill" style="width:32%"></div></div><span class="bar-val">17.1%</span></div>
+    <div class="bar-row"><span class="bar-label">Comment Magazine</span><div class="bar-track"><div class="bar-fill" style="width:31%"></div></div><span class="bar-val">16.5%</span></div>
+    <div class="bar-row"><span class="bar-label">WORLD Opinions</span><div class="bar-track"><div class="bar-fill" style="width:16%"></div></div><span class="bar-val">8.8%</span></div>
+    <div class="bar-row"><span class="bar-label">Sola Media</span><div class="bar-track"><div class="bar-fill" style="width:14%"></div></div><span class="bar-val">7.7%</span></div>
+    <div class="bar-row"><span class="bar-label">Mars Hill Audio Journal</span><div class="bar-track"><div class="bar-fill" style="width:9%"></div></div><span class="bar-val">5.0%</span></div>
+    <div class="bar-row"><span class="bar-label">The Bulwark</span><div class="bar-track"><div class="bar-fill" style="width:8%"></div></div><span class="bar-val">4.4%</span></div>
+    <div class="bar-row"><span class="bar-label">American Reformer</span><div class="bar-track"><div class="bar-fill" style="width:6%"></div></div><span class="bar-val">3.6%</span></div>
+    <div class="bar-row"><span class="bar-label">The Lamp</span><div class="bar-track"><div class="bar-fill" style="width:5%"></div></div><span class="bar-val">2.7%</span></div>
+</div>
+<div class="callout muted">
+    <p><strong>Your Competitive Set.</strong> TGC (49.7%), Substack Newsletters (45.6%), First Things (38.5%), and Christianity Today (34.3%) are the publications your readers also follow. MO occupies a distinctive niche: more intellectual than TGC, more Protestant than First Things, less institutional than CT. This positioning is your strategic advantage.</p>
+</div>
+
+<h2>Reader Profiles</h2>
+<div class="profile">
+    <h4>The Seasoned Pastor</h4>
+    <div class="pct">~26% of readership</div>
+    <p>Male, 45-65+, Presbyterian or Baptist. Reads multiple times per week. Top interests: Theology, Culture, Church. His biggest challenge is navigating political polarization in his congregation. He feels lonely in ministry and came to MO looking for intellectual companionship and resources for pastoral use.</p>
+    <div class="tags"><span class="tag">High loyalty</span><span class="tag">Political grief</span><span class="tag">Wants depth</span></div>
+</div>
+<div class="profile">
+    <h4>The Young Intellectual</h4>
+    <div class="pct">~22% of readership</div>
+    <p>Male, 25-34, often non-denominational or Anglican. Engages via website and email. Deeply interested in Culture, Theology, Family, and Technology. Many are navigating denominational questions and mid-career decisions. Wants community and practical content on parenting and faith formation.</p>
+    <div class="tags"><span class="tag gold">Growth segment</span><span class="tag">Family + Tech</span><span class="tag">Wants community</span><span class="tag">Email reader</span></div>
+</div>
+<div class="profile">
+    <h4>The Theologically Hungry Laywoman</h4>
+    <div class="pct">~10% of readership</div>
+    <p>Female, 30-55, lay member. Reads weekly via website or email. Wants Culture, Theology, Family, and Formation. Reports that most women's ministry lacks theological depth. Biggest challenges: parenting, time, and finding intellectually serious community with other women.</p>
+    <div class="tags"><span class="tag gold">Underserved</span><span class="tag">Family content gap</span><span class="tag">Wants depth</span><span class="tag">Isolated</span></div>
+</div>
+<div class="profile">
+    <h4>The Retired Thinker</h4>
+    <div class="pct">~18% of readership</div>
+    <p>Male, 65+, Presbyterian or Baptist. Reads weekly via website and email. Deeply interested in Theology, Culture, Church, and Book Reviews. Has time to read deeply. Values long-form content and engagement with intellectual history. Most interested in cultural commentary of any cohort.</p>
+    <div class="tags"><span class="tag">High retention</span><span class="tag">Book reviews</span><span class="tag">Long-form reader</span><span class="tag">Email-first</span></div>
+</div>
+
+<h2>Strategic Recommendations</h2>
+<div class="rec">
+    <div class="priority-tag">High Priority</div>
+    <h4>1. Launch a Faith &amp; Family Content Vertical</h4>
+    <p>58.4% of your 25–34 cohort and 49.6% of 35-54 readers want Family content. This is the single biggest unmet need in your data and directly serves your growth demographic.</p>
+</div>
+<div class="rec">
+    <div class="priority-tag">High Priority</div>
+    <h4>2. Invest in Technology &amp; AI Coverage</h4>
+    <p>Technology interest is 45.6% overall and 56-58% among under-54 readers. Technology/AI was the second-most cited challenge (17.3%). Frame it as theological anthropology: what does it mean to be human in a digital age?</p>
+</div>
+<div class="rec">
+    <div class="priority-tag">High Priority</div>
+    <h4>3. Deepen Theological Content</h4>
+    <p>51.9% want more in-depth theological content. Your readers chose MO for depth. They want you to go deeper, not broader. Consider multi-part series and sustained engagement with complex topics.</p>
+</div>
+<div class="rec">
+    <div class="priority-tag">Medium Priority</div>
+    <h4>4. Continue Audio Investment</h4>
+    <p>20.1% engage via podcast, but 19.7% want more audio versions of articles. Busy pastors and parents with commutes represent an expanding audience that values audio without sacrificing depth.</p>
+</div>
+<div class="rec">
+    <div class="priority-tag">Medium Priority</div>
+    <h4>5. Protect the Denominational Diversity</h4>
+    <p>Your appeal across Reformed, Baptist, Anglican, and non-denominational traditions is rare. Don't narrow toward any single tradition chasing financial sustainability. The breadth is your strength.</p>
+</div>
+<div class="rec">
+    <div class="priority-tag">Medium Priority</div>
+    <h4>6. Create Space for Women's Voices</h4>
+    <p>Women are 18.2% of your audience. They report wanting Family content at higher rates and express isolation in seeking theological depth. Recruit women contributors and explicitly address the gender imbalance in theological discourse.</p>
+</div>
+<div class="rec">
+    <div class="priority-tag">Medium Priority</div>
+    <h4>7. Address the Political Pain Directly</h4>
+    <p>Your readers are in genuine anguish over the politicization of evangelicalism. They don't want you to take a side. They want you to model faithful engagement that transcends the binary. This is exactly your brand. Lean into it more explicitly.</p>
+</div>
+<div class="callout" style="margin-top: 32px;">
+    <p><strong>What Not to Do:</strong> Only 6.4% want video. Only 3.5% want more social media. Only 2.5% want exclusive member-only content. Your readers are readers. Your competitive moat is depth, not reach.</p>
+</div>
+<footer>
+    Mere Orthodoxy Reader Survey &middot; 636 respondents &middot; February 2025<br>
+    Analysis prepared with Claude
+</footer>
+
+</div>
+<!-- FEEDBACK -->
+<div class="tab-panel panel-2025-feedback">
+<div class="sub-tabs" data-group="feedback-2025">
+    <button class="sub-tab active" data-target="feedback-2025-praise">Praise</button>
+    <button class="sub-tab" data-target="feedback-2025-criticism">Criticism</button>
+    <button class="sub-tab" data-target="feedback-2025-patterns">Patterns</button>
+</div>
+<div class="sub-panel active" id="feedback-2025-praise">
+<p>Respondents were asked "Anything else?" at the end of the survey. These are responses that expressed gratitude, encouragement, or affirmation of Mere Orthodoxy's work.</p>
+<div class="callout"><p>"You're amazing and please keep doing what you're doing. Mere O is a very meaningful place for me."</p></div>
+<div class="callout"><p>"Thanks for being one of the most intellectually stimulating and well-written corners of the web."</p></div>
+<div class="callout"><p>"I appreciate the spiritual and intellectual integrity of Meador's writing."</p></div>
+<div class="callout"><p>"Please don't give up. You helped me through deconstruction as a pastor. Keep making reason and nuance great again!"</p></div>
+<div class="callout"><p>"In formal terms, I probably stand to the left of you, but what I so appreciate is how you are trying to articulate a grounded, faithful response to this time."</p></div>
+<div class="callout"><p>"Mere Orthodoxy gives me such great perspectives in faith and how to engage the culture around me."</p></div>
+<div class="callout"><p>"For many years, Mere Orthodoxy has been one of the few media I regularly consume. The faithful engagement with Left, Right, Center, and Outsider, with perspectives across the Christian panorama is deeply appreciated."</p></div>
+<div class="callout"><p>"I really appreciate MereO, both when I agree and when I don't. It challenges me to think more clearly about why I believe what I believe."</p></div>
+<div class="callout"><p>"Your newsletter is so thoughtful and the articles are so well written that it gives me hope that there are Christians out there more devoted to their faith than to any political doctrines."</p></div>
+<div class="callout"><p>"I appreciate your writing so much. Christians have the most interesting writing material in all of creation and yet a horrifying percentage of writing by Christians is of all things, boring. You have not fallen prey to this... yet."</p></div>
+
+</div>
+<div class="sub-panel" id="feedback-2025-criticism">
+<p>Constructive criticism, concerns, and suggestions for improvement from survey responses.</p>
+<div class="callout"><p>Print journal editorial quality issues (typos, footnotes that go nowhere)</p></div>
+<div class="callout"><p>Quality inconsistency with volume increase</p></div>
+<div class="callout"><p>Articles from unknown authors feel less compelling than regular contributors</p></div>
+<div class="callout"><p>Email/article access issues</p></div>
+<div class="callout"><p>Email summary length could be shorter</p></div>
+<div class="callout"><p>Perception of anti-technology bias in coverage</p></div>
+<div class="callout"><p>Newsletter email frequency concerns</p></div>
+
+</div>
+<div class="sub-panel" id="feedback-2025-patterns">
+<p>Key patterns distilled from the survey feedback, with actionable insights.</p>
+<h3>What's Working</h3>
+<div class="callout">
+    <p><strong>You Are a Safe Harbor for the Politically Homeless.</strong> Multiple respondents describe MO as a place where they can think faithfully without being forced into a partisan box. This is your most distinctive asset. Readers come to you precisely because you refuse the binary.</p>
+</div>
+<div class="callout">
+    <p><strong>Depth Is Your Differentiator.</strong> Your readers praise the theological substance, the engagement with difficult questions, and the willingness to say "some questions don't have easy answers." Depth is not a luxury — it's your competitive moat.</p>
+</div>
+<div class="callout">
+    <p><strong>The Loyal Base Runs Deep.</strong> Readers mention discovering you years ago and having their faith shaped by your work. This loyalty translates to lifetime readership and potential membership conversion.</p>
+</div>
+
+<h3>What Needs Attention</h3>
+<div class="callout">
+    <p><strong>Emerging Content Gaps.</strong> Family content and technology coverage are explicitly requested and represent real needs in your audience. These are not fringe interests — they affect 40-60% of your readership.</p>
+</div>
+<div class="callout">
+    <p><strong>The Political Burden on Pastors.</strong> Your pastor readers are experiencing acute suffering over the politicization of evangelicalism. They come to MO looking for sanity and intellectual companionship. Your pastoral voice is essential.</p>
+</div>
+<div class="callout">
+    <p><strong>Time Constraints Are Real.</strong> With 74.5% reading weekly or more, your audience is time-conscious. They need your best work, not quantity. They want to feel that each article is worth their limited attention.</p>
+</div>
+
+</div>
+</div>
+</div><!-- end .tab-content -->
+</div><!-- end .page-wrap -->
+</div><!-- end .year-panel year-2025 -->
+
 
 <script>
 // Toggle examples panel
@@ -1921,55 +1990,81 @@ function toggleExamples(barRow) {
     }
 }
 
-// Main tab switching with scroll position preservation
-(function() {
-    var scrollPositions = {};
-    var currentTab = 'panel-summary';
 
-    document.querySelectorAll('.tab-sidebar button').forEach(function(btn) {
-        btn.addEventListener('click', function() {
-            var target = this.getAttribute('data-tab');
-            if (target === currentTab) return;
-
-            // Save current scroll position for the current tab
-            scrollPositions[currentTab] = window.scrollY;
-
-            // Deactivate all sidebar buttons and panels
-            document.querySelectorAll('.tab-sidebar button').forEach(function(b) {
-                b.classList.remove('active');
-            });
-            document.querySelectorAll('.tab-panel').forEach(function(p) {
-                p.classList.remove('active');
-            });
-
-            // Activate clicked tab and its panel
-            this.classList.add('active');
-            document.querySelector('.' + target).classList.add('active');
-            currentTab = target;
-
-            // Restore scroll position for the new tab (or go to saved position)
-            var savedPos = scrollPositions[target];
-            if (savedPos !== undefined) {
-                window.scrollTo(0, savedPos);
-            } else {
-                // First visit to this tab — keep current scroll position
-                // This lets you see the parallel spot
-            }
+// Year tab switching
+document.querySelectorAll('.year-tab').forEach(function(tab) {
+    tab.addEventListener('click', function() {
+        var year = this.getAttribute('data-year');
+        // Deactivate all tabs
+        document.querySelectorAll('.year-tab').forEach(function(t) {
+            t.classList.remove('active');
         });
+        document.querySelectorAll('.year-panel').forEach(function(p) {
+            p.classList.remove('active');
+        });
+        // Activate clicked tab
+        this.classList.add('active');
+        document.getElementById(year).classList.add('active');
     });
-})();
+});
 
-// Sub-tab switching
+
+// Main tab switching for 2025 sidebar (scoped to year-2025 panel)
+document.addEventListener('DOMContentLoaded', function() {
+    // 2025 sidebar tabs
+    var sidebar2025 = document.getElementById('sidebar-2025');
+    if (sidebar2025) {
+        sidebar2025.querySelectorAll('button').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var target = this.getAttribute('data-tab');
+                var panel = this.closest('.page-wrap').querySelector('.tab-content');
+
+                sidebar2025.querySelectorAll('button').forEach(function(b) {
+                    b.classList.remove('active');
+                });
+                panel.querySelectorAll('.tab-panel').forEach(function(p) {
+                    p.classList.remove('active');
+                });
+
+                this.classList.add('active');
+                document.querySelector('.' + target).classList.add('active');
+            });
+        });
+    }
+
+    // 2026 sidebar tabs (copied from original 2026 structure)
+    var sidebar2026 = document.querySelector('#year-2026 .tab-sidebar');
+    if (sidebar2026) {
+        sidebar2026.querySelectorAll('button').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var target = this.getAttribute('data-tab');
+                var panel = this.closest('.page-wrap').querySelector('.tab-content');
+
+                sidebar2026.querySelectorAll('button').forEach(function(b) {
+                    b.classList.remove('active');
+                });
+                panel.querySelectorAll('.tab-panel').forEach(function(p) {
+                    p.classList.remove('active');
+                });
+
+                this.classList.add('active');
+                document.querySelector('.' + target).classList.add('active');
+            });
+        });
+    }
+});
+
+// Sub-tab switching (scoped to parent panel)
 document.querySelectorAll('.sub-tab').forEach(function(tab) {
     tab.addEventListener('click', function() {
         var target = this.getAttribute('data-target');
+        var subTabs = this.closest('.sub-tabs');
+        var panel = this.closest('.tab-panel');
 
-        this.closest('.sub-tabs').querySelectorAll('.sub-tab').forEach(function(t) {
+        subTabs.querySelectorAll('.sub-tab').forEach(function(t) {
             t.classList.remove('active');
         });
-
-        var parent = this.closest('.tab-panel');
-        parent.querySelectorAll('.sub-panel').forEach(function(p) {
+        panel.querySelectorAll('.sub-panel').forEach(function(p) {
             p.classList.remove('active');
         });
 
@@ -1978,6 +2073,5 @@ document.querySelectorAll('.sub-tab').forEach(function(tab) {
     });
 });
 </script>
-
 </body>
 </html>
