@@ -2466,7 +2466,7 @@ function saveChatSettings() {
 
 function loadChatSettings() {
     var key = localStorage.getItem('mo_chat_api_key') || '';
-    var url = localStorage.getItem('mo_chat_worker_url') || '';
+    var url = localStorage.getItem('mo_chat_worker_url') || 'https://mo-survey-proxy.mereorthodoxy.workers.dev';
     var model = localStorage.getItem('mo_chat_model') || 'claude-sonnet-4-5-20250514';
     document.getElementById('chat-api-key').value = key;
     document.getElementById('chat-worker-url').value = url;
