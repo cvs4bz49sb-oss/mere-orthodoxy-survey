@@ -2394,7 +2394,7 @@ document.querySelectorAll('.sub-tab').forEach(function(tab) {
                 var q = this.value.toLowerCase();
                 var filtered = window[prefix + 'AllData'].filter(function(row) {
                     return cols.some(function(col) {
-                        return (row[col] || '').toLowerCase().indexOf(q) !== -1;
+                        return String(row[col] || '').toLowerCase().indexOf(q) !== -1;
                     });
                 });
                 window[prefix + 'CurrentData'] = filtered;
