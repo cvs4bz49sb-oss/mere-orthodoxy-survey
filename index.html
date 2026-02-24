@@ -464,12 +464,34 @@
             max-width: 300px;
             overflow: hidden;
             text-overflow: ellipsis;
+            cursor: default;
         }
         .data-table tbody tr:hover td { background: #faf7f0; }
+        .data-table tbody tr.expanded {
+            background: #fff;
+        }
+        .data-table tbody tr.expanded td {
+            white-space: normal;
+            max-width: none;
+            overflow: visible;
+            text-overflow: unset;
+            background: #fff;
+            border-bottom-color: #d4c9a8;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            vertical-align: top;
+            cursor: pointer;
+        }
         .data-table tbody td:first-child {
             font-weight: 600;
             color: #8B6914;
             max-width: none;
+        }
+        .data-table tbody tr {
+            cursor: pointer;
+        }
+        .data-table tbody tr:not(.expanded) td[title]:not(:first-child) {
+            position: relative;
         }
         /* Chatbot */
         .chatbot-btn {
@@ -2390,6 +2412,9 @@ document.querySelectorAll('.sub-tab').forEach(function(tab) {
                 td.textContent = row[col] || '';
                 td.title = row[col] || '';
                 tr.appendChild(td);
+            });
+            tr.addEventListener('click', function() {
+                this.classList.toggle('expanded');
             });
             tbody.appendChild(tr);
         });
