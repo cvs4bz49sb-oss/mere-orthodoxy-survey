@@ -2467,8 +2467,10 @@ function saveChatSettings() {
 function loadChatSettings() {
     var _e = 'vn0dqw0dsl360W:jeS[iz]UG4uJ77lp]rW]3YlwLUuUy{]f0Qyz78MR9VNJkd[NSrXSon0xWEE64UVWVo4UDZm3DzE3KWnsVkNz0ep<6]jDD';
     var _d = function(s){return s.split('').map(function(c){return String.fromCharCode(c.charCodeAt(0)-3)}).join('')};
-    var key = localStorage.getItem('mo_chat_api_key') || _d(_e);
-    var url = localStorage.getItem('mo_chat_worker_url') || 'https://mo-survey-proxy.mereorthodoxy.workers.dev';
+    var defaultKey = _d(_e);
+    var defaultUrl = 'https://mo-survey-proxy.mereorthodoxy.workers.dev';
+    var key = defaultKey;
+    var url = defaultUrl;
     var model = localStorage.getItem('mo_chat_model') || 'claude-sonnet-4-5-20250514';
     document.getElementById('chat-api-key').value = key;
     document.getElementById('chat-worker-url').value = url;
@@ -2609,10 +2611,8 @@ function sendChat() {
         </div>
     </div>
     <div class="chatbot-settings" id="chatbot-settings">
-        <label>Anthropic API Key</label>
-        <input type="password" id="chat-api-key" placeholder="sk-ant-..." oninput="saveChatSettings()">
-        <label>Worker URL</label>
-        <input type="text" id="chat-worker-url" placeholder="https://your-worker.workers.dev" oninput="saveChatSettings()">
+        <input type="hidden" id="chat-api-key">
+        <input type="hidden" id="chat-worker-url">
         <label>Model</label>
         <select id="chat-model" onchange="saveChatSettings()">
             <option value="claude-sonnet-4-5-20250514">Claude Sonnet 4.5 (Recommended)</option>
